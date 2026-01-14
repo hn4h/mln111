@@ -22,6 +22,7 @@ export interface Card {
   philosophicalContext?: string
   dialecticLaw?: string // Quy luật biện chứng liên quan
   yearContext?: string
+  historicalQuote?: string // Trích dẫn lịch sử cho card
   leftChoice: Choice
   rightChoice: Choice
   multipleChoices?: Array<{ 
@@ -33,6 +34,7 @@ export interface Card {
     historicalNote?: string;
     historicalQuote?: string;
     philosophicalExplanation?: string;
+    isCorrect?: boolean; // Đánh dấu đáp án đúng theo lịch sử
   }> // Support 3+ choices
 }
 

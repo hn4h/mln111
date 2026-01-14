@@ -7,10 +7,10 @@ interface StatsDisplayProps {
 
 export function StatsDisplay({ gameState }: StatsDisplayProps) {
   const stats = [
-    { label: "Finance", value: gameState.finance, icon: "💰", variable: "--stat-finance" },
-    { label: "People", value: gameState.people, icon: "🙂", variable: "--stat-people" },
-    { label: "Military", value: gameState.military, icon: "⚔️", variable: "--stat-military" },
-    { label: "Religion", value: gameState.religion, icon: "⛪", variable: "--stat-religion" },
+    { label: "Tài Chính", value: gameState.finance, icon: "💰", variable: "--stat-finance" },
+    { label: "Dân Sinh", value: gameState.people, icon: "🙂", variable: "--stat-people" },
+    { label: "Quân Sự", value: gameState.military, icon: "⚔️", variable: "--stat-military" },
+    { label: "Tôn Giáo", value: gameState.religion, icon: "⛪", variable: "--stat-religion" },
   ]
 
   const getDangerLevel = (value: number) => {

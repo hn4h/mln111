@@ -1,6 +1,6 @@
 import type { Dynasty, Card } from "./types"
 
-// Các triều đại Việt Nam
+// Các triều đại Việt Nam - Dựa trên JSON chuẩn
 export const vietnamDynasties: Dynasty[] = [
   {
     id: "ly",
@@ -8,1140 +8,1937 @@ export const vietnamDynasties: Dynasty[] = [
     period: "1009 - 1225",
     description: "Triều đại đầu tiên độc lập lâu dài, phát triển văn hóa Phật giáo và xây dựng đất nước",
     icon: "🏛️",
+    startingStats: { finance: 50, people: 50, military: 50, religion: 50 },
     cards: [
+      // Câu 1: Ban chiếu đại xá - 1009
       {
-        id: "ly1",
-        character: "Lý Công Uẩn - Năm 1010",
+        id: "ly_1",
+        character: "Lý Thái Tổ - Năm 1009",
         situation:
-          "Sau khi lên ngôi, bạn phải quyết định di đô từ Hoa Lư về Thăng Long. Quý tộc phản đối vì phải bỏ đất đai tổ tiên. Nhưng Thăng Long có vị trí địa lý tốt hơn, dễ phát triển kinh tế và quốc phòng.",
-        philosophicalContext: "Bảo thủ vs Tiến bộ",
-        dialecticLaw: "Quy luật phủ định của phủ định - Từ bỏ cái cũ để phát triển cái mới",
-        yearContext: "1010",
+          "Lý Công Uẩn vừa lên ngôi, triều chính chưa ổn định, lòng dân còn dao động. Bạn cần hành động để củng cố vị thế.",
+        philosophicalContext: "Đức trị vs Lực trị",
+        dialecticLaw: "Quy luật thống nhất và đấu tranh của các mặt đối lập: Trong giai đoạn chuyển giao quyền lực, sự ổn định xã hội cần được xây dựng trên nền tảng đồng thuận chứ không phải áp đặt bằng vũ lực. Đức trị (nhân từ) và lực trị (cứng rắn) là hai mặt đối lập nhưng thống nhất, cần biết vận dụng linh hoạt.",
+        yearContext: "1009",
+        historicalQuote: "Mới lên ngôi phải xá tội cho thiên hạ, lấy lòng nhân từ mà cảm hóa muôn dân. Người xưa dạy: 'Lòng dân là nền nước, lòng dân hướng về đâu, thiên hạ về đó'. Vậy nên trẫm ban ân xá rộng khắp, để người trong nước đều được an sinh lạc nghiệp. (Chiếu dụ của Lý Thái Tổ - Đại Việt sử ký toàn thư)",
         leftChoice: {
-          text: "Giữ lại đô Hoa Lư",
-          effects: { finance: -10, people: 5, military: -15, religion: 10 },
+          text: "Giữ luật cũ, tránh xáo trộn",
+          effects: { finance: 5, people: -5, military: 0, religion: 0 },
         },
         rightChoice: {
-          text: "Dời đô về Thăng Long",
-          effects: { finance: 20, people: 15, military: 20, religion: -5 },
+          text: "Ban chiếu đại xá, xoa dịu lòng dân",
+          effects: { finance: -2, people: 12, military: 0, religion: 3 },
         },
         multipleChoices: [
           {
             id: "ly1_a",
-            text: "Giữ Hoa Lư, tăng cường phòng thủ",
-            description: "Chi phí thấp nhưng khó phát triển",
-            cost: { finance: 3, people: 0, military: 2, religion: 0 },
-            effects: { finance: -5, people: 5, military: -10, religion: 8 },
-            historicalNote: "Hoa Lư là kinh đô của nhà Đinh và nhà Tiền Lê, nằm trong vùng núi hiểm trở ở Ninh Bình. Tuy dễ phòng thủ nhưng địa hình khép kín, khó mở rộng kinh tế và giao lưu văn hóa. Việc giữ lại Hoa Lư có thể đảm bảo an ninh ngắn hạn nhưng hạn chế sự phát triển lâu dài của quốc gia.",
-            philosophicalExplanation: "Đây là biểu hiện của tư tưởng bảo thủ - giữ gìn cái cũ một cách máy móc. Quy luật phủ định của phủ định cho thấy: sự phát triển đòi hỏi phải từ bỏ những cái lạc hậu để tiến lên. Giữ Hoa Lư là vi phạm quy luật khách quan của sự phát triển xã hội."
+            text: "Ban chiếu đại xá, xoa dịu lòng dân",
+            description: "Nhân từ và đúng đắn",
+            effects: { finance: -2, people: 12, military: 0, religion: 3 },
+            historicalNote: "Lý Thái Tổ đã ban chiếu đại xá ngay sau khi lên ngôi, giúp ổn định xã hội và lòng dân.",
+            isCorrect: true
           },
           {
             id: "ly1_b",
-            text: "Dời đô từ từ, xây dựng cơ sở hạ tầng trước",
-            description: "Thận trọng nhưng tốn kém và chậm",
-            cost: { finance: 8, people: 5, military: 3, religion: 0 },
-            effects: { finance: 10, people: 8, military: 10, religion: -5 },
-            historicalNote: "Phương án thận trọng này cho phép chuẩn bị kỹ lưỡng trước khi di chuyển. Xây dựng cung điện, thành quách, và hệ thống giao thông trước, sau đó mới chính thức di chuyển. Tuy an toàn nhưng tốn nhiều thời gian và tài nguyên, có thể bỏ lỡ thời cơ phát triển.",
-            philosophicalExplanation: "Đây là sự nhận thức được quy luật chuyển hóa từ lượng sang chất - tích lũy dần dần các điều kiện vật chất trước khi thực hiện bước nhảy vọt. Tuy nhiên, quá thận trọng có thể làm chậm tiến trình lịch sử, không nắm bắt được thời cơ thuận lợi."
+            text: "Giữ nguyên luật cũ, tránh xáo trộn",
+            description: "An toàn nhưng thiếu cảm hóa",
+            effects: { finance: 5, people: -5, military: 0, religion: 0 },
+            historicalNote: "Không có hành động mới sẽ không tạo được niềm tin với nhân dân."
           },
           {
             id: "ly1_c",
-            text: "Dời đô ngay lập tức, động viên toàn quốc",
-            description: "Quyết đoán nhưng rủi ro cao",
-            cost: { finance: 10, people: 5, military: 3, religion: 2 },
-            effects: { finance: 25, people: 20, military: 25, religion: -8 },
-            historicalQuote: "Thăng Long địa thế rồng cuộn, hổ ngồi, tứ linh tụ hội, thật là đất vương khí. Trẫm muốn dời đô ra đây để định vận nghìn thu.\n\n- Chiếu dời đô của Lý Thái Tổ, năm 1010",
-            historicalNote: "Lý Công Uẩn đã chọn cách này trong lịch sử. Chiếu dời đô năm 1010 có câu nổi tiếng: 'Thăng Long địa thế rồng cuộn, hổ ngồi, là chốn đất vương nên tối muốn lập kinh đô tại đây'. Quyết định táo bạo này đã mở ra kỷ nguyên mới cho Đại Việt, biến Thăng Long thành trung tâm chính trị-kinh tế-văn hóa phát triển.",
-            philosophicalExplanation: "Đây là sự vận dụng sáng tạo quy luật phủ định của phủ định - dám phủ định cái cũ để khẳng định cái mới trên nền tảng cao hơn. Lý Công Uẩn thể hiện tư duy biện chứng: nhận thức được mâu thuẫn giữa 'giữ gìn truyền thống' và 'phát triển đất nước', và chọn giải pháp phát triển dù phải đối mặt với rủi ro."
+            text: "Trấn áp tàn dư nhà Lê",
+            description: "Mạnh tay nhưng mất lòng dân",
+            effects: { finance: 5, people: -15, military: 15, religion: 0 },
+            historicalNote: "Dùng vũ lực sẽ gây bất ổn và làm mất lòng dân trong thời kỳ chuyển giao."
           },
           {
             id: "ly1_d",
-            text: "Thiết lập hai đô, Hoa Lư và Thăng Long",
-            description: "Thỏa hiệp nhưng tốn kém gấp đôi",
-            cost: { finance: 15, people: 10, military: 8, religion: 2 },
-            effects: { finance: -10, people: 12, military: 5, religion: 5 },
-            historicalNote: "Giải pháp dung hòa này giữ Hoa Lư như kinh đô phụ và Thăng Long làm kinh đô chính. Tuy làm hài lòng cả hai phe nhóm nhưng chia nhỏ nguồn lực, tốn kém gấp đôi để duy trì hai hệ thống hành chính. Trong lịch sử, không có triều đại nào thành công với mô hình này.",
-            philosophicalExplanation: "Đây là thể hiện của chủ nghĩa điều hòa - cố gắng dung hòa các mặt đối lập một cách hình thức, không giải quyết được mâu thuẫn về bản chất. Quy luật thống nhất và đấu tranh của các mặt đối lập cho thấy: mâu thuẫn phải được giải quyết triệt để, không thể hòa giải máy móc."
+            text: "Dựa vào giới tăng lữ để ổn định xã hội",
+            description: "Tâm linh nhưng chưa đủ",
+            effects: { finance: -5, people: 5, military: -5, religion: 15 },
+            historicalNote: "Chỉ dựa vào tôn giáo chưa đủ, cần có chính sách cụ thể cho dân."
           }
-        ]
+        ],
       },
+      // Câu 2: Dời đô về Thăng Long - 1010
       {
-        id: "ly2",
-        character: "Vấn đề Phật giáo - Năm 1028",
+        id: "ly_2",
+        character: "Lý Thái Tổ - Năm 1010",
         situation:
-          "Phật giáo đang phát triển mạnh. Một số sư muốn xây thêm nhiều chùa, tốn kém ngân khố. Nông dân phàn nàn thuế nặng. Bạn cần cân bằng giữa tín ngưỡng và đời sống nhân dân.",
-        philosophicalContext: "Tinh thần vs Vật chất",
-        dialecticLaw: "Quy luật thống nhất và đấu tranh của các mặt đối lập - Đời sống vật chất và tinh thần phải hài hòa",
+          "Hoa Lư hiểm trở nhưng chật hẹp, Đại La thuận lợi phát triển lâu dài. Bạn phải quyết định vấn đề kinh đô.",
+        philosophicalContext: "Bảo thủ vs Tiến bộ",
+        dialecticLaw: "Quy luật phủ định của phủ định: Sự phát triển là quá trình không ngừng từ bỏ cái cũ lạc hậu để xây dựng cái mới tiến bộ. Hoa Lư đại diện cho quá khứ cũ kỹ, Thăng Long là tương lai phát triển. Dời đô không phải chỉ là thay đổi vị trí địa lý mà là bước chuyển từ tư duy bảo thủ sang tư duy tiến bộ, mở ra kỷ nguyên mới.",
+        yearContext: "1010",
+        historicalQuote: "Đất Đại La, thuộc trấn Bắc Thành, phía đông giáp biển Đông, phía tây dựa núi Tản Viên, phía nam có sông Đáy làm hào, phía bắc có núi Tam Đảo làm chắn. Rồng cuộn hổ ngồi, địa thế nguy nga, tứ phương tụ hội, là nơi có vương khí. Nếu dựng đô ở đây, truyền nghìn đời còn vững bền. (Chiếu dời đô của Lý Thái Tổ năm 1010)",
         leftChoice: {
-          text: "Hạn chế xây chùa",
-          effects: { finance: 15, people: 15, military: 5, religion: -20 },
+          text: "Giữ đô ở Hoa Lư",
+          effects: { finance: 5, people: -10, military: -5, religion: 0 },
         },
         rightChoice: {
-          text: "Tiếp tục xây chùa",
-          effects: { finance: -12, people: -5, military: 0, religion: 20 },
+          text: "Dời đô ra Thăng Long",
+          effects: { finance: -6, people: 11, military: 8, religion: 3 },
         },
+        multipleChoices: [
+          {
+            id: "ly2_a",
+            text: "Giữ đô ở Hoa Lư",
+            description: "Bảo thủ, hạn chế phát triển",
+            effects: { finance: 5, people: -10, military: -5, religion: 0 },
+            historicalNote: "Hoa Lư địa thế hiểm trở nhưng hẹp, không có điều kiện phát triển kinh tế văn hóa."
+          },
+          {
+            id: "ly2_b",
+            text: "Trì hoãn dời đô để củng cố triều chính",
+            description: "Dè dặt, bỏ lỡ thời cơ",
+            effects: { finance: 10, people: -5, military: 0, religion: -5 },
+            historicalNote: "Chờ đợi quá lâu sẽ bỏ lỡ thời cơ phát triển và mất đi khí thế."
+          },
+          {
+            id: "ly2_c",
+            text: "Dời đô ra Thăng Long",
+            description: "Quyết đoán và đúng đắn",
+            effects: { finance: -6, people: 11, military: 8, religion: 3 },
+            historicalNote: "Lý Thái Tổ dời đô năm 1010, tạo nền tảng cho sự phát triển lâu dài của đất nước.",
+            isCorrect: true
+          },
+          {
+            id: "ly2_d",
+            text: "Dời đô nhưng giữ Hoa Lư làm căn cứ quân sự",
+            description: "Thận trọng nhưng tốn kém",
+            effects: { finance: -15, people: 10, military: 15, religion: 0 },
+            historicalNote: "Duy trì hai hệ thống tốn kém nguồn lực, chia nhỏ sức mạnh quốc gia."
+          }
+        ],
       },
+      // Câu 3: Phật giáo trong triều đình - Thế kỷ XI
       {
-        id: "ly3",
-        character: "Chiến tranh với Tống - Năm 1075",
+        id: "ly_3",
+        character: "Nhà Lý - Thế kỷ XI",
         situation:
-          "Quân Tống xâm lược. Lý Thường Kiệt đề nghị đánh phủ đầu, tấn công vào đất Tống trước. Triều thần lo sợ động binh tốn kém. Nhưng đánh trước có thể làm chủ động thế trận.",
-        philosophicalContext: "Phòng thủ vs Chủ động",
-        dialecticLaw: "Quy luật chuyển hóa từ lượng sang chất - Hành động quyết liệt có thể tạo bước ngoặt",
+          "Phật giáo phát triển mạnh, ảnh hưởng sâu vào triều đình. Bạn phải quyết định vai trò của tăng lữ trong chính sự.",
+        philosophicalContext: "Tâm linh vs Hành chính",
+        dialecticLaw: "Quy luật về mối quan hệ giữa cơ sở hạ tầng và thượng tầng kiến trúc: Đời sống tinh thần (tôn giáo, văn hóa) không tách rời mà có tác động qua lại với đời sống vật chất và tổ chức xã hội. Phật giáo thời Lý không chỉ là tín ngưỡng mà còn là công cụ giáo hóa, là nền tảng văn hóa dân tộc, là sợi dây kết nối giữa triều đình và nhân dân.",
+        yearContext: "Thế kỷ XI",
+        historicalQuote: "Phật pháp rộng lớn như biển cả, bao la như hư không, có thể độ người qua bể khổ. Nhưng phải biết rằng, giúp nước giúp dân mới thật là công đức. Tu hành nơi núi rừng dễ, nhưng cứu dân ra khỏi đói khổ mới thật khó. Vì vậy ta dùng sư tăng có đức hạnh làm cố vấn, vừa gìn giữ đạo pháp, vừa giúp nước an dân. (Lời của Thiền sư Vạn Hạnh - cố vấn triều Lý)",
         leftChoice: {
-          text: "Đợi địch đánh vào",
-          effects: { finance: 10, people: -15, military: -15, religion: 5 },
+          text: "Hạn chế vai trò Phật giáo",
+          effects: { finance: 5, people: -5, military: 5, religion: -15 },
         },
         rightChoice: {
-          text: "Tấn công phủ đầu",
-          effects: { finance: -10, people: 25, military: 30, religion: 5 },
+          text: "Trọng dụng sư tăng trong triều",
+          effects: { finance: -6, people: 5, military: -3, religion: 10 },
         },
         multipleChoices: [
           {
             id: "ly3_a",
-            text: "Phòng thủ thụ động, chờ địch tấn công",
-            description: "Tiết kiệm nhưng bất lợi về chiến lược",
-            cost: { finance: 2, people: 0, military: 3, religion: 0 },
-            effects: { finance: 8, people: -12, military: -10, religion: 5 }
+            text: "Hạn chế vai trò Phật giáo",
+            description: "Thực dụng nhưng mất hỗ trợ tinh thần",
+            effects: { finance: 5, people: -5, military: 5, religion: -15 },
+            historicalNote: "Hạn chế Phật giáo sẽ mất đi nguồn lực tinh thần to lớn của xã hội."
           },
           {
             id: "ly3_b",
-            text: "Chuẩn bị phòng thủ chặt chẽ, đào hào lũy",
-            description: "Thận trọng nhưng vẫn mất chủ động",
-            cost: { finance: 8, people: 5, military: 5, religion: 0 },
-            effects: { finance: -5, people: -5, military: 5, religion: 3 }
+            text: "Trọng dụng sư tăng trong triều",
+            description: "Phát huy vai trò tinh thần",
+            effects: { finance: -6, people: 5, military: -3, religion: 10 },
+            historicalNote: "Nhà Lý trọng dụng các cao tăng như Vạn Hạnh, Thường Chiếu làm cố vấn triều đình.",
+            isCorrect: true
           },
           {
             id: "ly3_c",
-            text: "Tấn công phủ đầu như Lý Thường Kiệt đề xuất",
-            description: "Mạo hiểm nhưng chiếm chủ động",
-            cost: { finance: 10, people: 5, military: 8, religion: 2 },
-            effects: { finance: -5, people: 30, military: 35, religion: 5 }
+            text: "Giữ cân bằng giữa tăng lữ và quan lại",
+            description: "Trung dung, cân bằng",
+            effects: { finance: -5, people: 5, military: 0, religion: 10 },
+            historicalNote: "Cân bằng giúp tránh xung đột nhưng không phát huy được vai trò của Phật giáo."
           },
           {
             id: "ly3_d",
-            text: "Huy động toàn dân, động viên tinh thần dân tộc",
-            description: "Tốn kém nhưng sức mạnh tổng lực",
-            cost: { finance: 12, people: 10, military: 8, religion: 5 },
-            effects: { finance: -15, people: 30, military: 25, religion: 10 }
+            text: "Loại bỏ tăng lữ khỏi chính sự",
+            description: "Cực đoan, gây mất ổn định",
+            effects: { finance: 10, people: -15, military: 5, religion: -25 },
+            historicalNote: "Loại bỏ hoàn toàn sẽ gây xung đột với niềm tin của nhân dân."
           }
-        ]
+        ],
       },
+      // Câu 4: Xây dựng chùa lớn - Thế kỷ XI
       {
-        id: "ly4",
-        character: "Cải cách ruộng đất - Năm 1042",
+        id: "ly_4",
+        character: "Nhà Lý - Thế kỷ XI",
         situation:
-          "Quý tộc chiếm nhiều ruộng đất, nông dân thiếu đất canh tác. Bạn muốn chia đều ruộng đất nhưng quý tộc phản đối dữ dội, có thể gây nội loạn.",
-        philosophicalContext: "Công bằng xã hội vs Ổn định",
-        dialecticLaw: "Mâu thuẫn giữa giai cấp - Xung đột lợi ích giữa tầng lớp thống trị và lao động",
+          "Triều đình đề xuất xây dựng nhiều chùa lớn để phát triển Phật giáo và văn hóa. Ngân khố cần phân bổ hợp lý.",
+        philosophicalContext: "Tâm linh vs Vật chất",
+        dialecticLaw: "Quy luật về sự thống nhất giữa đời sống vật chất và tinh thần: Một quốc gia phát triển bền vững cần cả hai yếu tố này hài hòa. Kinh tế vật chất tạo nền tảng cho văn hóa tinh thần, trong khi văn hóa tinh thần định hướng và thúc đẩy phát triển kinh tế. Xây dựng công trình tôn giáo không chỉ thỏa mãn nhu cầu tâm linh mà còn là biểu tượng của sức mạnh quốc gia, là trung tâm văn hóa giáo dục.",
+        yearContext: "Thế kỷ XI",
+        historicalQuote: "Xây chùa xây tháp là để ghi công đức, lưu lại cho muôn đời sau. Chùa chiền là nơi thờ Phật, là trường dạy chữ, là chốn tu dưỡng tâm hồn cho dân. Đất nước có chùa tháng nghĩa là có văn hóa, có học vấn. Một cột chống trời, mái che đại địa, đó là biểu tượng của lòng biết ơn, của sự ghi nhớ công ơn tổ tiên và trời phật. (Ký sự về việc xây dựng các ngôi chùa lớn thời Lý)",
         leftChoice: {
-          text: "Giữ nguyên hiện trạng",
-          effects: { finance: 10, people: -25, military: 10, religion: -5 },
+          text: "Cấm xây chùa mới",
+          effects: { finance: 15, people: -15, military: 5, religion: -20 },
         },
         rightChoice: {
-          text: "Cải cách ruộng đất",
-          effects: { finance: -15, people: 30, military: -15, religion: 5 },
+          text: "Xây dựng chùa quy mô lớn",
+          effects: { finance: -8, people: 8, military: -3, religion: 8 },
         },
         multipleChoices: [
           {
             id: "ly4_a",
-            text: "Không thay đổi, giữ nguyên hiện trạng",
-            description: "An toàn nhưng bất công",
-            cost: { finance: 0, people: 0, military: 0, religion: 0 },
-            effects: { finance: 8, people: -28, military: 8, religion: -3 }
+            text: "Xây dựng chùa quy mô lớn",
+            description: "Phát triển văn hóa và tinh thần",
+            effects: { finance: -8, people: 8, military: -3, religion: 8 },
+            historicalNote: "Nhà Lý xây dựng nhiều chùa lớn như Diên Hựu, Bảo Thiên, tạo nền văn hóa Phật giáo phát triển.",
+            isCorrect: true
           },
           {
             id: "ly4_b",
-            text: "Cải cách nhẹ, hạn chế số ruộng tối đa",
-            description: "Thỏa hiệp, ít rủi ro",
-            cost: { finance: 5, people: 3, military: 5, religion: 2 },
-            effects: { finance: -5, people: 15, military: -8, religion: 3 }
+            text: "Chỉ xây chùa vừa và nhỏ",
+            description: "Tiết kiệm, cân bằng",
+            effects: { finance: -5, people: 5, military: 0, religion: 10 },
+            historicalNote: "Xây chùa nhỏ tiết kiệm nhưng không tạo được tác động lớn đến văn hóa xã hội."
           },
           {
             id: "ly4_c",
-            text: "Cải cách toàn diện, tịch thu và phân phối lại",
-            description: "Công bằng nhưng rủi ro nội loạn cao",
-            cost: { finance: 10, people: 8, military: 12, religion: 5 },
-            effects: { finance: -18, people: 35, military: -18, religion: 8 }
+            text: "Tạm dừng xây chùa, ưu tiên kho lương",
+            description: "Thực dụng nhưng mất cơ hội văn hóa",
+            effects: { finance: 10, people: -5, military: 5, religion: -10 },
+            historicalNote: "Chỉ chú trọng vật chất mà bỏ qua tinh thần sẽ làm mất đi bản sắc văn hóa."
           },
           {
             id: "ly4_d",
-            text: "Mở rộng khai hoang, tăng diện tích canh tác",
-            description: "Giải pháp sáng tạo, tốn nhiều nguồn lực",
-            cost: { finance: 15, people: 10, military: 10, religion: 3 },
-            effects: { finance: 5, people: 25, military: 5, religion: 2 }
+            text: "Cấm xây chùa mới",
+            description: "Cực đoan, gây phản ứng",
+            effects: { finance: 15, people: -15, military: 5, religion: -20 },
+            historicalNote: "Cấm hoàn toàn sẽ đi ngược lại xu hướng xã hội và gây bất bình."
           }
-        ]
+        ],
       },
+      // Câu 5: Chiến tranh với Tống - 1075
       {
-        id: "ly5",
-        character: "Quan hệ ngoại giao với Tống - Năm 1060",
+        id: "ly_5",
+        character: "Lý Thường Kiệt - Năm 1075",
         situation:
-          "Tống muốn lập quan hệ thương mại, nhưng đòi Đại Việt phải chấp nhận làm quốc phụ thuộc về danh nghĩa. Thương mại sẽ giàu có nhưng mất tự chủ.",
-        philosophicalContext: "Độc lập vs Thịnh vượng",
-        dialecticLaw: "Hình thức và nội dung - Hình thức phụ thuộc không phản ánh bản chất độc lập",
+          "Nhà Tống chuẩn bị xâm lược Đại Việt. Bạn phải quyết định chiến lược.",
+        philosophicalContext: "Phòng thủ vs Chủ động",
+        dialecticLaw: "Quy luật chuyển hóa từ lượng sang chất: Khi mâu thuẫn tích lũy đến mức nguy kịch, cần có hành động quyết liệt để tạo bước ngoặt chất lượng. Chiến tranh phòng thủ và tấn công là hai chiến lược đối lập nhưng có thể chuyển hóa lẫn nhau. Trong điều kiện cụ thể năm 1075, tấn công phủ đầu chính là cách phòng thủ tốt nhất, biến thụ động thành chủ động, tạo thế trận có lợi.",
+        yearContext: "1075",
+        historicalQuote: "Nam quốc sơn hà Nam đế cư, tiệt nhiên định phận tại thiên thư. Như hà nghịch lỗ lai xâm phạm, nhữ đẳng hành khan thủ bại hư! (Sông núi nước Nam vua Nam ở, rành rành định phận tại sách trời. Cớ sao bọn giặc sang xâm phạm, chúng bay hãy thấy khéo vào chịu thua!) - Lời thề của tướng Lý Thường Kiệt trước khi xuất chinh năm 1075, thể hiện tinh thần quyết chiến, quyết thắng bảo vệ giang san Tổ quốc",
         leftChoice: {
-          text: "Chấp nhận quan hệ phụ thuộc",
-          effects: { finance: 15, people: -25, military: -20, religion: 0 },
+          text: "Lập phòng tuyến chờ giặc",
+          effects: { finance: -10, people: -5, military: 15, religion: 0 },
         },
         rightChoice: {
-          text: "Từ chối, giữ độc lập",
-          effects: { finance: -8, people: 25, military: 15, religion: 12 },
+          text: "Đánh trước sang đất Tống",
+          effects: { finance: -8, people: -8, military: 16, religion: 0 },
         },
+        multipleChoices: [
+          {
+            id: "ly5_a",
+            text: "Cầu hòa, dâng cống",
+            description: "Tránh chiến nhưng mất độc lập",
+            effects: { finance: -5, people: -10, military: -10, religion: 0 },
+            historicalNote: "Chấp nhận làm phụ thuộc sẽ mất độc lập và tinh thần dân tộc."
+          },
+          {
+            id: "ly5_b",
+            text: "Lập phòng tuyến chờ giặc",
+            description: "Thận trọng nhưng thụ động",
+            effects: { finance: -10, people: -5, military: 15, religion: 0 },
+            historicalNote: "Phòng thủ giúp giảm tổn thất nhưng mất quyền chủ động trong chiến tranh."
+          },
+          {
+            id: "ly5_c",
+            text: "Tăng cường tuyển quân, chưa giao chiến",
+            description: "Bị động, mất thời cơ",
+            effects: { finance: -10, people: -5, military: 10, religion: 0 },
+            historicalNote: "Chuẩn bị lâu sẽ để địch chủ động tấn công."
+          },
+          {
+            id: "ly5_d",
+            text: "Đánh trước sang đất Tống",
+            description: "Chủ động và quyết đoán",
+            effects: { finance: -8, people: -8, military: 16, religion: 0 },
+            historicalNote: "Lý Thường Kiệt tấn công phủ đầu năm 1075, giành thắng lợi tại Như Nguyệt.",
+            isCorrect: true
+          }
+        ],
       },
+      // Câu 6: Chiến sự tại sông Như Nguyệt - 1076
       {
-        id: "ly6",
-        character: "Khoa cử - Năm 1075",
+        id: "ly_6",
+        character: "Lý Thường Kiệt - Năm 1076",
         situation:
-          "Bạn muốn mở khoa thi để tuyển nhân tài từ dân gian. Nhưng quý tộc lo mất quyền lợi, muốn chỉ con cháu họ mới được làm quan.",
-        philosophicalContext: "Dân chủ vs Quý tộc",
-        dialecticLaw: "Sản xuất và quan hệ sản xuất - Phát triển cần người tài giỏi, không phân biệt giai cấp",
+          "Quân Tống tiến sâu, chiến sự căng thẳng tại sông Như Nguyệt. Bạn phải lựa chọn chiến thuật.",
+        philosophicalContext: "Quyết đoán vs Dè dặt",
+        dialecticLaw: "Quy luật về vai trò của chiến thuật trong chiến tranh: Chiến lược quyết định phương hướng tổng thể, chiến thuật quyết định thắng bại từng trận. Sự lựa chọn chiến thuật phù hợp với địa hình, thời cơ và lực lượng là yếu tố then chốt. Cố thủ hay phản công, thụ động hay chủ động đều phải xuất phát từ điều kiện thực tế chứ không phải quan điểm chủ quan.",
+        yearContext: "1076",
+        historicalQuote: "Quân ta tuy ít nhưng đang ở thế có lợi, sông Như Nguyệt chảy xiết, cầu cống hẹp, giặc đông nhưng khó triển khai. Ta giữ vững bờ sông này, không để giặc vượt qua, đó chính là chiến thắng. Binh pháp có câu: 'Thủ như núi, công như sấm', biết giữ vững thành trì mới có thể chờ cơ hội phản công. (Lời của Lý Thường Kiệt tại chiến trường Như Nguyệt - theo ghi chép sử sách)",
         leftChoice: {
-          text: "Chỉ quý tộc làm quan",
-          effects: { finance: -10, people: -20, military: -10, religion: 15 },
+          text: "Rút quân bảo toàn lực lượng",
+          effects: { finance: -5, people: -10, military: -10, religion: 0 },
         },
         rightChoice: {
-          text: "Mở khoa thi cho dân",
-          effects: { finance: 18, people: 25, military: 10, religion: -15 },
+          text: "Lập phòng tuyến cố thủ",
+          effects: { finance: -6, people: -4, military: 14, religion: 2 },
         },
+        multipleChoices: [
+          {
+            id: "ly6_a",
+            text: "Rút quân bảo toàn lực lượng",
+            description: "Bảo thủ, mất lợi thế",
+            effects: { finance: -5, people: -10, military: -10, religion: 0 },
+            historicalNote: "Rút quân sẽ để địch tiến sâu và mất lợi thế chiến trường."
+          },
+          {
+            id: "ly6_b",
+            text: "Cầu viện tinh thần tôn giáo",
+            description: "Tinh thần nhưng thiếu chiến thuật",
+            effects: { finance: 0, people: 5, military: 5, religion: 10 },
+            historicalNote: "Tinh thần quan trọng nhưng phải kết hợp với chiến thuật hợp lý."
+          },
+          {
+            id: "ly6_c",
+            text: "Lập phòng tuyến cố thủ",
+            description: "Chiến thuật vững chắc",
+            effects: { finance: -6, people: -4, military: 14, religion: 2 },
+            historicalNote: "Lý Thường Kiệt lập phòng tuyến vững chắc tại Như Nguyệt, giành thắng lợi quyết định.",
+            isCorrect: true
+          },
+          {
+            id: "ly6_d",
+            text: "Chủ động phản công mạnh",
+            description: "Tích cực nhưng rủi ro cao",
+            effects: { finance: -15, people: -10, military: 25, religion: 0 },
+            historicalNote: "Phản công mạnh có thể thắng lớn nhưng cũng dễ bị tổn thất nặng."
+          }
+        ],
       },
+      // Câu 7: Khích lệ tinh thần quân sĩ - 1076
       {
-        id: "ly7",
-        character: "Nạn hạn hán - Năm 1100",
+        id: "ly_7",
+        character: "Lý Thường Kiệt - Năm 1076",
         situation:
-          "Hạn hán kéo dài, dân đói. Kho tàng trống rỗng. Sư cao tăng nói phải xây tháp cầu mưa. Quan nho đề nghị đào kênh thủy lợi.",
-        philosophicalContext: "Duy tâm vs Duy vật",
-        dialecticLaw: "Tồn tại xã hội và ý thức xã hội - Thực tiễn vật chất quyết định, không phải ý niệm",
+          "Tinh thần quân sĩ dao động trước thế giặc. Bạn cần khích lệ quân lính.",
+        philosophicalContext: "Tinh thần vs Vật chất",
+        dialecticLaw: "Quy luật về vai trò quyết định của yếu tố con người trong chiến tranh: Vũ khí, quân số chỉ là yếu tố vật chất, tinh thần ý chí mới là yếu tố quyết định. Ý thức hệ, niềm tin vào sự nghiệp chính nghĩa có sức mạnh to lớn, biến con người yếu thế về vật chất thành vô địch về tinh thần. Văn học, nghệ thuật, tuyên truyền là những công cụ quan trọng để nâng cao tinh thần chiến đấu.",
+        yearContext: "1076",
+        historicalQuote: "Nam quốc sơn hà Nam đế cư, tiệt nhiên định phận tại thiên thư. Như hà nghịch lỗ lai xâm phạm, nhữ đẳng hành khan thủ bại hư! (Sông núi nước Nam vua Nam ở, rành rành định phận tại sách trời. Cớ sao bọn giặc sang xâm phạm, chúng bay hãy thấy khéo vào chịu thua!) - Bài thơ bất hủ này của Lý Thường Kiệt đã thắp lên ngọn lửa yêu nước trong lòng mỗi người lính, khẳng định chủ quyền thiêng liêng của Tổ quốc, biến mỗi chiến sĩ thành người hùng bảo vệ non sông.",
         leftChoice: {
-          text: "Xây tháp cầu mưa",
-          effects: { finance: -20, people: -15, military: -10, religion: 25 },
+          text: "Siết chặt quân luật",
+          effects: { finance: 0, people: -5, military: 15, religion: 0 },
         },
         rightChoice: {
-          text: "Đào kênh thủy lợi",
-          effects: { finance: -10, people: 25, military: 5, religion: -15 },
+          text: "Đọc 'Nam quốc sơn hà' khích lệ tinh thần",
+          effects: { finance: 0, people: 7, military: 8, religion: 2 },
         },
         multipleChoices: [
           {
             id: "ly7_a",
-            text: "Xây tháp cầu mưa theo lời sư",
-            description: "Rẻ tiền nhưng không hiệu quả",
-            cost: { finance: 5, people: 3, military: 0, religion: 0 },
-            effects: { finance: -18, people: -12, military: -8, religion: 28 }
+            text: "Siết chặt quân luật",
+            description: "Cứng rắn nhưng thiếu cảm hóa",
+            effects: { finance: 0, people: -5, military: 15, religion: 0 },
+            historicalNote: "Quân luật nghiêm khắc cần thiết nhưng phải kết hợp với cảm hóa tinh thần."
           },
           {
             id: "ly7_b",
-            text: "Mở kho cứu trợ dân đói tạm thời",
-            description: "Giải quyết ngắn hạn, không bền vững",
-            cost: { finance: 10, people: 2, military: 3, religion: 0 },
-            effects: { finance: -20, people: 15, military: -5, religion: 5 }
+            text: "Đọc 'Nam quốc sơn hà' khích lệ tinh thần",
+            description: "Tinh thần mạnh mẽ và đoàn kết",
+            effects: { finance: 0, people: 7, military: 8, religion: 2 },
+            historicalNote: "Lý Thường Kiệt đọc bài thơ 'Nam quốc sơn hà' để khích lệ tinh thần quân sĩ, tạo sự đoàn kết mạnh mẽ.",
+            isCorrect: true
           },
           {
             id: "ly7_c",
-            text: "Đào kênh thủy lợi, giải pháp lâu dài",
-            description: "Tốn kém ban đầu nhưng hiệu quả lâu dài",
-            cost: { finance: 15, people: 10, military: 8, religion: 2 },
-            effects: { finance: -10, people: 30, military: 8, religion: -12 }
+            text: "Tăng thưởng vật chất cho quân lính",
+            description: "Thực dụng nhưng tốn kém",
+            effects: { finance: -10, people: 5, military: 10, religion: 0 },
+            historicalNote: "Vật chất quan trọng nhưng không bằng sức mạnh tinh thần trong lúc khó khăn."
           },
           {
             id: "ly7_d",
-            text: "Tổ chức dân công, mở rộng canh tác",
-            description: "Cần nhiều lao động và tổ chức",
-            cost: { finance: 12, people: 12, military: 10, religion: 0 },
-            effects: { finance: 5, people: 25, military: 5, religion: -8 }
+            text: "Rút bớt quân để tránh tổn thất",
+            description: "Bảo thủ quá mức, suy yếu quân lực",
+            effects: { finance: 5, people: -5, military: -15, religion: 0 },
+            historicalNote: "Rút quân khi tinh thần xuống thấp sẽ làm mất hẳn lòng chiến đấu."
           }
-        ]
+        ],
       },
+      // Câu 8: Sau chiến thắng - Sau 1077
       {
-        id: "ly8",
-        character: "Chế độ sở hữu - Năm 1115",
+        id: "ly_8",
+        character: "Lý Thánh Tông - Sau 1077",
         situation:
-          "Dân tộc thiểu số ở miền núi muốn quyền tự quản, canh tác ruộng rẫy theo tập quán riêng. Triều đình muốn thống nhất quản lý theo luật chung.",
-        philosophicalContext: "Đoàn kết vs Đa dạng",
-        dialecticLaw: "Cái chung và cái riêng - Thống nhất trong đa dạng",
+          "Đại Việt giành ưu thế trước nhà Tống. Bạn cần quyết định bước tiếp theo.",
+        philosophicalContext: "Chiến tranh vs Hòa bình",
+        dialecticLaw: "Quy luật về mục đích và phương tiện: Chiến tranh chỉ là phương tiện, hòa bình mới là mục đích. Biết thắng còn phải biết dừng đúng lúc, đó là trí tuệ của người lãnh đạo. Sau chiến thắng, nếu cứ tiếp tục chiến tranh sẽ biến thắng lợi thành thất bại, làm tổn hại lợi ích dân tộc. Ngoại giao khôn ngoan là kéo dài thành quả chiến tranh bằng hòa bình.",
+        yearContext: "Sau 1077",
+        historicalQuote: "Chiến tranh là việc lớn của quốc gia, là nơi sinh tử của dân, không thể không thận trọng. Đã thắng rồi, mà cứ ham đánh tiếp, sẽ làm quân mệt dân đói, của cải tiêu hao. Người khôn ngoan biết dừng lại đúng lúc, lấy thắng lợi quân sự để đổi lấy hòa bình lâu dài. Đó mới thật là 'đại trí'. (Theo lời bàn của các mưu thần triều Lý sau chiến thắng chống Tống - Sử ký ghi chép)",
         leftChoice: {
-          text: "Áp đặt luật chung",
-          effects: { finance: 10, people: -20, military: -15, religion: 5 },
+          text: "Tiếp tục truy kích",
+          effects: { finance: -10, people: -5, military: 15, religion: 0 },
         },
         rightChoice: {
-          text: "Cho phép tự quản",
-          effects: { finance: -10, people: 20, military: 10, religion: 10 },
+          text: "Chủ động giảng hòa",
+          effects: { finance: 10, people: 7, military: -4, religion: 0 },
         },
+        multipleChoices: [
+          {
+            id: "ly8_a",
+            text: "Tiếp tục truy kích",
+            description: "Tích cực nhưng rủi ro cao",
+            effects: { finance: -10, people: -5, military: 15, religion: 0 },
+            historicalNote: "Truy kích có thể thắng lớn hơn nhưng cũng dễ gây chiến tranh kéo dài."
+          },
+          {
+            id: "ly8_b",
+            text: "Rút quân phòng thủ biên giới",
+            description: "An toàn, giữ vững thành quả",
+            effects: { finance: 5, people: 5, military: 0, religion: 0 },
+            historicalNote: "Phòng thủ biên giới là lựa chọn an toàn nhưng bỏ lỡ cơ hội ngoại giao."
+          },
+          {
+            id: "ly8_c",
+            text: "Cắt giảm quân đội để tiết kiệm",
+            description: "Tiết kiệm nhưng suy yếu phòng thủ",
+            effects: { finance: 10, people: -5, military: -15, religion: 0 },
+            historicalNote: "Cắt giảm quân đội quá nhanh có thể làm suy yếu khả năng phòng thủ."
+          },
+          {
+            id: "ly8_d",
+            text: "Chủ động giảng hòa",
+            description: "Khôn ngoan và có tầm nhìn",
+            effects: { finance: 10, people: 7, military: -4, religion: 0 },
+            historicalNote: "Lý Thánh Tông chủ động giảng hòa sau chiến thắng, thể hiện sự khôn ngoan trong ngoại giao.",
+            isCorrect: true
+          }
+        ],
       },
+      // Câu 9: Đắp đê khai hoang - Thế kỷ XI
       {
-        id: "ly9",
-        character: "Công nghệ sản xuất - Năm 1130",
+        id: "ly_9",
+        character: "Nhà Lý - Thế kỷ XI",
         situation:
-          "Thương nhân Tống mang đến kỹ thuật rèn sắt tiên tiến. Thợ rèn địa phương sợ mất nghề. Bạn phải quyết định có cho nhập công nghệ mới không.",
-        philosophicalContext: "Truyền thống vs Đổi mới",
-        dialecticLaw: "Lực lượng sản xuất quyết định quan hệ sản xuất - Công nghệ mới thúc đẩy phát triển",
+          "Triều đình xem xét việc đắp đê, khai khẩn ruộng đất để ổn định sản xuất nông nghiệp.",
+        philosophicalContext: "Phát triển vs Bảo thủ",
+        dialecticLaw: "Quy luật về nông nghiệp là nền tảng kinh tế: Trong xã hội nông nghiệp, ruộng đất và thủy lợi quyết định sự sống còn của quốc gia. Đầu tư vào hạ tầng thủy lợi là đầu tư lâu dài, tạo điều kiện cho sản xuất phát triển bền vững. Quan điểm chỉ lo ngắn hạn, không dám đầu tư sẽ dẫn đến trì trệ và lạc hậu. Phát triển kinh tế phải xuất phát từ điều kiện cụ thể của đất nước.",
+        yearContext: "Thế kỷ XI",
+        historicalQuote: "Đê cao thì nước không tràn, ruộng rộng thì thóc đầy kho. Dân no ấm thì nước yên, nước yên thì giặc không dám xâm phạm. Xưa nay các bậc minh quân đều coi trọng thủy lợi nông nghiệp như vậy. Trẫm nghe lời này, quyết tâm huy động dân chúng đắp đê khai hoang, để thiên hạ đều được ấm no. (Chiếu dụ của vua Lý về việc phát triển thủy lợi)",
         leftChoice: {
-          text: "Cấm công nghệ mới",
-          effects: { finance: -15, people: 10, military: -10, religion: 5 },
+          text: "Trì hoãn để tiết kiệm ngân khố",
+          effects: { finance: 10, people: -10, military: 0, religion: 0 },
         },
         rightChoice: {
-          text: "Học hỏi công nghệ",
-          effects: { finance: 25, people: -10, military: 20, religion: 0 },
+          text: "Huy động dân đắp đê, khai hoang quy mô lớn",
+          effects: { finance: -6, people: 8, military: -3, religion: 0 },
         },
+        multipleChoices: [
+          {
+            id: "ly9_a",
+            text: "Trì hoãn để tiết kiệm ngân khố",
+            description: "Ngắn hạn nhưng bỏ lỡ cơ hội",
+            effects: { finance: 10, people: -10, military: 0, religion: 0 },
+            historicalNote: "Không đầu tư vào nông nghiệp sẽ làm dân nghèo và đất nước suy yếu lâu dài."
+          },
+          {
+            id: "ly9_b",
+            text: "Giao việc cho địa phương tự lo",
+            description: "Phân quyền nhưng thiếu quy hoạch",
+            effects: { finance: -5, people: 5, military: 0, religion: 0 },
+            historicalNote: "Địa phương tự làm thiếu sự phối hợp, hiệu quả không cao."
+          },
+          {
+            id: "ly9_c",
+            text: "Huy động dân đắp đê, khai hoang quy mô lớn",
+            description: "Đầu tư dài hạn, phát triển bền vững",
+            effects: { finance: -6, people: 8, military: -3, religion: 0 },
+            historicalNote: "Nhà Lý đã tổ chức đắp đê, khai hoang quy mô lớn, tạo nền tảng phát triển nông nghiệp.",
+            isCorrect: true
+          },
+          {
+            id: "ly9_d",
+            text: "Ưu tiên ngân sách cho quân đội",
+            description: "Mất cân bằng phát triển",
+            effects: { finance: -5, people: -10, military: 10, religion: 0 },
+            historicalNote: "Chỉ chú trọng quân sự mà bỏ qua nông nghiệp sẽ làm kinh tế suy yếu."
+          }
+        ],
       },
+      // Câu 10: Thu hồi ruộng công - Thế kỷ XI
       {
-        id: "ly10",
-        character: "Giáo dục dân trí - Năm 1145",
+        id: "ly_10",
+        character: "Nhà Lý - Thế kỷ XI",
         situation:
-          "Bạn muốn mở trường học công ở các làng, dạy chữ cho con em nông dân. Quý tộc phản đối vì dân có học sẽ khó cai trị.",
-        philosophicalContext: "Khai sáng vs Độc quyền",
-        dialecticLaw: "Cơ sở hạ tầng và thượng tầng kiến trúc - Giáo dục tạo nền tảng cho phát triển xã hội",
+          "Nhiều quý tộc và quan lại chiếm ruộng công, gây bất bình trong dân. Bạn cần quyết định xử lý.",
+        philosophicalContext: "Công bằng vs Quyền lực",
+        dialecticLaw: "Quy luật về công lý xã hội: Xã hội chỉ ổn định khi có công bằng. Khi quyền lực bóc lột quá đáng, mâu thuẫn xã hội sẽ bùng nổ. Nhà nước phải là người bảo vệ quyền lợi của đại đa số nhân dân, chứ không phải bảo vệ đặc quyền của thiểu số quý tộc. Cải cách ruộng đất không chỉ là vấn đề kinh tế mà còn là vấn đề chính trị, quyết định sự ủng hộ của nhân dân đối với triều đình.",
+        yearContext: "Thế kỷ XI",
+        historicalQuote: "Ruộng công là của công quốc gia, là ruộng của dân, không phải của riêng một cá nhân nào. Quan quý tộc cậy thế lực mà chiếm đoạt ruộng công, khiến dân không có đất cày cấy, đó là tội lớn. Trẫm ra lệnh thu hồi tất cả ruộng công bị chiếm đoạt, trả lại cho dân nghèo canh tác, để họ có cơm no áo ấm, sống yên ổn. Ai không tuân sẽ bị tru truất chức vị. (Sắc lệnh về thu hồi ruộng công thời Lý)",
         leftChoice: {
-          text: "Giữ dân mù chữ",
-          effects: { finance: 5, people: -25, military: -15, religion: 10 },
+          text: "Giữ nguyên hiện trạng để tránh xung đột",
+          effects: { finance: 5, people: -10, military: 0, religion: 0 },
         },
         rightChoice: {
-          text: "Mở trường cho dân",
-          effects: { finance: -10, people: 30, military: 10, religion: -10 },
+          text: "Thu hồi ruộng công, trả lại cho dân",
+          effects: { finance: -3, people: 7, military: -2, religion: 0 },
         },
+        multipleChoices: [
+          {
+            id: "ly10_a",
+            text: "Đàn áp dân khiếu kiện",
+            description: "Cực đoan, gây mất lòng dân",
+            effects: { finance: 5, people: -15, military: 10, religion: 0 },
+            historicalNote: "Dùng vũ lực chống lại dân sẽ gây bất ổn và làm mất uy tín triều đình."
+          },
+          {
+            id: "ly10_b",
+            text: "Thu hồi ruộng công, trả lại cho dân",
+            description: "Công bằng và đúng đắn",
+            effects: { finance: -3, people: 7, military: -2, religion: 0 },
+            historicalNote: "Nhà Lý đã thu hồi ruộng công bị chiếm đoạt, trả lại cho dân canh tác.",
+            isCorrect: true
+          },
+          {
+            id: "ly10_c",
+            text: "Chỉ xử lý những trường hợp quá đáng",
+            description: "Ôn hòa nhưng chưa triệt để",
+            effects: { finance: 0, people: 5, military: 0, religion: 0 },
+            historicalNote: "Xử lý nhẹ nhàng giúp giảm xung đột nhưng không giải quyết căn bản."
+          },
+          {
+            id: "ly10_d",
+            text: "Giữ nguyên hiện trạng để tránh xung đột",
+            description: "Nhượng bộ, mất lòng dân",
+            effects: { finance: 5, people: -10, military: 0, religion: 0 },
+            historicalNote: "Không can thiệp sẽ để tình trạng càng nghiêm trọng và gây bất bình lớn."
+          }
+        ],
       },
+      // Câu 11: Mở khoa thi - 1104
       {
-        id: "ly11",
-        character: "Tổ chức quân đội - Năm 1150",
+        id: "ly_11",
+        character: "Nhà Lý - Năm 1104",
         situation:
-          "Hệ thống quân đội hiện tại do quý tộc chỉ huy, thiếu kỷ luật. Bạn muốn tổ chức quân đội chuyên nghiệp, nhưng cần tốn kém và làm giảm quyền lực quý tộc.",
-        philosophicalContext: "Hiệu quả vs Quyền lực",
-        dialecticLaw: "Hình thức tổ chức phải phù hợp với yêu cầu thực tiễn",
+          "Nhà Lý mở các kỳ thi để tuyển chọn nhân tài, từng bước xây dựng bộ máy quan lại.",
+        philosophicalContext: "Hiền tài vs Thế tập",
+        dialecticLaw: "Quy luật về vai trò của nhân tài trong phát triển xã hội: Nhân tài là nguồn lực quý giá nhất của quốc gia. Chế độ thế tập (truyền ngôi cha con) tuy đảm bảo ổn định nhưng dễ bỏ sót nhân tài. Khoa cử thi tuyển mở rộng cơ hội cho mọi tầng lớp, tạo động lực phấn đấu, đồng thời làm tăng tính hợp pháp của chính quyền. Đây là bước tiến bộ quan trọng trong lịch sử phát triển thể chế chính trị.",
+        yearContext: "1104",
+        historicalQuote: "Người tài đức là nền tảng của quốc gia, là cội nguồn trị nước. Không phân quý tiện cao thấp, chỉ lấy tài năng làm trọng. Nay trẫm mở khoa thi, cho phép sĩ tử khắp nước đến dự, ai có tài thì được dùng, không hỏi xuất thân. Đó là đạo công bằng, cũng là đạo trị nước của thánh hiền xưa để lại. (Chiếu mở khoa thi của Lý Nhân Tông năm 1104 - đây là lần mở khoa thi đầu tiên có hệ thống ở Việt Nam)",
         leftChoice: {
-          text: "Giữ quân đội quý tộc",
-          effects: { finance: 10, people: -10, military: -15, religion: 5 },
+          text: "Chỉ bổ nhiệm con cháu quý tộc",
+          effects: { finance: 5, people: -10, military: 5, religion: 0 },
         },
         rightChoice: {
-          text: "Quân đội chuyên nghiệp",
-          effects: { finance: -10, people: 15, military: 35, religion: -5 },
+          text: "Tổ chức khoa thi tuyển chọn nhân tài",
+          effects: { finance: -5, people: 6, military: 0, religion: -2 },
         },
+        multipleChoices: [
+          {
+            id: "ly11_a",
+            text: "Chưa tổ chức thi, ưu tiên ổn định triều đình",
+            description: "Thận trọng nhưng bỏ lỡ nhân tài",
+            effects: { finance: 5, people: -5, military: 0, religion: 0 },
+            historicalNote: "Trì hoãn cải cách sẽ làm mất cơ hội phát hiện và dùng người tài."
+          },
+          {
+            id: "ly11_b",
+            text: "Kết hợp thi cử và tiến cử",
+            description: "Cân bằng, linh hoạt",
+            effects: { finance: -5, people: 5, military: 0, religion: 0 },
+            historicalNote: "Kết hợp hai phương thức giúp tuyển chọn rộng rãi hơn."
+          },
+          {
+            id: "ly11_c",
+            text: "Chỉ bổ nhiệm con cháu quý tộc",
+            description: "Bảo thủ, mất công bằng",
+            effects: { finance: 5, people: -10, military: 5, religion: 0 },
+            historicalNote: "Chỉ dùng người nhà sẽ bỏ qua nhiều nhân tài và gây bất bình xã hội."
+          },
+          {
+            id: "ly11_d",
+            text: "Tổ chức khoa thi tuyển chọn nhân tài",
+            description: "Tiến bộ và công bằng",
+            effects: { finance: -5, people: 6, military: 0, religion: -2 },
+            historicalNote: "Lý Nhân Tông mở khoa thi năm 1104, tạo cơ hội cho người tài đức.",
+            isCorrect: true
+          }
+        ],
       },
+      // Câu 12: Dẹp loạn biên giới - Thế kỷ XII
       {
-        id: "ly12",
-        character: "Quan hệ với Chăm Pa - Năm 1160",
+        id: "ly_12",
+        character: "Nhà Lý - Thế kỷ XII",
         situation:
-          "Chăm Pa xâm lược biên giới. Bạn có thể đánh trả để răn đe, hoặc đàm phán để tránh chiến tranh kéo dài tốn kém.",
-        philosophicalContext: "Cứng rắn vs Ngoại giao",
-        dialecticLaw: "Mục đích và phương tiện - Hòa bình là mục đích, chiến tranh là phương tiện cuối cùng",
+          "Nhiều vùng miền núi và biên giới nổi dậy, chống lại triều đình. Cần có giải pháp hợp lý.",
+        philosophicalContext: "Sức mạnh vs Khoan dung",
+        dialecticLaw: "Quy luật về kết hợp sức mạnh và nhân từ trong quản lý: Đàn áp thuần túy chỉ tạo ra thù hận và kháng cự lâu dài, khoan dung thuần túy lại dễ bị lợi dụng và xem thường. Chính sách đúng đắn là vừa đánh vừa dỗ, vừa cứng vừa mềm. Với kẻ cầm đầu nổi loạn phải trấn áp quyết liệt, với quần chúng bị lôi kéo phải khoan hồng giáo hóa. Đây là nghệ thuật cai trị cao cấp.",
+        yearContext: "Thế kỷ XII",
+        historicalQuote: "Đối với kẻ nổi loạn, nếu chỉ dùng vũ lực đàn áp thì giết hết không xuể, lại càng gây thù hận. Nếu chỉ dùng lời khuyên dỗ dành thì chúng coi thường, càng nổi loạn thêm. Phải dùng cả hai: trước hết dùng quân đội trấn áp những kẻ cầm đầu để răn đe, sau đó chiêu an những người bị lôi kéo, cho họ đất đai và miễn thuế. Như vậy mới bền lâu. (Binh thư thời Lý về phương pháp bình định biên giới)",
         leftChoice: {
-          text: "Đàm phán hòa bình",
-          effects: { finance: 10, people: 10, military: -15, religion: 5 },
+          text: "Đàn áp quân sự toàn diện",
+          effects: { finance: -10, people: -15, military: 20, religion: 0 },
         },
         rightChoice: {
-          text: "Chiến tranh răn đe",
-          effects: { finance: -15, people: 15, military: 20, religion: -10 },
+          text: "Vừa đàn áp vừa chiêu an",
+          effects: { finance: -5, people: 3, military: 8, religion: 0 },
         },
+        multipleChoices: [
+          {
+            id: "ly12_a",
+            text: "Bỏ qua, để địa phương tự xử lý",
+            description: "Yếu đuối, mất uy quyền",
+            effects: { finance: 5, people: -10, military: -10, religion: 0 },
+            historicalNote: "Không can thiệp sẽ để tình hình mất kiểm soát và lan rộng."
+          },
+          {
+            id: "ly12_b",
+            text: "Vừa đàn áp vừa chiêu an",
+            description: "Cân bằng và khôn ngoan",
+            effects: { finance: -5, people: 3, military: 8, religion: 0 },
+            historicalNote: "Nhà Lý dùng chính sách vừa đánh vừa dỗ, bình định biên giới hiệu quả.",
+            isCorrect: true
+          },
+          {
+            id: "ly12_c",
+            text: "Đàn áp quân sự toàn diện",
+            description: "Quyết liệt nhưng tốn kém",
+            effects: { finance: -10, people: -15, military: 20, religion: 0 },
+            historicalNote: "Chỉ dùng vũ lực sẽ gây thương vong lớn và tốn kém, khó bình định lâu dài."
+          },
+          {
+            id: "ly12_d",
+            text: "Chỉ dùng biện pháp chiêu an",
+            description: "Nhân từ nhưng thiếu uy lực",
+            effects: { finance: -5, people: 10, military: -5, religion: 0 },
+            historicalNote: "Chỉ dỗ dành mà không răn đe sẽ khó khống chế các thế lực nổi loạn."
+          }
+        ],
       },
+      // Câu 13: Cơ chế quân đội - Thế kỷ XII
       {
-        id: "ly13",
-        character: "Chính sách thuế - Năm 1170",
+        id: "ly_13",
+        character: "Nhà Lý - Thế kỷ XII",
         situation:
-          "Thuế nông nghiệp quá nặng, nhiều nông dân bỏ ruộng. Giảm thuế sẽ thiếu ngân sách, nhưng giữ thuế cao dân sẽ nổi loạn.",
-        philosophicalContext: "Ngắn hạn vs Dài hạn",
-        dialecticLaw: "Cái riêng và cái chung - Lợi ích trước mắt và lâu dài phải cân bằng",
+          "Quân đội thời bình tiêu tốn ngân khố nhưng vẫn cần duy trì sức mạnh để bảo vệ đất nước.",
+        philosophicalContext: "An ninh vs Kinh tế",
+        dialecticLaw: "Quy luật về cân bằng giữa chi phí an ninh và hiệu quả kinh tế: Quốc phòng là cần thiết nhưng không thể vì quốc phòng mà làm kinh tế kiệt quệ. Trong thời bình, cần tìm mô hình quân đội tối ưu: vừa đảm bảo sức mạnh phòng thủ, vừa không gây gánh nặng tài chính. Chế độ nông binh (dân vừa là nông dân vừa là lính) là giải pháp phù hợp với điều kiện nước ta: tiết kiệm chi phí, duy trì sẵn sàng chiến đấu.",
+        yearContext: "Thế kỷ XII",
+        historicalQuote: "Quân đội là để bảo vệ nước, nhưng nếu nuôi quân quá đông thì dân phải nộp thuế nhiều, kho tàng cạn kiệt. Xưa kia thánh vương có dạy: 'Quân ít mà tinh thắng hơn quân đông mà yếu'. Vậy nên ta áp dụng chế độ nông binh: thời bình thì cày cấy, có giặc thì cầm vũ khí chiến đấu. Vừa sản xuất được lương thực, vừa sẵn sàng bảo vệ đất nước. Đó mới là đạo dùng quân khôn ngoan. (Chế độ quân Lý - ghi trong Đại Việt sử ký toàn thư)",
         leftChoice: {
-          text: "Giữ thuế cao",
-          effects: { finance: 12, people: -35, military: -15, religion: -12 },
+          text: "Mở rộng quân đội quy mô lớn",
+          effects: { finance: -15, people: -5, military: 20, religion: 0 },
         },
         rightChoice: {
-          text: "Giảm thuế cho dân",
-          effects: { finance: -10, people: 35, military: 8, religion: 12 },
+          text: "Duy trì quân đội vừa đủ, kết hợp nông binh",
+          effects: { finance: 3, people: 3, military: 3, religion: 0 },
         },
+        multipleChoices: [
+          {
+            id: "ly13_a",
+            text: "Cắt giảm mạnh quân đội",
+            description: "Tiết kiệm nhưng mất an ninh",
+            effects: { finance: 15, people: -5, military: -15, religion: 0 },
+            historicalNote: "Cắt giảm quá nhiều sẽ làm suy yếu khả năng phòng thủ đất nước."
+          },
+          {
+            id: "ly13_b",
+            text: "Duy trì quân đội vừa đủ, kết hợp nông binh",
+            description: "Cân bằng và hiệu quả",
+            effects: { finance: 3, people: 3, military: 3, religion: 0 },
+            historicalNote: "Nhà Lý áp dụng chế độ nông binh, vừa sản xuất vừa sẵn sàng chiến đấu.",
+            isCorrect: true
+          },
+          {
+            id: "ly13_c",
+            text: "Mở rộng quân đội quy mô lớn",
+            description: "Mạnh nhưng tốn kém",
+            effects: { finance: -15, people: -5, military: 20, religion: 0 },
+            historicalNote: "Quân đội quá lớn trong thời bình sẽ gây gánh nặng tài chính."
+          },
+          {
+            id: "ly13_d",
+            text: "Chỉ giữ quân canh gác kinh đô",
+            description: "Tập trung nhưng yếu biên giới",
+            effects: { finance: 10, people: 0, military: -10, religion: 0 },
+            historicalNote: "Bỏ trống biên giới sẽ dễ bị xâm nhập từ bên ngoài."
+          }
+        ],
       },
+      // Câu 14: Phát triển thủ công nghiệp - Thế kỷ XII
       {
-        id: "ly14",
-        character: "Y học và mê tín - Năm 1180",
+        id: "ly_14",
+        character: "Nhà Lý - Thế kỷ XII",
         situation:
-          "Dịch bệnh bùng phát. Thầy thuốc Đông y muốn điều trị bằng thuốc thảo mộc. Đạo sĩ nói bệnh do tà khí, phải cúng tế. Ngân sách chỉ đủ cho một phương án.",
-        philosophicalContext: "Khoa học vs Mê tín",
-        dialecticLaw: "Nhận thức và thực tiễn - Chân lý khoa học từ thực tiễn, không từ mê tín",
+          "Thủ công nghiệp phát triển, xuất hiện nhiều nghề thủ công. Triều đình cần chính sách quản lý.",
+        philosophicalContext: "Nông nghiệp vs Thủ công",
+        dialecticLaw: "Quy luật về đa dạng hóa cấu trúc kinh tế: Một nền kinh tế chỉ dựa vào một ngành duy nhất sẽ thiếu tính ổn định và khả năng phát triển. Nông nghiệp cung cấp lương thực, thủ công nghiệp cung cấp công cụ lao động và hàng tiêu dùng, thương nghiệp lưu thông hàng hóa - ba ngành bổ sung cho nhau tạo nên nền kinh tế toàn diện. Khuyến khích thủ công phát triển không có nghĩa bỏ rơi nông nghiệp, mà là tạo thêm động lực mới cho nền kinh tế.",
+        yearContext: "Thế kỷ XII",
+        historicalQuote: "Nông nghiệp là gốc, nuôi sống con người. Thủ công nghiệp là ngọn, làm ra công cụ và vật dụng. Cả hai đều quan trọng, không thể thiếu một trong hai. Nước ta có thợ rèn, thợ gốm, thợ dệt, thợ mộc... tài hoa, làm ra nhiều đồ dùng tinh xảo. Nhà nước nên khuyến khích họ, không nên ngăn cấm hay đánh thuế nặng, để nghề thủ công phát triển, làm giàu cho đất nước. (Ghi chép về kinh tế thời Lý - sách Lĩnh Nam chích quái có đề cập)",
         leftChoice: {
-          text: "Cúng tế giải tà khí",
-          effects: { finance: -15, people: -20, military: -10, religion: 25 },
+          text: "Hạn chế thủ công, ưu tiên nông nghiệp",
+          effects: { finance: -5, people: -5, military: 0, religion: 0 },
         },
         rightChoice: {
-          text: "Điều trị bằng Đông y",
-          effects: { finance: -15, people: 25, military: 5, religion: -15 },
+          text: "Khuyến khích thủ công nghiệp phát triển",
+          effects: { finance: 4, people: 4, military: 0, religion: 0 },
         },
+        multipleChoices: [
+          {
+            id: "ly14_a",
+            text: "Khuyến khích thủ công nghiệp phát triển",
+            description: "Tiến bộ và thịnh vượng",
+            effects: { finance: 4, people: 4, military: 0, religion: 0 },
+            historicalNote: "Nhà Lý khuyến khích nghề thủ công, tạo ra nhiều sản phẩm chất lượng cao.",
+            isCorrect: true
+          },
+          {
+            id: "ly14_b",
+            text: "Hạn chế thủ công, ưu tiên nông nghiệp",
+            description: "Bảo thủ, hạn chế phát triển",
+            effects: { finance: -5, people: -5, military: 0, religion: 0 },
+            historicalNote: "Chỉ chú trọng nông nghiệp sẽ bỏ qua tiềm năng phát triển kinh tế đa dạng."
+          },
+          {
+            id: "ly14_c",
+            text: "Đánh thuế nặng nghề thủ công",
+            description: "Ngắn hạn có lợi, dài hạn nguy hại",
+            effects: { finance: 10, people: -10, military: 0, religion: 0 },
+            historicalNote: "Thuế nặng sẽ kìm hãm sự phát triển của thủ công nghiệp."
+          },
+          {
+            id: "ly14_d",
+            text: "Nhà nước độc quyền các nghề quan trọng",
+            description: "Kiểm soát chặt nhưng kém hiệu quả",
+            effects: { finance: 5, people: -5, military: 5, religion: 0 },
+            historicalNote: "Độc quyền nhà nước thường kém linh hoạt và thiếu sáng tạo."
+          }
+        ],
       },
+      // Câu 15: Kế thừa ngôi vua - Cuối thế kỷ XII
       {
-        id: "ly15",
-        character: "Kế vị ngôi vua - Năm 1200",
+        id: "ly_15",
+        character: "Nhà Lý - Cuối thế kỷ XII",
         situation:
-          "Hoàng tử cả thông minh nhưng thân với nhóm cải cách quyền lực. Hoàng tử thứ trung dung nhưng được quý tộc ủng hộ. Chọn ai kế vị?",
-        philosophicalContext: "Cải cách vs Ổn định",
-        dialecticLaw: "Sự phát triển xã hội - Cải cách là tất yếu của lịch sử, không thể cản trở",
+          "Vua già yếu, cần chọn người kế vị. Con trưởng thông minh nhưng còn trẻ, con thứ trung bình nhưng được quý tộc ủng hộ.",
+        philosophicalContext: "Tài năng vs Ổn định",
+        dialecticLaw: "Quy luật về kế thừa quyền lực: Lựa chọn người kế vị là quyết định quan trọng nhất quyết định vận mệnh triều đại. Chọn người tài năng là đầu tư cho tương lai, chọn người trung bình chỉ vì ổn định trước mắt là đánh mất tương lai. Lịch sử chứng minh: những triều đại hưng thịnh đều có những vị vua tài giỏi, những triều đại suy vong thường bắt đầu từ những vị vua nhu nhược. Dũng khí chọn người tài dù phải đối mặt với áp lực chính là phẩm chất của nhà lãnh đạo sáng suốt.",
+        yearContext: "Cuối thế kỷ XII",
+        historicalQuote: "Chọn người kế nghiệp là việc trọng đại, quyết định hưng vong của quốc gia. Không thể vì sợ xung đột trước mắt mà chọn người trung bình, làm hại cho thiên hạ đời sau. Người xưa dạy: 'Lập hiền lập trưởng', nghĩa là chọn người hiền tài và người trưởng thứ hợp lý. Trẫm suy nghĩ kỹ, quyết chọn người có tài đức nhất, dù còn trẻ, vì đất nước cần người có năng lực lãnh đạo, chứ không cần người chỉ biết giữ gìn bình yên mà không dám làm gì. (Di huấn của các vua Lý về vấn đề kế vị - trích từ sử sách)",
         leftChoice: {
-          text: "Hoàng tử thứ - Ổn định",
-          effects: { finance: 10, people: -15, military: 10, religion: 15 },
+          text: "Chọn con thứ để tránh xung đột",
+          effects: { finance: 5, people: -8, military: 5, religion: 5 },
         },
         rightChoice: {
-          text: "Hoàng tử cả - Cải cách",
-          effects: { finance: -10, people: 20, military: 15, religion: -15 },
+          text: "Chọn con trưởng tài giỏi làm thái tử",
+          effects: { finance: 2, people: 5, military: 2, religion: -2 },
         },
+        multipleChoices: [
+          {
+            id: "ly15_a",
+            text: "Chọn con trưởng tài giỏi làm thái tử",
+            description: "Tài năng và tầm nhìn xa",
+            effects: { finance: 2, people: 5, military: 2, religion: -2 },
+            historicalNote: "Chọn người tài năng nhất sẽ đảm bảo sự phát triển lâu dài của đất nước.",
+            isCorrect: true
+          },
+          {
+            id: "ly15_b",
+            text: "Chọn con thứ để tránh xung đột",
+            description: "Ổn định ngắn hạn, nguy hiểm dài hạn",
+            effects: { finance: 5, people: -8, military: 5, religion: 5 },
+            historicalNote: "Chọn người trung bình chỉ vì ổn định có thể dẫn đến suy thoái sau này."
+          },
+          {
+            id: "ly15_c",
+            text: "Để quý tộc quyết định",
+            description: "Yếu đuối, mất quyền lực",
+            effects: { finance: 0, people: -10, military: 0, religion: 10 },
+            historicalNote: "Để quyền lực vào tay quý tộc sẽ làm suy yếu triều đình."
+          },
+          {
+            id: "ly15_d",
+            text: "Chọn hoàng tử được dân yêu mến nhất",
+            description: "Dân chủ nhưng chưa chắc tài giỏi",
+            effects: { finance: 0, people: 10, military: 0, religion: 0 },
+            historicalNote: "Được dân yêu mến chưa đủ, cần cả tài năng lãnh đạo."
+          }
+        ],
       },
     ],
   },
   {
     id: "tran",
-    name: "Nhà Trần",
-    period: "1225 - 1400",
-    description: "Triều đại anh hùng chống Mông Cổ ba lần, đỉnh cao văn hóa Đại Việt",
-    icon: "⚔️",
+  name: "Nhà Trần",
+  period: "1225 - 1400",
+  description:
+    "Triều đại quân sự – chính trị tiêu biểu, ba lần đánh bại quân Nguyên – Mông, xây dựng kỷ cương quốc gia, kết hợp Phật giáo, Nho giáo và tinh thần thượng võ.",
+  icon: "⚔️",
+    startingStats: { finance: 50, people: 50, military: 50, religion: 50 },
     cards: [
       {
-        id: "tran1",
-        character: "Trần Thủ Độ - Năm 1225",
-        situation:
-          "Để lên ngôi, nhà Trần cần lật đổ nhà Lý. Có thể dùng âm mưu cướp quyền, hoặc chờ nhà Lý suy yếu tự nhiên. Âm mưu nhanh nhưng mất lòng dân.",
-        philosophicalContext: "Cách mạng vs Cải lương",
-        dialecticLaw: "Bước nhảy vọt trong lượng và chất - Thay đổi quyền lực có thể từ từ hoặc đột biến",
-        leftChoice: {
-          text: "Chờ Lý suy yếu",
-          effects: { finance: 5, people: 10, military: -10, religion: 10 },
-        },
-        rightChoice: {
-          text: "Cướp quyền ngay",
-          effects: { finance: 15, people: -15, military: 20, religion: -15 },
-        },
-        multipleChoices: [
-          {
-            id: "tran1_a",
-            text: "Chờ đợi nhà Lý tự suy yếu",
-            description: "An toàn nhưng mất thời cơ",
-            cost: { finance: 0, people: 0, military: 0, religion: 0 },
-            effects: { finance: 3, people: 8, military: -12, religion: 12 }
-          },
-          {
-            id: "tran1_b",
-            text: "Kết hôn với hoàng tộc Lý, thâm nhập quyền lực",
-            description: "Chiến lược lâu dài, ít đổ máu",
-            cost: { finance: 5, people: 3, military: 2, religion: 5 },
-            effects: { finance: 10, people: 5, military: 8, religion: -5 }
-          },
-          {
-            id: "tran1_c",
-            text: "Dùng âm mưu cướp quyền nhanh chóng",
-            description: "Nhanh nhưng gây tranh cãi",
-            cost: { finance: 10, people: 8, military: 10, religion: 5 },
-            effects: { finance: 18, people: -18, military: 25, religion: -18 }
-          },
-          {
-            id: "tran1_d",
-            text: "Lập công lớn trong chiến tranh để được dân ủng hộ",
-            description: "Hợp pháp nhưng cần thời gian",
-            cost: { finance: 12, people: 5, military: 8, religion: 3 },
-            effects: { finance: -5, people: 20, military: 18, religion: 8 }
-          }
-        ]
-      },
-      {
-        id: "tran2",
-        character: "Mối đe dọa Mông Cổ - Năm 1257",
-        situation:
-          "Quân Mông Cổ áp sát biên giới, yêu cầu Đại Việt chịu phục thuộc. Chấp nhận sẽ mất độc lập. Từ chối sẽ phải chiến tranh với đế quốc hùng mạnh nhất thế giới.",
-        philosophicalContext: "Tự do vs Sinh tồn",
-        dialecticLaw: "Mâu thuẫn cơ bản và phi cơ bản - Độc lập dân tộc là mâu thuẫn sống còn",
-        leftChoice: {
-          text: "Chấp nhận phục thuộc",
-          effects: { finance: 15, people: -30, military: -25, religion: -10 },
-        },
-        rightChoice: {
-          text: "Kiên quyết kháng chiến",
-          effects: { finance: -20, people: 30, military: 25, religion: 15 },
-        },
-        multipleChoices: [
-          {
-            id: "tran2_a",
-            text: "Chấp nhận phục thuộc Mông Cổ",
-            description: "An toàn nhưng mất độc lập",
-            cost: { finance: 0, people: 0, military: 0, religion: 0 },
-            effects: { finance: 18, people: -35, military: -30, religion: -12 },
-            historicalNote: "Đây là con đường của những nước đầu hàng Mông Cổ như Cao Ly (Triều Tiên), Đại Lý (Vân Nam). Họ được giữ lại một phần quyền tự trị nhưng phải nộp cống, cử con tin, và tuân theo mệnh lệnh Mông Cổ. Quyền tự chủ dần bị xói mòn, văn hóa dân tộc mai một.",
-            philosophicalExplanation: "Vi phạm nguyên tắc độc lập tự chủ của dân tộc - một trong những quy luật cơ bản của chủ nghĩa duy vật lịch sử. Chấp nhận phục thuộc là phủ định bản chất dân tộc, đánh mất quyền tự quyết định vận mệnh của mình."
-          },
-          {
-            id: "tran2_b",
-            text: "Nộp cống hình thức, giữ quyền tự trị",
-            description: "Thỏa hiệp, tránh chiến tranh",
-            cost: { finance: 5, people: 3, military: 0, religion: 2 },
-            effects: { finance: 10, people: -10, military: -8, religion: 5 },
-            historicalNote: "Một số nước cố gắng duy trì hình thức phục thuộc nhưng thực chất độc lập. Tuy nhiên với Mông Cổ - đế quốc hùng mạnh nhất thời đó - chiến lược này khó thực hiện. Họ thường đòi hỏi sự phục tùng thực sự, không chấp nhận 'nửa vời'.",
-            philosophicalExplanation: "Đây là thể hiện của chủ nghĩa điều hòa - cố gắng dung hòa hai mặt đối lập không thể dung hòa (độc lập và phục thuộc). Mâu thuẫn về độc lập dân tộc là mâu thuẫn đối kháng, phải giải quyết triệt để bằng đấu tranh, không thể hòa giải."
-          },
-          {
-            id: "tran2_c",
-            text: "Kiên quyết kháng chiến, chuẩn bị chiến tranh",
-            description: "Quyết liệt, động viên dân tộc",
-            cost: { finance: 10, people: 8, military: 8, religion: 5 },
-            effects: { finance: -18, people: 35, military: 30, religion: 18 },
-            historicalNote: "Nhà Trần đã chọn con đường này. Tháng 1/1258, sứ giả Mông Cổ đến yêu cầu Trần Thái Tông đầu hàng. Ông từ chối dứt khoát và bắt đầu chuẩn bị kháng chiến. Đây là lựa chọn của những anh hùng dân tộc, thể hiện khí phách 'thà hy sinh tất cả, không chịu mất nước'.",
-            philosophicalExplanation: "Vận dụng đúng đắn quy luật về mâu thuẫn đối kháng - mâu thuẫn dân tộc giữa Đại Việt và Mông Cổ chỉ có thể giải quyết bằng đấu tranh cách mạng. Đây là thể hiện của ý chí tự chủ dân tộc, bảo vệ nền tảng tồn tại và phát triển của dân tộc."
-          },
-          {
-            id: "tran2_d",
-            text: "Tạm thời chấp nhận, bí mật chuẩn bị",
-            description: "Chiến lược lâu dài, gian khổ",
-            cost: { finance: 8, people: 10, military: 5, religion: 3 },
-            effects: { finance: 5, people: 10, military: 15, religion: -8 },
-            historicalNote: "Chiến lược 'tránh mạnh đánh yếu' này có thể mua thêm thời gian chuẩn bị. Tuy nhiên, lịch sử cho thấy Mông Cổ rất khắt khe với các quốc gia phụ thuộc. Một khi đã đầu hàng, khó có cơ hội khởi nghĩa lại vì họ kiểm soát chặt chẽ.",
-            philosophicalExplanation: "Tuy có tính chiến lược nhưng mâu thuẫn về nguyên tắc: chấp nhận phục thuộc dù tạm thời vẫn là mất độc lập. Quy luật về tính tất yếu của lịch sử cho thấy: những gì đi ngược với khát vọng độc lập của dân tộc sẽ bị lịch sử đào thải."
-          }
-        ]
-      },
-      {
-        id: "tran3",
-        character: "Chuẩn bị kháng chiến - Năm 1283",
-        situation:
-          "Mông Cổ sắp xâm lược lần hai. Trần Quốc Tuấn đề xuất chiến lược 'vườn không nhà trống', dân phải bỏ nhà cửa theo triều đình. Nhiều người không muốn bỏ tài sản.",
-        philosophicalContext: "Cá nhân vs Tập thể",
-        dialecticLaw: "Cái riêng và cái chung - Lợi ích dân tộc trên lợi ích cá nhân",
-        leftChoice: {
-          text: "Đánh thường quy",
-          effects: { finance: 10, people: -20, military: -20, religion: 5 },
-        },
-        rightChoice: {
-          text: "Vườn không nhà trống",
-          effects: { finance: -15, people: 25, military: 30, religion: 10 },
-        },
-        multipleChoices: [
-          {
-            id: "tran3_a",
-            text: "Đánh thường quy, giữ dân ở thành",
-            description: "Dân giữ tài sản nhưng yếu thế",
-            cost: { finance: 3, people: 0, military: 5, religion: 0 },
-            effects: { finance: 8, people: -22, military: -25, religion: 3 },
-            historicalNote: "Chiến thuật truyền thống là giữ thành trì, đối đầu trực tiếp với địch. Tuy nhiên trước quân Mông Cổ - tinh nhuệ nhất thế giới thời đó - chiến thuật này gần như tự sát. Các thành phố sẽ bị bao vây, dân chúng bị thảm sát khi thành thất thủ.",
-            philosophicalExplanation: "Vi phạm quy luật về sự thống nhất giữa chủ quan và khách quan. Không nhận thức được thực lực của địch và điểm yếu của mình, áp dụng máy móc kinh nghiệm cũ vào hoàn cảnh mới - đó là chủ nghĩa giáo điều."
-          },
-          {
-            id: "tran3_b",
-            text: "Dời dân đến vùng an toàn, giữ quân thành",
-            description: "Thỏa hiệp, bảo vệ dân",
-            cost: { finance: 8, people: 5, military: 8, religion: 3 },
-            effects: { finance: -8, people: 10, military: 5, religion: 8 },
-            historicalNote: "Giải pháp trung gian này bảo vệ dân nhưng vẫn cố giữ thành trì. Tuy nhiên thành trì không có dân sẽ thiếu lương thực, tiếp tế. Quân Mông Cổ có thể vây thành đói, bắt dân làm lá chắn tấn công.",
-            philosophicalExplanation: "Thể hiện sự do dự giữa hai đường lối chiến lược. Chưa nhận thức triệt để quy luật 'binh dân là gốc' - sức mạnh chiến tranh đến từ nhân dân, không thể tách rời quân và dân."
-          },
-          {
-            id: "tran3_c",
-            text: "Chiến lược 'Vườn không nhà trống' như Trần Quốc Tuấn",
-            description: "Quyết liệt, chiến lược tối ưu",
-            cost: { finance: 12, people: 10, military: 10, religion: 5 },
-            effects: { finance: -18, people: 30, military: 35, religion: 12 },
-            historicalNote: "Trần Quốc Tuấn (Hưng Đạo Vương) đề xuất: 'Địch đến, ta rút. Vườn trống, nhà không. Lương thực dấu kỹ, không để lại gì cho địch'. Chiến lược này đã thành công vang dội: quân Mông Cổ không có lương thực, sa lầy trong rừng núi, cuối cùng phải rút lui và bị tập k格 tiêu diệt tại Bạch Đằng.",
-            philosophicalExplanation: "Vận dụng sáng tạo quy luật 'biến bất lợi thành có lợi' - dùng địa hình, thời tiết, và sự hiểu biết địa phương để bù đắp sức mạnh quân sự. Đây là tư duy biện chứng cao: không đối đầu cứng nhắc mà linh hoạt, dùng điểm mạnh của ta đánh vào điểm yếu của địch."
-          },
-          {
-            id: "tran3_d",
-            text: "Huy động toàn dân vào quân, chiến tranh nhân dân",
-            description: "Sức mạnh tổng lực cao nhất",
-            cost: { finance: 15, people: 12, military: 8, religion: 8 },
-            effects: { finance: -12, people: 35, military: 30, religion: 15 },
-            historicalNote: "Nhà Trần đã huy động toàn dân: 'Già cả mang cơm nước, trai tráng ra trận'. Đây là chiến tranh nhân dân thực sự - mỗi người dân là một chiến sĩ. Sức mạnh này đã tạo nên chiến thắng vĩ đại trước Mông Cổ.",
-            philosophicalExplanation: "Thể hiện quy luật 'quần chúng nhân dân là động lực của lịch sử'. Chiến tranh giải phóng dân tộc chỉ thắng lợi khi huy động được sức mạnh toàn dân. Đây là biểu hiện cao nhất của tư tưởng 'dân là gốc nước'."
-          }
-        ]
-      },
-      {
-        id: "tran4",
-        character: "Động viên toàn dân - Năm 1284",
-        situation:
-          "Một số quan lại chủ trương đầu hàng Mông Cổ để giữ mạng sống. Trần Quốc Tuấn muốn xử tử để răn đe. Nhưng có thể gây hoang mang trong triều.",
-        philosophicalContext: "Nhân đạo vs Nghiêm khắc",
-        dialecticLaw: "Hình thức và nội dung - Hành động quyết liệt thể hiện bản chất kiên quyết",
-        leftChoice: {
-          text: "Khoan hồng cho quan chủ hòa",
-          effects: { finance: 5, people: -15, military: -25, religion: 10 },
-        },
-        rightChoice: {
-          text: "Xử tử để răn đe",
-          effects: { finance: -5, people: 20, military: 30, religion: -10 },
-        },
-      },
-      {
-        id: "tran5",
-        character: "Chiến thắng Bạch Đằng - Năm 1288",
-        situation:
-          "Sau chiến thắng, quân Mông Cổ rút lui. Có thể truy kích triệt để hoặc để cho rút về. Truy kích có thể tiêu diệt nhiều địch nhưng mất nhiều quân.",
-        philosophicalContext: "Triệt để vs Dừng đúng lúc",
-        dialecticLaw: "Lượng và chất - Biết đủ là mức độ thích hợp",
-        leftChoice: {
-          text: "Để địch rút lui",
-          effects: { finance: 10, people: 10, military: -5, religion: 5 },
-        },
-        rightChoice: {
-          text: "Truy kích tận gốc",
-          effects: { finance: -10, people: 20, military: 20, religion: 0 },
-        },
-        multipleChoices: [
-          {
-            id: "tran5_a",
-            text: "Cho quân Mông Cổ rút lui an toàn",
-            description: "Giữ sức lực nhưng bỏ cơ hội",
-            cost: { finance: 0, people: 0, military: 0, religion: 0 },
-            effects: { finance: 12, people: 8, military: -8, religion: 5 }
-          },
-          {
-            id: "tran5_b",
-            text: "Truy kích nhẹ để răn đe",
-            description: "Cân bằng giữa hiệu quả và tổn thất",
-            cost: { finance: 5, people: 3, military: 5, religion: 0 },
-            effects: { finance: 5, people: 12, military: 8, religion: 3 }
-          },
-          {
-            id: "tran5_c",
-            text: "Truy kích tận gốc, tiêu diệt tối đa",
-            description: "Hiệu quả cao nhưng mất quân",
-            cost: { finance: 10, people: 5, military: 10, religion: 0 },
-            effects: { finance: -12, people: 25, military: 25, religion: 0 }
-          },
-          {
-            id: "tran5_d",
-            text: "Vừa truy kích vừa đàm phán, bắt cống",
-            description: "Lợi ích tối ưu, chiến lược nhất",
-            cost: { finance: 8, people: 5, military: 8, religion: 3 },
-            effects: { finance: 10, people: 18, military: 15, religion: 8 }
-          }
-        ]
-      },
-      {
-        id: "tran6",
-        character: "Phục hồi sau chiến tranh - Năm 1290",
-        situation:
-          "Đất nước tàn phá sau chiến tranh. Ưu tiên xây dựng lại kinh tế hay củng cố quân đội phòng khi Mông Cổ trở lại?",
-        philosophicalContext: "Kinh tế vs Quốc phòng",
-        dialecticLaw: "Cơ sở và thượng tầng - Kinh tế là cơ sở, quốc phòng là bảo vệ cơ sở",
-        leftChoice: {
-          text: "Củng cố quân đội",
-          effects: { finance: -15, people: -10, military: 30, religion: 0 },
-        },
-        rightChoice: {
-          text: "Phục hồi kinh tế",
-          effects: { finance: 25, people: 20, military: -15, religion: 5 },
-        },
-      },
-      {
-        id: "tran7",
-        character: "Chính sách đối ngoại - Năm 1300",
-        situation:
-          "Nhà Nguyên (Mông Cổ đã lập ở Trung Quốc) yêu cầu Đại Việt nộp cống hàng năm. Chấp nhận để hòa bình, hay từ chối để giữ phẩm giá?",
-        philosophicalContext: "Thực dụng vs Tự tôn",
-        dialecticLaw: "Hiện tượng và bản chất - Hình thức nộp cống không làm mất bản chất độc lập",
-        leftChoice: {
-          text: "Từ chối nộp cống",
-          effects: { finance: -10, people: 20, military: -15, religion: 10 },
-        },
-        rightChoice: {
-          text: "Chấp nhận hình thức nộp cống",
-          effects: { finance: 15, people: -15, military: 10, religion: -10 },
-        },
-      },
-      {
-        id: "tran8",
-        character: "Phật giáo và chính trị - Năm 1310",
-        situation:
-          "Nhiều vua Trần xuất gia làm Phật. Một số vua muốn xuất gia khi còn trẻ để tu hành. Nhưng đất nước cần lãnh đạo mạnh mẽ.",
-        philosophicalContext: "Tâm linh vs Trách nhiệm",
-        dialecticLaw: "Cá nhân và xã hội - Trách nhiệm xã hội là ưu tiên",
-        leftChoice: {
-          text: "Cho phép vua xuất gia",
-          effects: { finance: -15, people: -10, military: -15, religion: 30 },
-        },
-        rightChoice: {
-          text: "Yêu cầu hoàn thành trách nhiệm",
-          effects: { finance: 15, people: 10, military: 15, religion: -20 },
-        },
-      },
-      {
-        id: "tran9",
-        character: "Tranh chấp quyền lực - Năm 1330",
-        situation:
-          "Hoàng tộc chia phe, tranh giành quyền lực. Dùng bạo lực dẹp nhanh nhưng tạo hận thù. Hòa giải mất thời gian và quyền lực suy yếu.",
-        philosophicalContext: "Độc đoán vs Dân chủ",
-        dialecticLaw: "Mâu thuẫn nội bộ - Giải quyết mâu thuẫn nội bộ đúng cách là chìa khóa",
-        leftChoice: {
-          text: "Dùng bạo lực dẹp",
-          effects: { finance: -10, people: -15, military: 15, religion: -15 },
-        },
-        rightChoice: {
-          text: "Hòa giải và thương lượng",
-          effects: { finance: 5, people: 15, military: -10, religion: 10 },
-        },
-      },
-      {
-        id: "tran10",
-        character: "Quan hệ với Chăm Pa - Năm 1340",
-        situation:
-          "Chăm Pa yếu thế, có thể sáp nhập vào Đại Việt. Nhưng dân Chăm có văn hóa riêng, sáp nhập có thể gây xung đột lâu dài.",
-        philosophicalContext: "Bành trướng vs Hòa bình",
-        dialecticLaw: "Tự quyết dân tộc - Mỗi dân tộc có quyền tự quyết",
-        leftChoice: {
-          text: "Sáp nhập Chăm Pa",
-          effects: { finance: 15, people: -20, military: 20, religion: -15 },
-        },
-        rightChoice: {
-          text: "Giữ Chăm Pa độc lập",
-          effects: { finance: -5, people: 15, military: -10, religion: 10 },
-        },
-      },
-      {
-        id: "tran11",
-        character: "Cải cách hành chính - Năm 1350",
-        situation:
-          "Hệ thống quan liêu tham nhũng. Cải cách toàn diện mất thời gian và gặp phản kháng. Chỉ trị tội những người tham nhũng quá lớn thì dễ hơn nhưng không giải quyết gốc.",
-        philosophicalContext: "Triệt để vs Từng bước",
-        dialecticLaw: "Lượng và chất - Tích lũy từng bước dẫn đến bước nhảy vọt",
-        leftChoice: {
-          text: "Chỉ xử lý tham nhũng lớn",
-          effects: { finance: 10, people: -10, military: 5, religion: -5 },
-        },
-        rightChoice: {
-          text: "Cải cách toàn diện",
-          effects: { finance: -15, people: 25, military: -10, religion: 10 },
-        },
-      },
-      {
-        id: "tran12",
-        character: "Đào tạo nhân tài - Năm 1360",
-        situation:
-          "Con em quý tộc thiếu tài năng nhưng nắm quyền. Người tài từ dân gian bị ngăn cản. Mở rộng thi cử công bằng hay giữ đặc quyền quý tộc?",
-        philosophicalContext: "Đẳng cấp vs Tài năng",
-        dialecticLaw: "Sản xuất và quan hệ sản xuất - Phát triển cần người tài giỏi",
-        leftChoice: {
-          text: "Giữ đặc quyền quý tộc",
-          effects: { finance: -10, people: -25, military: -15, religion: 10 },
-        },
-        rightChoice: {
-          text: "Mở rộng thi cử công bằng",
-          effects: { finance: 15, people: 25, military: 15, religion: -10 },
-        },
-      },
-      {
-        id: "tran13",
-        character: "Thương mại với các nước - Năm 1370",
-        situation:
-          "Thương nhân Ấn Độ và Ả Rập muốn buôn bán qua cảng Đại Việt. Họ mang đạo Hồi, có thể ảnh hưởng văn hóa bản địa. Mở cửa thương mại hay bảo vệ văn hóa?",
-        philosophicalContext: "Giao lưu vs Bảo tồn",
-        dialecticLaw: "Cái chung và cái riêng - Giao lưu làm giàu văn hóa, không xóa bỏ bản sắc",
-        leftChoice: {
-          text: "Hạn chế giao thương",
-          effects: { finance: -15, people: -5, military: 5, religion: 20 },
-        },
-        rightChoice: {
-          text: "Mở cửa giao thương",
-          effects: { finance: 25, people: 15, military: 0, religion: -15 },
-        },
-      },
-      {
-        id: "tran14",
-        character: "Chế độ quân điền - Năm 1380",
-        situation:
-          "Quân đội tốn kém ngân sách. Trần Nghệ Tông đề xuất chế độ quân điền: binh sĩ tự canh tác khi không chiến tranh. Nhưng có thể làm giảm tính chuyên nghiệp.",
-        philosophicalContext: "Chuyên nghiệp vs Tiết kiệm",
-        dialecticLaw: "Hình thức và nội dung - Hình thức tổ chức phải phục vụ hiệu quả",
-        leftChoice: {
-          text: "Giữ quân đội chuyên nghiệp",
-          effects: { finance: -20, people: -10, military: 25, religion: 0 },
-        },
-        rightChoice: {
-          text: "Áp dụng chế độ quân điền",
-          effects: { finance: 15, people: 10, military: -15, religion: 5 },
-        },
-      },
-      {
-        id: "tran15",
-        character: "Suy tàn triều Trần - Năm 1395",
-        situation:
-          "Nhà Trần suy yếu, Hồ Quý Ly nắm quyền thực. Ông ta muốn cải cách triệt để, có thể lật đổ nhà Trần. Ủng hộ cải cách hay giữ trung thành nhà Trần?",
-        philosophicalContext: "Trung nghĩa vs Hiện thực",
-        dialecticLaw: "Sự phát triển lịch sử - Cái cũ phải nhường chỗ cho cái mới",
-        leftChoice: {
-          text: "Giữ trung thành nhà Trần",
-          effects: { finance: -15, people: -20, military: -15, religion: 20 },
-        },
-        rightChoice: {
-          text: "Ủng hộ Hồ Quý Ly cải cách",
-          effects: { finance: 20, people: 15, military: 15, religion: -20 },
-        },
-      },
-    ],
+  id: "tran_1",
+  character: "Trần Thái Tông - Năm 1225",
+  situation:
+    "Triều Lý suy yếu, quyền lực thực tế nằm trong tay họ Trần. Một quyết định chuyển giao quyền lực sẽ định đoạt vận mệnh quốc gia.",
+  philosophicalContext: "Hòa bình vs Xung đột",
+  dialecticLaw:
+    "Quy luật chuyển hóa từ lượng thành chất: Khi quyền lực thực tế đã tích tụ đủ lớn, sự thay đổi triều đại là tất yếu. Nhường ngôi hòa bình giúp tránh bước nhảy bạo lực, bảo toàn xã hội.",
+  yearContext: "1225",
+  historicalQuote:
+    "Nhà Lý đã suy, lòng người không theo nữa. Nếu cưỡng lại tất sinh binh đao, chi bằng thuận theo thời thế để yên xã tắc. (Đại Việt sử ký toàn thư)",
+  leftChoice: {
+    text: "Duy trì nhà Lý bằng vũ lực",
+    effects: { finance: -10, people: -15, military: 10, religion: 0 }
   },
+  rightChoice: {
+    text: "Nhường ngôi cho nhà Trần",
+    effects: { finance: 0, people: 10, military: -5, religion: 5 }
+  },
+  multipleChoices: [
+    {
+      id: "tran1_a",
+      text: "Duy trì nhà Lý bằng vũ lực",
+      description: "Bảo vệ danh nghĩa nhưng gây loạn",
+      effects: { finance: -10, people: -15, military: 10, religion: 0 },
+      historicalNote:
+        "Nếu chống lại họ Trần, đất nước có nguy cơ nội chiến kéo dài."
+    },
+    {
+      id: "tran1_b",
+      text: "Thỏa hiệp chia quyền với họ Trần",
+      description: "Nửa vời, thiếu dứt khoát",
+      effects: { finance: -5, people: -5, military: 0, religion: 0 },
+      historicalNote:
+        "Chia quyền dễ dẫn đến xung đột ngầm và mất ổn định lâu dài."
+    },
+    {
+      id: "tran1_c",
+      text: "Nhường ngôi cho nhà Trần",
+      description: "Chuyển giao hòa bình, đúng lịch sử",
+      effects: { finance: 0, people: 10, military: -5, religion: 5 },
+      historicalNote:
+        "Năm 1225, Lý Chiêu Hoàng nhường ngôi cho Trần Cảnh, mở ra triều Trần."
+    },
+    {
+      id: "tran1_d",
+      text: "Kêu gọi tăng lữ can thiệp",
+      description: "Dựa vào Phật giáo để ổn định",
+      effects: { finance: 0, people: 0, military: -5, religion: 10 },
+      historicalNote:
+        "Phật giáo có ảnh hưởng lớn nhưng không thể thay thế quyền lực chính trị."
+    }
+  ]
+},{
+  id: "tran_2",
+  character: "Trần Nhân Tông - Năm 1284",
+  situation:
+    "Quân Nguyên – Mông chuẩn bị xâm lược lần thứ hai. Triều đình phải quyết định chiến hay hòa.",
+  philosophicalContext: "Độc lập dân tộc vs Sinh tồn ngắn hạn",
+  dialecticLaw:
+    "Quy luật mâu thuẫn: Hòa bình giả tạo với ngoại bang chỉ làm mâu thuẫn tích tụ, trong khi kháng chiến tuy đau đớn nhưng giải quyết tận gốc xung đột.",
+  yearContext: "1284",
+  historicalQuote:
+    "Nên hòa hay nên đánh? – Đánh! (Hội nghị Diên Hồng, Đại Việt sử ký toàn thư)",
+  leftChoice: {
+    text: "Chấp nhận hòa với quân Nguyên",
+    effects: { finance: -5, people: -15, military: -10, religion: 0 }
+  },
+  rightChoice: {
+    text: "Toàn dân quyết tâm kháng chiến",
+    effects: { finance: -10, people: 15, military: 20, religion: 0 }
+  },
+  multipleChoices: [
+    {
+      id: "tran2_a",
+      text: "Chấp nhận hòa để tránh tổn thất",
+      description: "Ngắn hạn yên ổn nhưng mất độc lập",
+      effects: { finance: -5, people: -15, military: -10, religion: 0 },
+      historicalNote:
+        "Nhà Nguyên nhiều lần ép Đại Việt làm chư hầu, đòi cống nạp nặng nề."
+    },
+    {
+      id: "tran2_b",
+      text: "Đánh nhưng chỉ dựa vào quân đội triều đình",
+      description: "Thiếu sức mạnh toàn dân",
+      effects: { finance: -10, people: -5, military: 10, religion: 0 },
+      historicalNote:
+        "Chiến tranh chống Nguyên cần huy động sức dân trên toàn quốc."
+    },
+    {
+      id: "tran2_c",
+      text: "Họp Diên Hồng, toàn dân kháng chiến",
+      description: "Quyết sách lịch sử",
+      effects: { finance: -10, people: 15, military: 20, religion: 0 },
+      historicalNote:
+        "Hội nghị Diên Hồng thể hiện ý chí toàn dân tộc thời Trần."
+    },
+    {
+      id: "tran2_d",
+      text: "Rút vua lui về tu hành, giao quyền cho tướng lĩnh",
+      description: "Tinh thần cao nhưng rủi ro chính trị",
+      effects: { finance: 0, people: 5, military: 5, religion: 10 },
+      historicalNote:
+        "Nhà Trần kết hợp vai trò vua – tướng – dân, không tách rời quyền lực."
+    }
+  ]
+},{
+  id: "tran_3",
+  character: "Trần Hưng Đạo - Năm 1285",
+  situation:
+    "Quân Nguyên mạnh về kỵ binh và số lượng. Đại Việt phải chọn chiến lược phù hợp để đối đầu.",
+  philosophicalContext: "Sức mạnh tuyệt đối vs Trí tuệ chiến lược",
+  dialecticLaw:
+    "Quy luật phủ định biện chứng: Không đối đầu trực diện với cái mạnh hơn, mà phủ định nó bằng phương thức chiến tranh linh hoạt, du kích và tiêu hao.",
+  yearContext: "1285",
+  historicalQuote:
+    "Lấy đoản binh chống trường trận, lấy yếu chống mạnh, đó là điều cốt yếu trong binh pháp. (Hịch tướng sĩ)",
+  leftChoice: {
+    text: "Đối đầu trực diện với quân Nguyên",
+    effects: { finance: -15, people: -10, military: -10, religion: 0 }
+  },
+  rightChoice: {
+    text: "Áp dụng chiến tranh tiêu hao, du kích",
+    effects: { finance: -5, people: 5, military: 15, religion: 0 }
+  },
+  multipleChoices: [
+    {
+      id: "tran3_a",
+      text: "Đối đầu trực diện",
+      description: "Danh dự cao nhưng rủi ro lớn",
+      effects: { finance: -15, people: -10, military: -10, religion: 0 },
+      historicalNote:
+        "Quân Nguyên vượt trội về kỵ binh và trang bị."
+    },
+    {
+      id: "tran3_b",
+      text: "Rút lui chiến lược để bảo toàn lực lượng",
+      description: "Nhẫn nhịn để phản công",
+      effects: { finance: -5, people: 0, military: 10, religion: 0 },
+      historicalNote:
+        "Nhà Trần nhiều lần chủ động bỏ kinh thành để phản công sau."
+    },
+    {
+      id: "tran3_c",
+      text: "Chiến tranh du kích, tiêu hao",
+      description: "Chiến lược thiên tài",
+      effects: { finance: -5, people: 5, military: 15, religion: 0 },
+      historicalNote:
+        "Chiến lược này dẫn đến các thắng lợi lớn như Bạch Đằng."
+    },
+    {
+      id: "tran3_d",
+      text: "Cầu viện các nước láng giềng",
+      description: "Hy vọng bên ngoài",
+      effects: { finance: -5, people: -5, military: 0, religion: 0 },
+      historicalNote:
+        "Đại Việt thời Trần chủ yếu tự lực kháng chiến."
+    }
+  ]
+},{
+  id: "tran_4",
+  character: "Trần Thái Tông - Năm 1236",
+  situation:
+    "Vua Trần Thái Tông chán nản triều chính, lên núi Yên Tử tìm con đường giải thoát.",
+  philosophicalContext: "Trách nhiệm vs Giải thoát cá nhân",
+  dialecticLaw:
+    "Mâu thuẫn giữa cá nhân và xã hội: Giải thoát cá nhân chỉ có ý nghĩa khi gắn với trách nhiệm lịch sử.",
+  yearContext: "1236",
+  historicalQuote:
+    "Trẫm làm vua là vì thiên hạ, nếu bỏ thiên hạ mà cầu đạo thì đạo nào dung chứa được? (Đại Việt sử ký toàn thư)",
+  leftChoice: {
+    text: "Ở lại Yên Tử, rời bỏ triều chính",
+    effects: { finance: 0, people: -15, military: -10, religion: 15 }
+  },
+  rightChoice: {
+    text: "Quay về triều tiếp tục trị vì",
+    effects: { finance: 5, people: 10, military: 5, religion: -5 }
+  },
+  multipleChoices: [
+    {
+      id: "tran4_a",
+      text: "Rời bỏ triều chính để tu hành",
+      description: "Giải thoát cá nhân",
+      effects: { finance: 0, people: -15, military: -10, religion: 15 },
+      historicalNote:
+        "Nếu vua bỏ nước, triều đình dễ rơi vào rối loạn."
+    },
+    {
+      id: "tran4_b",
+      text: "Tu hành nhưng vẫn giữ quyền lực",
+      description: "Nửa vời",
+      effects: { finance: 0, people: -5, military: -5, religion: 5 },
+      historicalNote:
+        "Không dứt khoát sẽ làm suy yếu uy tín hoàng quyền."
+    },
+    {
+      id: "tran4_c",
+      text: "Quay về triều, lấy đạo giúp đời",
+      description: "Quyết định lịch sử",
+      effects: { finance: 5, people: 10, military: 5, religion: -5 },
+      historicalNote:
+        "Trần Thái Tông trở lại triều, mở đầu tư tưởng nhập thế."
+    },
+    {
+      id: "tran4_d",
+      text: "Trao quyền cho tướng lĩnh",
+      description: "Giảm gánh nặng cá nhân",
+      effects: { finance: 5, people: -5, military: 10, religion: 0 },
+      historicalNote:
+        "Quyền lực phân tán dễ gây mất kiểm soát."
+    }
+  ]
+},{
+  id: "tran_5",
+  character: "Triều đình nhà Trần",
+  situation:
+    "Triều Trần cần duy trì quân đội mạnh nhưng không thể nuôi quân thường trực quá lớn.",
+  philosophicalContext: "Kinh tế vs Quân sự",
+  dialecticLaw:
+    "Chuyển hóa mâu thuẫn: Kết hợp sản xuất và chiến đấu để dung hòa hai cực đối lập.",
+  yearContext: "Thế kỷ XIII",
+  historicalQuote:
+    "Lúc bình thời làm ruộng, khi có giặc thì cầm binh. (Chế độ ngụ binh ư nông)",
+  leftChoice: {
+    text: "Duy trì quân đội thường trực lớn",
+    effects: { finance: -15, people: -5, military: 15, religion: 0 }
+  },
+  rightChoice: {
+    text: "Áp dụng ngụ binh ư nông",
+    effects: { finance: 10, people: 5, military: 5, religion: 0 }
+  },
+  multipleChoices: [
+    {
+      id: "tran5_a",
+      text: "Quân đội thường trực",
+      description: "Mạnh nhưng tốn kém",
+      effects: { finance: -15, people: -5, military: 15, religion: 0 },
+      historicalNote:
+        "Ngân khố không đủ nuôi quân lâu dài."
+    },
+    {
+      id: "tran5_b",
+      text: "Ngụ binh ư nông",
+      description: "Cân bằng và hiệu quả",
+      effects: { finance: 10, people: 5, military: 5, religion: 0 },
+      historicalNote:
+        "Đây là chính sách quân sự đặc trưng của nhà Trần."
+    },
+    {
+      id: "tran5_c",
+      text: "Giảm mạnh quân đội",
+      description: "Tiết kiệm nhưng nguy hiểm",
+      effects: { finance: 15, people: 0, military: -15, religion: 0 },
+      historicalNote:
+        "Đại Việt luôn đối mặt nguy cơ xâm lược."
+    },
+    {
+      id: "tran5_d",
+      text: "Dựa vào tăng binh",
+      description: "Tinh thần cao nhưng yếu thực lực",
+      effects: { finance: 0, people: 0, military: -10, religion: 10 },
+      historicalNote:
+        "Tăng lữ không thể thay thế quân đội chính quy."
+    }
+  ]
+}
+,{
+  id: "tran_6",
+  character: "Trần Hưng Đạo",
+  situation:
+    "Quân Nguyên tiến sâu vào Đại Việt với lực lượng áp đảo.",
+  philosophicalContext: "Hy sinh ngắn hạn vs Thắng lợi lâu dài",
+  dialecticLaw:
+    "Phủ định biện chứng: Từ bỏ cái trước mắt để giành thắng lợi bản chất.",
+  yearContext: "1285",
+  historicalQuote:
+    "Giặc đến thì bỏ thành, giữ dân, giữ lực lượng. (Chiến lược nhà Trần)",
+  leftChoice: {
+    text: "Giữ thành, quyết chiến",
+    effects: { finance: -10, people: -15, military: -10, religion: 0 }
+  },
+  rightChoice: {
+    text: "Vườn không nhà trống",
+    effects: { finance: -5, people: 5, military: 15, religion: 0 }
+  },
+  multipleChoices: [
+    {
+      id: "tran6_a",
+      text: "Quyết tử giữ thành",
+      description: "Tinh thần cao nhưng nguy hiểm",
+      effects: { finance: -10, people: -15, military: -10, religion: 0 },
+      historicalNote:
+        "Đối đầu trực diện dễ thất bại trước quân Nguyên."
+    },
+    {
+      id: "tran6_b",
+      text: "Rút lui chiến lược",
+      description: "Bảo toàn lực lượng",
+      effects: { finance: -5, people: 0, military: 10, religion: 0 },
+      historicalNote:
+        "Nhà Trần nhiều lần bỏ kinh thành để phản công."
+    },
+    {
+      id: "tran6_c",
+      text: "Vườn không nhà trống",
+      description: "Chiến lược quyết định",
+      effects: { finance: -5, people: 5, military: 15, religion: 0 },
+      historicalNote:
+        "Chiến thuật làm quân Nguyên thiếu lương nghiêm trọng."
+    },
+    {
+      id: "tran6_d",
+      text: "Cầu hòa để giữ dân",
+      description: "Yên ngắn hạn",
+      effects: { finance: 0, people: -10, military: -10, religion: 0 },
+      historicalNote:
+        "Hòa với Nguyên đồng nghĩa mất chủ quyền."
+    }
+  ]
+}
+, {
+  id: "tran_6",
+  character: "Trần Hưng Đạo",
+  situation:
+    "Quân Nguyên tiến sâu vào Đại Việt với lực lượng áp đảo.",
+  philosophicalContext: "Hy sinh ngắn hạn vs Thắng lợi lâu dài",
+  dialecticLaw:
+    "Phủ định biện chứng: Từ bỏ cái trước mắt để giành thắng lợi bản chất.",
+  yearContext: "1285",
+  historicalQuote:
+    "Giặc đến thì bỏ thành, giữ dân, giữ lực lượng. (Chiến lược nhà Trần)",
+  leftChoice: {
+    text: "Giữ thành, quyết chiến",
+    effects: { finance: -10, people: -15, military: -10, religion: 0 }
+  },
+  rightChoice: {
+    text: "Vườn không nhà trống",
+    effects: { finance: -5, people: 5, military: 15, religion: 0 }
+  },
+  multipleChoices: [
+    {
+      id: "tran6_a",
+      text: "Quyết tử giữ thành",
+      description: "Tinh thần cao nhưng nguy hiểm",
+      effects: { finance: -10, people: -15, military: -10, religion: 0 },
+      historicalNote:
+        "Đối đầu trực diện dễ thất bại trước quân Nguyên."
+    },
+    {
+      id: "tran6_b",
+      text: "Rút lui chiến lược",
+      description: "Bảo toàn lực lượng",
+      effects: { finance: -5, people: 0, military: 10, religion: 0 },
+      historicalNote:
+        "Nhà Trần nhiều lần bỏ kinh thành để phản công."
+    },
+    {
+      id: "tran6_c",
+      text: "Vườn không nhà trống",
+      description: "Chiến lược quyết định",
+      effects: { finance: -5, people: 5, military: 15, religion: 0 },
+      historicalNote:
+        "Chiến thuật làm quân Nguyên thiếu lương nghiêm trọng."
+    },
+    {
+      id: "tran6_d",
+      text: "Cầu hòa để giữ dân",
+      description: "Yên ngắn hạn",
+      effects: { finance: 0, people: -10, military: -10, religion: 0 },
+      historicalNote:
+        "Hòa với Nguyên đồng nghĩa mất chủ quyền."
+    }
+  ]
+}
+, {
+  id: "tran_7",
+  character: "Trần Hưng Đạo - Năm 1288",
+  situation:
+    "Thủy quân Nguyên rút lui qua sông Bạch Đằng.",
+  philosophicalContext: "Thiên thời – Địa lợi – Nhân hòa",
+  dialecticLaw:
+    "Tổng hợp biện chứng: Thắng lợi chỉ xuất hiện khi hội đủ nhiều yếu tố.",
+  yearContext: "1288",
+  historicalQuote:
+    "Sông núi nước Nam vua Nam ở. (Tinh thần độc lập dân tộc)",
+  leftChoice: {
+    text: "Đánh đuổi từng phần",
+    effects: { finance: -5, people: 0, military: 5, religion: 0 }
+  },
+  rightChoice: {
+    text: "Bố trí cọc ngầm, tiêu diệt toàn bộ",
+    effects: { finance: -5, people: 10, military: 20, religion: 0 }
+  },
+  multipleChoices: [
+    {
+      id: "tran7_c",
+      text: "Bẫy cọc Bạch Đằng",
+      description: "Đỉnh cao quân sự",
+      effects: { finance: -5, people: 10, military: 20, religion: 0 },
+      historicalNote:
+        "Chiến thắng Bạch Đằng 1288 kết thúc mộng xâm lược Nguyên."
+    }
+  ]
+}
+,{
+  id: "tran_8",
+  character: "Trần Hưng Đạo",
+  situation:
+    "Tinh thần quân sĩ suy giảm trước sức mạnh quân Nguyên.",
+  philosophicalContext: "Danh dự vs Sợ hãi",
+  dialecticLaw:
+    "Ý thức xã hội tác động ngược trở lại tồn tại xã hội.",
+  yearContext: "1284",
+  historicalQuote:
+    "Nếu bệ hạ muốn hàng, xin trước hãy chém đầu thần rồi hãy hàng. (Hịch tướng sĩ)",
+  leftChoice: {
+    text: "Dùng thưởng vật để khích lệ",
+    effects: { finance: -10, people: 0, military: 5, religion: 0 }
+  },
+  rightChoice: {
+    text: "Kêu gọi danh dự và lòng yêu nước",
+    effects: { finance: 0, people: 10, military: 15, religion: 0 }
+  },
+  multipleChoices: []
+}
+,{
+  id: "tran_9",
+  character: "Triều đình nhà Trần - Sau năm 1288",
+  situation:
+    "Ba lần kháng chiến thắng lợi nhưng quốc gia kiệt quệ, ruộng đất bỏ hoang, ngân khố suy giảm.",
+  philosophicalContext: "Chiến thắng vs Cái giá phải trả",
+  dialecticLaw:
+    "Quy luật hai mặt của thắng lợi: Mỗi chiến thắng quân sự đều mang theo tổn thất kinh tế – xã hội cần được giải quyết.",
+  yearContext: "Cuối thế kỷ XIII",
+  historicalQuote:
+    "Dân mệt, của kiệt, nhưng chí chưa nguôi. (Tinh thần hậu chiến thời Trần)",
+  leftChoice: {
+    text: "Tiếp tục ưu tiên quân sự",
+    effects: { finance: -10, people: -10, military: 10, religion: 0 }
+  },
+  rightChoice: {
+    text: "Khôi phục kinh tế, giảm quân bị",
+    effects: { finance: 10, people: 10, military: -10, religion: 0 }
+  },
+  multipleChoices: [
+    {
+      id: "tran9_a",
+      text: "Duy trì quân đội lớn",
+      description: "Phòng xa nhưng hao kiệt",
+      effects: { finance: -10, people: -10, military: 10, religion: 0 },
+      historicalNote:
+        "Thời bình kéo dài khiến quân đội lớn trở thành gánh nặng."
+    },
+    {
+      id: "tran9_b",
+      text: "Khôi phục sản xuất nông nghiệp",
+      description: "Củng cố gốc rễ quốc gia",
+      effects: { finance: 10, people: 10, military: -10, religion: 0 },
+      historicalNote:
+        "Nhà Trần từng chú trọng khai khẩn ruộng đất sau chiến tranh."
+    },
+    {
+      id: "tran9_c",
+      text: "Tăng thuế để bù ngân khố",
+      description: "Giải pháp ngắn hạn",
+      effects: { finance: 15, people: -15, military: 0, religion: 0 },
+      historicalNote:
+        "Thuế nặng dễ gây bất ổn xã hội."
+    },
+    {
+      id: "tran9_d",
+      text: "Dựa vào Phật giáo an dân",
+      description: "Ổn định tinh thần",
+      effects: { finance: 0, people: 5, military: -5, religion: 10 },
+      historicalNote:
+        "Tôn giáo giúp trấn an nhưng không giải quyết kinh tế."
+    }
+  ]
+}
+, {
+  id: "tran_10",
+  character: "Trần Nhân Tông - Năm 1299",
+  situation:
+    "Sau khi hoàn thành sứ mệnh lịch sử, Trần Nhân Tông quyết định xuất gia, lập Thiền phái Trúc Lâm.",
+  philosophicalContext: "Quyền lực vs Giác ngộ",
+  dialecticLaw:
+    "Phủ định của phủ định: Từ quyền lực thế tục quay về tinh thần, nhưng tinh thần lại tác động ngược trở lại xã hội.",
+  yearContext: "1299",
+  historicalQuote:
+    "Ở đời vui đạo hãy tùy duyên. (Trần Nhân Tông)",
+  leftChoice: {
+    text: "Tiếp tục can thiệp sâu vào triều chính",
+    effects: { finance: 5, people: -5, military: 0, religion: -5 }
+  },
+  rightChoice: {
+    text: "Xuất gia, dẫn dắt tinh thần quốc gia",
+    effects: { finance: 0, people: 10, military: -5, religion: 15 }
+  },
+  multipleChoices: [
+    {
+      id: "tran10_a",
+      text: "Giữ quyền lực thực tế",
+      description: "Ổn định ngắn hạn",
+      effects: { finance: 5, people: -5, military: 0, religion: -5 },
+      historicalNote:
+        "Can thiệp quá sâu làm suy yếu quyền vua kế vị."
+    },
+    {
+      id: "tran10_b",
+      text: "Xuất gia lập Trúc Lâm",
+      description: "Quyết định lịch sử",
+      effects: { finance: 0, people: 10, military: -5, religion: 15 },
+      historicalNote:
+        "Thiền phái Trúc Lâm mang bản sắc Phật giáo Việt."
+    },
+    {
+      id: "tran10_c",
+      text: "Thoái vị nhưng vẫn nắm quân đội",
+      description: "Quyền lực kép",
+      effects: { finance: 0, people: -5, military: 10, religion: 0 },
+      historicalNote:
+        "Quyền lực chồng chéo dễ gây rối loạn."
+    },
+    {
+      id: "tran10_d",
+      text: "Rút hoàn toàn khỏi chính sự",
+      description: "Buông bỏ triệt để",
+      effects: { finance: 0, people: 5, military: -10, religion: 10 },
+      historicalNote:
+        "Triều đình mất đi chỗ dựa tinh thần."
+    }
+  ]
+}
+, {
+  id: "tran_11",
+  character: "Triều đình nhà Trần",
+  situation:
+    "Phật giáo dần suy yếu, Nho giáo được trọng dụng để xây dựng kỷ cương quan lại.",
+  philosophicalContext: "Từ bi vs Kỷ luật",
+  dialecticLaw:
+    "Chuyển hóa ý thức hệ: Khi xã hội phức tạp hơn, nhu cầu kỷ luật thay thế cảm hóa tinh thần.",
+  yearContext: "Thế kỷ XIV",
+  historicalQuote:
+    "Muốn trị nước lâu dài, phải lấy lễ nghĩa làm gốc. (Tinh thần Nho giáo)",
+  leftChoice: {
+    text: "Tiếp tục đề cao Phật giáo",
+    effects: { finance: 0, people: 5, military: -5, religion: 10 }
+  },
+  rightChoice: {
+    text: "Ưu tiên Nho giáo và pháp luật",
+    effects: { finance: 5, people: -5, military: 5, religion: -10 }
+  },
+  multipleChoices: [
+    {
+      id: "tran11_b",
+      text: "Đẩy mạnh Nho giáo",
+      description: "Kỷ cương nhưng khô cứng",
+      effects: { finance: 5, people: -5, military: 5, religion: -10 },
+      historicalNote:
+        "Cuối Trần, Nho giáo dần chiếm vị trí chủ đạo."
+    }
+  ]
+}
+, {
+  id: "tran_12",
+  character: "Triều đình nhà Trần - Cuối thế kỷ XIV",
+  situation:
+    "Các vương hầu họ Trần nắm nhiều đất đai và binh quyền, làm suy yếu trung ương.",
+  philosophicalContext: "Phân quyền vs Tập quyền",
+  dialecticLaw:
+    "Mâu thuẫn nội tại của giai cấp thống trị dẫn đến suy vong.",
+  yearContext: "Cuối thế kỷ XIV",
+  historicalQuote:
+    "Quyền chia quá rộng, triều cương tất loạn. (Sử luận)",
+  leftChoice: {
+    text: "Siết chặt quyền lực trung ương",
+    effects: { finance: 5, people: 0, military: -10, religion: 0 }
+  },
+  rightChoice: {
+    text: "Nhượng bộ quý tộc",
+    effects: { finance: -5, people: -5, military: 5, religion: 0 }
+  },
+  multipleChoices: []
+}, {
+  id: "tran_13",
+  character: "Hồ Quý Ly - Cuối thế kỷ XIV",
+  situation:
+    "Hồ Quý Ly từng bước thao túng triều đình, đề xuất cải cách mạnh mẽ.",
+  philosophicalContext: "Cải cách vs Ổn định",
+  dialecticLaw:
+    "Khi cái cũ không còn đáp ứng thực tiễn, cái mới tất yếu xuất hiện – dù gây chấn động.",
+  yearContext: "1390 - 1400",
+  historicalQuote:
+    "Thời thế đã khác, không đổi ắt vong. (Tinh thần cải cách Hồ Quý Ly)",
+  leftChoice: {
+    text: "Giữ nguyên trật tự cũ",
+    effects: { finance: -5, people: -10, military: -5, religion: 0 }
+  },
+  rightChoice: {
+    text: "Ủng hộ cải cách của Hồ Quý Ly",
+    effects: { finance: 10, people: -5, military: 5, religion: -5 }
+  },
+  multipleChoices: [
+    {
+      id: "tran13_b",
+      text: "Cải cách mạnh tay",
+      description: "Tiến bộ nhưng gây phản kháng",
+      effects: { finance: 10, people: -5, military: 5, religion: -5 },
+      historicalNote:
+        "Cải cách giúp hiện đại hóa nhưng làm mất lòng nhiều tầng lớp."
+    }
+  ]
+}
+
+
+    ]
+  }
+  ,
   {
-    id: "le",
-    name: "Nhà Lê",
-    period: "1428 - 1789",
-    description: "Triều đại dài nhất lịch sử Việt Nam, khôi phục độc lập và phát triển văn hóa",
-    icon: "👑",
+    id: "le_so",
+    name: "Nhà Lê Sơ",
+    period: "1428 - 1527",
+    description:
+    "Triều đại được thành lập sau chiến thắng Lam Sơn, bản lĩnh dân tộc, hưng thịnh về văn hóa, kinh tế và quân sự, thời kỳ Lê Thánh Tông được coi là thời đại hoàng kim.",
+    icon: "🏛️",
+    startingStats: { finance: 50, people: 50, military: 50, religion: 50 },
     cards: [
-      {
-        id: "le1",
-        character: "Lê Lợi - Khởi nghĩa Lam Sơn 1418",
-        situation:
-          "Nhà Minh chiếm Đại Việt 20 năm. Khởi nghĩa rất khó, thất bại nhiều lần. Triều đình Minh mời hàng, phong bạn làm quan. Tiếp tục kháng chiến hay chấp nhận đầu hàng?",
-        philosophicalContext: "Kiên trì vs Thực dụng",
-        dialecticLaw: "Tất yếu và ngẫu nhiên - Độc lập dân tộc là tất yếu lịch sử",
-        leftChoice: {
-          text: "Chấp nhận làm quan Minh",
-          effects: { finance: 20, people: -30, military: -25, religion: -15 },
-        },
-        rightChoice: {
-          text: "Tiếp tục kháng chiến",
-          effects: { finance: -20, people: 30, military: 25, religion: 15 },
-        },
-        multipleChoices: [
-          {
-            id: "le1_a",
-            text: "Chấp nhận làm quan Minh, an nhàn sống",
-            description: "Củng cố quyền lợi nhưng mất dân tộc",
-            cost: { finance: 0, people: 0, military: 0, religion: 0 },
-            effects: { finance: 22, people: -35, military: -30, religion: -18 },
-            historicalNote: "Nhiều quý tộc Đại Việt đã chọn con đường này, trở thành quan lại cho nhà Minh để giữ địa vị và tài sản. Họ là công cụ áp bức đồng bào, giúp Minh khai thác tài nguyên, đồng hóa văn hóa Việt. Lịch sử gọi họ là 'bọn Tàu đầy', bị nhân dân khinh bỉ.",
-            philosophicalExplanation: "Đây là sự phản bội bản chất dân tộc vì lợi ích cá nhân. Vi phạm nguyên tắc 'lợi ích dân tộc trên hết' - một trong những giá trị cốt lõi của chủ nghĩa yêu nước cách mạng."
-          },
-          {
-            id: "le1_b",
-            text: "Chấp nhận tạm thời, nuôi sức khởi nghĩa sau",
-            description: "Chiến lược nhưng mất uy tín",
-            cost: { finance: 5, people: 8, military: 5, religion: 3 },
-            effects: { finance: 10, people: -10, military: 5, religion: -8 },
-            historicalNote: "Một số người chủ trương đầu hàng hình thức để bảo tồn lực lượng. Tuy nhiên, một khi đã đầu hàng, rất khó tập hợp dân chúng khởi nghĩa lại. Nhà Minh cũng kiểm soát chặt chẽ, phân hóa nội bộ người Việt.",
-            philosophicalExplanation: "Mâu thuẫn giữa chiến lược ngắn hạn và nguyên tắc lâu dài. Quy luật về uy tín và lòng tin của quần chúng cho thấy: một khi mất uy tín, khó lấy lại được sự ủng hộ của nhân dân."
-          },
-          {
-            id: "le1_c",
-            text: "Tiếp tục khởi nghĩa dù khó khăn",
-            description: "Kiên quyết, động viên nhân dân",
-            cost: { finance: 10, people: 8, military: 10, religion: 5 },
-            effects: { finance: -22, people: 35, military: 30, religion: 18 },
-            historicalQuote: "Việc nhân nghĩa tất thắng. Dù đường xa ngàn dặm, dù núi cao vạn trượng, ta quyết không lùi bước. Giặc Minh hùng mạnh nhưng không có đạo nghĩa, ta yếu thế nhưng có lòng dân. Cuối cùng, chính nghĩa sẽ chiến thắng cường quyền!\n\n- Lê Lợi, Bình Nghê Vương, Khởi nghĩa Lam Sơn",
-            historicalNote: "Lê Lợi đã chọn con đường này. Từ 1418-1427, suốt 10 năm kháng chiến gian khổ, nhiều lần thất bại nhưng không bao giờ từ bỏ. Danh ngôn của ông: 'Việc nhân nghĩa tất thắng'. Cuối cùng khởi nghĩa Lam Sơn thành công, đuổi quân Minh, khôi phục độc lập.",
-            philosophicalExplanation: "Vận dụng quy luật về tính tất yếu của chiến thắng trong chiến tranh chính nghĩa. Dù khó khăn nhưng nhân dân là lực lượng quyết định, ý chí độc lập dân tộc là không thể khuất phục. Đây là biểu hiện của chủ nghĩa anh hùng cách mạng."
-          },
-          {
-            id: "le1_d",
-            text: "Hợp tác với các lực lượng kháng chiến khác",
-            description: "Tăng sức mạnh nhưng chia quyền",
-            cost: { finance: 12, people: 10, military: 8, religion: 5 },
-            effects: { finance: -15, people: 28, military: 35, religion: 10 },
-            historicalNote: "Lê Lợi đã liên kết với nhiều nghĩa quân khác như Trần Nguyên Hãn, Lê Sát... Họ thống nhất dưới cờ 'Bình Định Vương' (Lê Lợi), tạo thành khối đoàn kết mạnh mẽ. Đoàn kết này là yếu tố quan trọng dẫn đến thắng lợi.",
-            philosophicalExplanation: "Thể hiện quy luật về sức mạnh của đoàn kết - 'đoàn kết, đoàn kết, đại đoàn kết; thành công, thành công, đại thành công'. Biết dựa vào lực lượng tập thể, không cá nhân anh hùng hóa bản thân."
-          }
-        ]
-      },
-      {
-        id: "le2",
-        character: "Chiến thuật du kích - Năm 1420",
-        situation:
-          "Quân Minh hùng mạnh, đánh chính diện sẽ thua. Lê Lợi đề xuất du kích rừng núi. Nhưng tướng già muốn đánh giành thành trì để có uy thế.",
-        philosophicalContext: "Linh hoạt vs Truyền thống",
-        dialecticLaw: "Cái khách quan và cái chủ quan - Chiến thuật phải phù hợp thực tế",
-        leftChoice: {
-          text: "Đánh giành thành trì",
-          effects: { finance: -15, people: -20, military: -25, religion: 5 },
-        },
-        rightChoice: {
-          text: "Du kích rừng núi",
-          effects: { finance: -10, people: 20, military: 25, religion: 10 },
-        },
-        multipleChoices: [
-          {
-            id: "le2_a",
-            text: "Đánh chiếm thành trì để tạo uy thế",
-            description: "Truyền thống nhưng nguy hiểm",
-            cost: { finance: 5, people: 3, military: 8, religion: 0 },
-            effects: { finance: -18, people: -25, military: -30, religion: 3 }
-          },
-          {
-            id: "le2_b",
-            text: "Kết hợp du kích và giữ vùng căn cứ",
-            description: "Cân bằng giữa cũ và mới",
-            cost: { finance: 8, people: 5, military: 10, religion: 3 },
-            effects: { finance: -10, people: 10, military: 10, religion: 8 }
-          },
-          {
-            id: "le2_c",
-            text: "Du kích rừng núi như Lê Lợi đề xuất",
-            description: "Linh hoạt, tối ưu nhất",
-            cost: { finance: 10, people: 8, military: 12, religion: 5 },
-            effects: { finance: -12, people: 25, military: 30, religion: 12 }
-          },
-          {
-            id: "le2_d",
-            text: "Chiến tranh nhân dân, huy động toàn dân",
-            description: "Sức mạnh lớn nhất",
-            cost: { finance: 12, people: 10, military: 10, religion: 8 },
-            effects: { finance: -15, people: 30, military: 28, religion: 15 }
-          }
-        ]
-      },
-      {
-        id: "le3",
-        character: "Chiến thắng Tốt Động - Năm 1427",
-        situation:
-          "Sau chiến thắng lớn, có thể truy kích quân Minh đến tận biên giới, hoặc đàm phán để họ rút lui nhanh. Truy kích có thể tiêu diệt nhiều địch nhưng chiến tranh kéo dài.",
-        philosophicalContext: "Toàn thắng vs Hòa đàm",
-        dialecticLaw: "Mục đích và phương tiện - Độc lập là mục đích, chiến tranh là phương tiện",
-        leftChoice: {
-          text: "Đàm phán cho Minh rút",
-          effects: { finance: 15, people: 15, military: -10, religion: 10 },
-        },
-        rightChoice: {
-          text: "Truy kích đến cùng",
-          effects: { finance: -15, people: 20, military: 20, religion: 0 },
-        },
-        multipleChoices: [
-          {
-            id: "le3_a",
-            text: "Cho quân Minh rút lui ngay lập tức",
-            description: "Nhanh chóng, giữ sức lực",
-            cost: { finance: 3, people: 0, military: 3, religion: 0 },
-            effects: { finance: 18, people: 12, military: -12, religion: 10 }
-          },
-          {
-            id: "le3_b",
-            text: "Đàm phán kèm điều kiện, lấy lợi ích",
-            description: "Vừa đạt độc lập vừa có lợi",
-            cost: { finance: 8, people: 5, military: 8, religion: 3 },
-            effects: { finance: 15, people: 18, military: -5, religion: 12 }
-          },
-          {
-            id: "le3_c",
-            text: "Truy kích đến tận biên giới",
-            description: "Triệt để nhưng tốn thất lớn",
-            cost: { finance: 12, people: 8, military: 12, religion: 0 },
-            effects: { finance: -18, people: 25, military: 25, religion: -3 }
-          },
-          {
-            id: "le3_d",
-            text: "Vừa truy kích vừa đàm phán, ép buộc",
-            description: "Chiến lược tối ưu nhất",
-            cost: { finance: 10, people: 8, military: 10, religion: 5 },
-            effects: { finance: 5, people: 22, military: 15, religion: 8 }
-          }
-        ]
-      },
-      {
-        id: "le4",
-        character: "Xây dựng luật pháp - Năm 1430",
-        situation:
-          "Lê Thái Tổ muốn ban hành Quốc triều luật lệ, thống nhất luật pháp cả nước. Nhưng các vùng có tập quán riêng, áp đặt luật chung sẽ gây phản ứng.",
-        philosophicalContext: "Thống nhất vs Đa dạng",
-        dialecticLaw: "Cái chung và cái riêng - Luật chung nhưng linh hoạt với đặc thù địa phương",
-        leftChoice: {
-          text: "Giữ tập quán địa phương",
-          effects: { finance: -10, people: 10, military: -10, religion: 15 },
-        },
-        rightChoice: {
-          text: "Thống nhất luật pháp",
-          effects: { finance: 20, people: -15, military: 15, religion: -10 },
-        },
-      },
-      {
-        id: "le5",
-        character: "Cải cách ruộng đất - Năm 1440",
-        situation:
-          "Sau chiến tranh, nhiều đất hoang. Lê Thái Tông muốn chia đều ruộng đất cho nông dân. Quý tộc và tướng lĩnh công thần phản đối vì muốn được thưởng ruộng lớn.",
-        philosophicalContext: "Công bằng vs Công lao",
-        dialecticLaw: "Mâu thuẫn lợi ích giai cấp - Công bằng xã hội vs quyền lợi tầng lớp",
-        leftChoice: {
-          text: "Thưởng ruộng lớn cho công thần",
-          effects: { finance: 10, people: -25, military: 20, religion: -10 },
-        },
-        rightChoice: {
-          text: "Chia đều ruộng đất",
-          effects: { finance: -10, people: 30, military: -15, religion: 10 },
-        },
-      },
-      {
-        id: "le6",
-        character: "Lê Thánh Tông cải cách - Năm 1460",
-        situation:
-          "Lê Thánh Tông muốn cải cách toàn diện: hành chính, giáo dục, quân sự. Đây là thay đổi lớn, nhiều quan cũ phản đối. Cải cách mạnh hay từ từ?",
-        philosophicalContext: "Cách mạng vs Tiến hóa",
-        dialecticLaw: "Bước nhảy vọt - Cải cách triệt để tạo bước ngoặt phát triển",
-        leftChoice: {
-          text: "Cải cách từ từ",
-          effects: { finance: 5, people: 5, military: 5, religion: 10 },
-        },
-        rightChoice: {
-          text: "Cải cách mạnh mẽ",
-          effects: { finance: 20, people: 20, military: 20, religion: -20 },
-        },
-        multipleChoices: [
-          {
-            id: "le6_a",
-            text: "Giữ nguyên hiện trạng, không cải cách",
-            description: "An toàn nhưng lạc hậu",
-            cost: { finance: 0, people: 0, military: 0, religion: 0 },
-            effects: { finance: -5, people: -10, military: -8, religion: 15 }
-          },
-          {
-            id: "le6_b",
-            text: "Cải cách từ từ, từng bước một",
-            description: "Ít phản đối nhưng chậm",
-            cost: { finance: 5, people: 3, military: 3, religion: 5 },
-            effects: { finance: 8, people: 8, military: 8, religion: 8 }
-          },
-          {
-            id: "le6_c",
-            text: "Cải cách toàn diện mạnh mẽ",
-            description: "Hiệu quả cao, phản đối lớn",
-            cost: { finance: 15, people: 10, military: 10, religion: 8 },
-            effects: { finance: 25, people: 25, military: 25, religion: -25 }
-          },
-          {
-            id: "le6_d",
-            text: "Cải cách vừa phải, lắng nghe ý kiến",
-            description: "Cân bằng giữa hiệu quả và ổn định",
-            cost: { finance: 10, people: 8, military: 8, religion: 5 },
-            effects: { finance: 18, people: 18, military: 18, religion: -10 }
-          }
-        ]
-      },
-      {
-        id: "le7",
-        character: "Mở rộng lãnh thổ - Năm 1470",
-        situation:
-          "Chinh phạt Chiêm Thành (Chăm Pa). Sáp nhập vào Đại Việt để mở rộng lãnh thổ, hay để họ tự trị để tránh xung đột văn hóa?",
-        philosophicalContext: "Thống nhất vs Tự quyết",
-        dialecticLaw: "Quyền tự quyết dân tộc - Cân bằng giữa thống nhất và đa dạng dân tộc",
-        leftChoice: {
-          text: "Để Chiêm Thành tự trị",
-          effects: { finance: -10, people: 10, military: -10, religion: 15 },
-        },
-        rightChoice: {
-          text: "Sáp nhập hoàn toàn",
-          effects: { finance: 20, people: -15, military: 25, religion: -15 },
-        },
-      },
-      {
-        id: "le8",
-        character: "Khoa cử và văn hóa - Năm 1475",
-        situation:
-          "Mở rộng khoa cử cho tất cả dân chúng có tài năng. Quý tộc lo mất đặc quyền. Nhưng đào tạo rộng rãi sẽ có nhiều nhân tài hơn.",
-        philosophicalContext: "Đặc quyền vs Dân chủ",
-        dialecticLaw: "Cơ hội bình đẳng - Phát triển xã hội cần sự công bằng trong giáo dục",
-        leftChoice: {
-          text: "Giữ đặc quyền quý tộc",
-          effects: { finance: -5, people: -25, military: -10, religion: 15 },
-        },
-        rightChoice: {
-          text: "Khoa cử cho mọi người",
-          effects: { finance: 15, people: 30, military: 15, religion: -15 },
-        },
-      },
-      {
-        id: "le9",
-        character: "Thương mại quốc tế - Năm 1480",
-        situation:
-          "Thương nhân Nhật Bản, Trung Quốc, Ả Rập muốn buôn bán tại cảng Đại Việt. Mở cửa sẽ giàu có nhưng văn hóa ngoại lai xâm nhập. Bảo thủ hay mở cửa?",
-        philosophicalContext: "Bảo thủ vs Hội nhập",
-        dialecticLaw: "Giao lưu văn hóa - Tiếp thu tinh hoa, giữ bản sắc",
-        leftChoice: {
-          text: "Hạn chế thương mại",
-          effects: { finance: -20, people: -10, military: 5, religion: 20 },
-        },
-        rightChoice: {
-          text: "Mở cửa thương mại",
-          effects: { finance: 30, people: 15, military: -5, religion: -15 },
-        },
-      },
-      {
-        id: "le10",
-        character: "Quan hệ với Minh - Năm 1490",
-        situation:
-          "Nhà Minh yêu cầu Đại Việt triều cống. Đây chỉ là hình thức nhưng nhiều người cho là mất mặt. Chấp nhận hay từ chối?",
-        philosophicalContext: "Hình thức vs Bản chất",
-        dialecticLaw: "Hiện tượng và bản chất - Hình thức triều cống không làm mất độc lập thực sự",
-        leftChoice: {
-          text: "Từ chối triều cống",
-          effects: { finance: -15, people: 20, military: -20, religion: 10 },
-        },
-        rightChoice: {
-          text: "Chấp nhận hình thức triều cống",
-          effects: { finance: 20, people: -15, military: 15, religion: -10 },
-        },
-      },
-      {
-        id: "le11",
-        character: "Phát triển nông nghiệp - Năm 1500",
-        situation:
-          "Đầu tư vào thủy lợi để tăng năng suất lúa gạo. Nhưng ngân sách hạn chế, đầu tư nông nghiệp sẽ giảm chi cho quân đội và giáo dục.",
-        philosophicalContext: "Ưu tiên phát triển",
-        dialecticLaw: "Cơ sở kinh tế - Nông nghiệp là nền tảng của xã hội phong kiến",
-        leftChoice: {
-          text: "Ưu tiên quân sự và giáo dục",
-          effects: { finance: -10, people: -15, military: 20, religion: 10 },
-        },
-        rightChoice: {
-          text: "Đầu tư thủy lợi nông nghiệp",
-          effects: { finance: 15, people: 25, military: -15, religion: 5 },
-        },
-      },
-      {
-        id: "le12",
-        character: "Chính biến Mạc Đăng Dung - Năm 1527",
-        situation:
-          "Mạc Đăng Dung nắm quyền thực, muốn lật đổ nhà Lê. Ông có tài năng cải cách. Ủng hộ để đất nước phát triển, hay trung thành với nhà Lê?",
-        philosophicalContext: "Trung nghĩa vs Hiệu quả",
-        dialecticLaw: "Tất yếu lịch sử - Triều đại cũ suy yếu, cái mới ra đời",
-        leftChoice: {
-          text: "Trung thành nhà Lê",
-          effects: { finance: -20, people: -15, military: -15, religion: 25 },
-        },
-        rightChoice: {
-          text: "Ủng hộ Mạc Đăng Dung",
-          effects: { finance: 20, people: 15, military: 20, religion: -25 },
-        },
-      },
-      {
-        id: "le13",
-        character: "Nội chiến Lê - Mạc - Năm 1545",
-        situation:
-          "Nội chiến kéo dài giữa Lê và Mạc. Dân chúng khổ sở. Hòa giải hai bên để dân được nghỉ ngơi, hay đánh đến cùng để thống nhất?",
-        philosophicalContext: "Thống nhất vs Hòa bình",
-        dialecticLaw: "Mâu thuẫn và thống nhất - Đôi khi cần giải quyết triệt để mâu thuẫn",
-        leftChoice: {
-          text: "Hòa giải chia đôi đất nước",
-          effects: { finance: 10, people: 15, military: -20, religion: 10 },
-        },
-        rightChoice: {
-          text: "Đánh đến cùng để thống nhất",
-          effects: { finance: -20, people: -15, military: 25, religion: -5 },
-        },
-      },
-      {
-        id: "le14",
-        character: "Người Bồ Đào Nha - Năm 1550",
-        situation:
-          "Thương nhân Bồ Đào Nha đến, mang súng ống hiện đại và truyền đạo Thiên Chúa. Cho phép họ buôn bán và truyền đạo, hay cấm vì sợ văn hóa ngoại lai?",
-        philosophicalContext: "Tiếp nhận vs Bài xích",
-        dialecticLaw: "Giao lưu văn hóa và công nghệ - Tiếp thu có chọn lọc",
-        leftChoice: {
-          text: "Cấm người Tây buôn bán",
-          effects: { finance: -20, people: 5, military: -15, religion: 20 },
-        },
-        rightChoice: {
-          text: "Cho phép thương mại và truyền đạo",
-          effects: { finance: 25, people: -10, military: 20, religion: -20 },
-        },
-      },
-      {
-        id: "le15",
-        character: "Suy tàn nhà Lê - Năm 1600",
-        situation:
-          "Nhà Lê suy yếu, họ Trịnh và Nguyễn nắm quyền thực. Đất nước chia đôi. Cố gắng khôi phục quyền lực nhà Lê hay chấp nhận thực tế quyền lực mới?",
-        philosophicalContext: "Lý tưởng vs Hiện thực",
-        dialecticLaw: "Sự tất yếu lịch sử - Không thể ngăn cản sự phát triển khách quan",
-        leftChoice: {
-          text: "Khôi phục quyền lực nhà Lê",
-          effects: { finance: -15, people: -20, military: -20, religion: 20 },
-        },
-        rightChoice: {
-          text: "Chấp nhận Trịnh - Nguyễn phân tranh",
-          effects: { finance: 10, people: 10, military: 15, religion: -15 },
-        },
-      },
-    ],
+{
+  id: "le_1",
+  character: "Lê Lợi – Năm 1428",
+  situation:
+    "Cuộc khởi nghĩa Lam Sơn thắng lợi, nhà Minh bị đánh đuổi. Một triều đại mới cần được xác lập.",
+  philosophicalContext: "Khởi nghĩa vs Chính thống",
+  dialecticLaw:
+    "Quy luật phủ định của phủ định: Ách đô hộ bị phủ định bằng khởi nghĩa, từ đó hình thành một chính quyền chính thống mới.",
+  yearContext: "1428",
+  historicalQuote:
+    "Việc nhân nghĩa cốt ở yên dân. (Bình Ngô đại cáo – Nguyễn Trãi)",
+  leftChoice: {
+    text: "Lập triều đại mới – Nhà Lê",
+    effects: { finance: -5, people: 15, military: 10, religion: 0 }
   },
+  rightChoice: {
+    text: "Tiếp tục cai trị bằng quân sự",
+    effects: { finance: -10, people: -5, military: 15, religion: 0 }
+  },
+  multipleChoices: [
+    {
+      id: "le1_a",
+      text: "Lập triều đại mới – Nhà Lê",
+      description: "Chính thống, hợp lòng dân",
+      effects: { finance: -5, people: 15, military: 10, religion: 0 },
+      historicalNote:
+        "Năm 1428, Lê Lợi lên ngôi, mở đầu nhà Lê sơ."
+    },
+    {
+      id: "le1_b",
+      text: "Tiếp tục cai trị bằng quân sự",
+      description: "Ổn định nhanh nhưng dễ phản kháng",
+      effects: { finance: -10, people: -5, military: 15, religion: 0 },
+      historicalNote:
+        "Quân sự không thể thay thế chính danh lâu dài."
+    },
+    {
+      id: "le1_c",
+      text: "Trao quyền cho công thần",
+      description: "Giữ lòng tướng lĩnh",
+      effects: { finance: -10, people: 5, military: 5, religion: 0 },
+      historicalNote:
+        "Công thần Lam Sơn có ảnh hưởng lớn đầu triều."
+    },
+    {
+      id: "le1_d",
+      text: "Dựa vào Nho giáo xây dựng triều chính",
+      description: "Định hình tư tưởng cai trị",
+      effects: { finance: 0, people: 5, military: 0, religion: 10 },
+      historicalNote:
+        "Nhà Lê đề cao Nho giáo hơn Phật giáo."
+    }
+  ]
+},
+{
+  id: "le_2",
+  character: "Lê Thái Tổ – Năm 1429",
+  situation:
+    "Công thần Lam Sơn ngày càng chuyên quyền, đe dọa quyền lực trung ương.",
+  philosophicalContext: "Công lao vs Pháp luật",
+  dialecticLaw:
+    "Quy luật mâu thuẫn: Công lao nếu không bị kiểm soát sẽ biến thành thế lực đối lập.",
+  yearContext: "1429",
+  historicalQuote:
+    "Dựng nước khó, giữ nước càng khó.",
+  leftChoice: {
+    text: "Trấn áp công thần",
+    effects: { finance: 0, people: -10, military: 5, religion: 0 }
+  },
+  rightChoice: {
+    text: "Dung hòa và kiểm soát",
+    effects: { finance: -5, people: 10, military: -5, religion: 0 }
+  },
+  multipleChoices: [
+    {
+      id: "le2_a",
+      text: "Trấn áp công thần",
+      description: "Củng cố quyền lực vua",
+      effects: { finance: 0, people: -10, military: 5, religion: 0 },
+      historicalNote:
+        "Nhiều công thần Lam Sơn bị xử lý."
+    },
+    {
+      id: "le2_b",
+      text: "Dung hòa và kiểm soát",
+      description: "Ổn định lâu dài",
+      effects: { finance: -5, people: 10, military: -5, religion: 0 },
+      historicalNote:
+        "Cần cân bằng công – pháp."
+    },
+    {
+      id: "le2_c",
+      text: "Giao quyền quân sự cho công thần",
+      description: "Nguy cơ quân phiệt",
+      effects: { finance: 0, people: -5, military: 10, religion: 0 },
+      historicalNote:
+        "Quân quyền tập trung dễ gây loạn."
+    },
+    {
+      id: "le2_d",
+      text: "Nhờ Nho sĩ điều hòa triều chính",
+      description: "Tư tưởng trị quốc",
+      effects: { finance: 0, people: 5, military: -5, religion: 10 },
+      historicalNote:
+        "Nho sĩ ngày càng có vai trò lớn."
+    }
+  ]
+},
+{
+  id: "le_3",
+  character: "Lê Nhân Tông – Năm 1442",
+  situation:
+    "Triều đình còn non trẻ, quyền lực tập trung vào hoàng hậu và đại thần.",
+  philosophicalContext: "Ổn định vs Cải cách",
+  dialecticLaw:
+    "Quy luật lượng – chất: Tích tụ quyền lực sai lệch sẽ dẫn tới biến loạn.",
+  yearContext: "1442",
+  historicalQuote:
+    "Triều chính không minh, ắt sinh biến.",
+  leftChoice: {
+    text: "Duy trì trật tự hiện tại",
+    effects: { finance: 5, people: -10, military: 0, religion: 0 }
+  },
+  rightChoice: {
+    text: "Cải tổ triều chính",
+    effects: { finance: -5, people: 10, military: -5, religion: 0 }
+  },
+  multipleChoices: [
+    {
+      id: "le3_a",
+      text: "Duy trì trật tự hiện tại",
+      description: "Ngắn hạn ổn định",
+      effects: { finance: 5, people: -10, military: 0, religion: 0 },
+      historicalNote:
+        "Triều đình thiếu cải cách dễ suy yếu."
+    },
+    {
+      id: "le3_b",
+      text: "Cải tổ triều chính",
+      description: "Lấy lại quyền lực trung ương",
+      effects: { finance: -5, people: 10, military: -5, religion: 0 },
+      historicalNote:
+        "Cải tổ là tiền đề cho thời thịnh trị."
+    },
+    {
+      id: "le3_c",
+      text: "Trao thêm quyền cho ngoại thích",
+      description: "Nguy hiểm",
+      effects: { finance: 0, people: -15, military: 5, religion: 0 },
+      historicalNote:
+        "Ngoại thích thường gây loạn triều đình."
+    },
+    {
+      id: "le3_d",
+      text: "Dựa vào Nho giáo ổn định xã hội",
+      description: "Ổn định tư tưởng",
+      effects: { finance: 0, people: 5, military: -5, religion: 10 },
+      historicalNote:
+        "Nho giáo là trụ cột tư tưởng thời Lê."
+    }
+  ]
+},
+{
+  id: "le_4",
+  character: "Lê Thánh Tông – Năm 1460",
+  situation:
+    "Triều đình cần một cuộc cải cách toàn diện để củng cố quốc gia.",
+  philosophicalContext: "Pháp trị vs Nhân trị",
+  dialecticLaw:
+    "Quy luật tổ chức xã hội: Pháp luật mạnh tạo nên trật tự bền vững.",
+  yearContext: "1460",
+  historicalQuote:
+    "Pháp luật là phép công của thiên hạ.",
+  leftChoice: {
+    text: "Cải cách mạnh tay",
+    effects: { finance: -5, people: 10, military: 10, religion: 0 }
+  },
+  rightChoice: {
+    text: "Giữ mô hình cũ",
+    effects: { finance: 5, people: -10, military: -5, religion: 0 }
+  },
+  multipleChoices: [
+    {
+      id: "le4_a",
+      text: "Cải cách mạnh tay",
+      description: "Mở ra thời Hồng Đức",
+      effects: { finance: -5, people: 10, military: 10, religion: 0 },
+      historicalNote:
+        "Lê Thánh Tông đưa nhà Lê lên đỉnh cao."
+    },
+    {
+      id: "le4_b",
+      text: "Giữ mô hình cũ",
+      description: "Bảo thủ",
+      effects: { finance: 5, people: -10, military: -5, religion: 0 },
+      historicalNote:
+        "Không cải cách sẽ trì trệ."
+    },
+    {
+      id: "le4_c",
+      text: "Chỉ cải cách quân sự",
+      description: "Thiếu toàn diện",
+      effects: { finance: -5, people: 0, military: 10, religion: 0 },
+      historicalNote:
+        "Quân sự mạnh nhưng xã hội yếu."
+    },
+    {
+      id: "le4_d",
+      text: "Cải cách giáo dục Nho học",
+      description: "Đào tạo quan lại",
+      effects: { finance: -5, people: 5, military: 0, religion: 10 },
+      historicalNote:
+        "Khoa cử phát triển mạnh thời Hồng Đức."
+    }
+  ]
+},
+{
+  id: "le_5",
+  character: "Luật Hồng Đức – Năm 1483",
+  situation:
+    "Nhà nước cần một bộ luật thống nhất để quản lý xã hội.",
+  philosophicalContext: "Pháp luật vs Tập quán",
+  dialecticLaw:
+    "Quy luật thể chế hóa: Ý chí nhà nước phải được pháp luật hóa.",
+  yearContext: "1483",
+  historicalQuote:
+    "Phép nước là thước đo của xã hội.",
+  leftChoice: {
+    text: "Ban hành Luật Hồng Đức",
+    effects: { finance: 5, people: 10, military: 0, religion: 0 }
+  },
+  rightChoice: {
+    text: "Dựa vào lệ làng",
+    effects: { finance: 0, people: -5, military: 0, religion: 5 }
+  },
+  multipleChoices: [
+    {
+      id: "le5_a",
+      text: "Ban hành Luật Hồng Đức",
+      description: "Pháp trị tiến bộ",
+      effects: { finance: 5, people: 10, military: 0, religion: 0 },
+      historicalNote:
+        "Luật Hồng Đức bảo vệ cả dân và quốc gia."
+    },
+    {
+      id: "le5_b",
+      text: "Dựa vào lệ làng",
+      description: "Thiếu thống nhất",
+      effects: { finance: 0, people: -5, military: 0, religion: 5 },
+      historicalNote:
+        "Lệ làng không đủ quản lý quốc gia."
+    },
+    {
+      id: "le5_c",
+      text: "Trao quyền xét xử cho địa phương",
+      description: "Phân quyền pháp lý",
+      effects: { finance: 0, people: 0, military: -5, religion: 0 },
+      historicalNote:
+        "Dễ sinh lạm quyền."
+    },
+    {
+      id: "le5_d",
+      text: "Ưu tiên luật hình sự",
+      description: "Răn đe mạnh",
+      effects: { finance: 0, people: -10, military: 5, religion: 0 },
+      historicalNote:
+        "Pháp trị cần cân bằng nhân đạo."
+    }
+  ]
+},
+{
+  id: "le_6",
+  character: "Lê Thánh Tông – Năm 1471",
+  situation:
+    "Đại Việt tiến hành chiến dịch đánh Chiêm Thành.",
+  philosophicalContext: "Mở rộng vs Ổn định",
+  dialecticLaw:
+    "Quy luật không gian lịch sử: Mở rộng lãnh thổ là xu thế phát triển nhà nước.",
+  yearContext: "1471",
+  historicalQuote:
+    "Bờ cõi mở rộng, xã tắc vững bền.",
+  leftChoice: {
+    text: "Tiến công Chiêm Thành",
+    effects: { finance: -10, people: 5, military: 15, religion: 0 }
+  },
+  rightChoice: {
+    text: "Giữ nguyên biên giới",
+    effects: { finance: 5, people: 0, military: -5, religion: 0 }
+  },
+  multipleChoices: [
+    {
+      id: "le6_a",
+      text: "Tiến công Chiêm Thành",
+      description: "Mở rộng lãnh thổ",
+      effects: { finance: -10, people: 5, military: 15, religion: 0 },
+      historicalNote:
+        "Năm 1471, Chiêm Thành suy vong."
+    },
+    {
+      id: "le6_b",
+      text: "Giữ nguyên biên giới",
+      description: "An toàn ngắn hạn",
+      effects: { finance: 5, people: 0, military: -5, religion: 0 },
+      historicalNote:
+        "Không tận dụng thời cơ lịch sử."
+    },
+    {
+      id: "le6_c",
+      text: "Đánh phòng thủ",
+      description: "Không triệt để",
+      effects: { finance: -5, people: 0, military: 5, religion: 0 },
+      historicalNote:
+        "Chiêm Thành vẫn là mối đe dọa."
+    },
+    {
+      id: "le6_d",
+      text: "Cầu hòa lâu dài",
+      description: "Không bền vững",
+      effects: { finance: 0, people: -5, military: -10, religion: 0 },
+      historicalNote:
+        "Chiêm Thành thường xuyên xung đột."
+    }
+  ]
+},
+{
+  id: "le_7",
+  character: "Hậu Lê – Đầu thế kỷ XVI",
+  situation:
+    "Triều đình bắt đầu suy yếu, quan lại tham nhũng.",
+  philosophicalContext: "Cải cách vs Thoái hóa",
+  dialecticLaw:
+    "Quy luật suy thoái: Khi mâu thuẫn tích tụ mà không giải quyết, hệ thống sẽ sụp đổ.",
+  yearContext: "1500",
+  historicalQuote:
+    "Quan tham thì dân khổ.",
+  leftChoice: {
+    text: "Chấn chỉnh triều chính",
+    effects: { finance: -5, people: 10, military: 5, religion: 0 }
+  },
+  rightChoice: {
+    text: "Làm ngơ",
+    effects: { finance: 5, people: -15, military: -5, religion: 0 }
+  },
+  multipleChoices: [
+    {
+      id: "le7_a",
+      text: "Chấn chỉnh triều chính",
+      description: "Cứu vãn triều đại",
+      effects: { finance: -5, people: 10, military: 5, religion: 0 },
+      historicalNote:
+        "Thiếu cải cách khiến nhà Lê suy yếu."
+    },
+    {
+      id: "le7_b",
+      text: "Làm ngơ",
+      description: "Thoái hóa",
+      effects: { finance: 5, people: -15, military: -5, religion: 0 },
+      historicalNote:
+        "Tham nhũng lan rộng cuối Lê sơ."
+    },
+    {
+      id: "le7_c",
+      text: "Dựa vào quân đội",
+      description: "Nguy cơ quân phiệt",
+      effects: { finance: -5, people: -5, military: 10, religion: 0 },
+      historicalNote:
+        "Quân đội không giải quyết gốc rễ."
+    },
+    {
+      id: "le7_d",
+      text: "Dựa vào Nho giáo răn đe",
+      description: "Ổn định tư tưởng",
+      effects: { finance: 0, people: 5, military: -5, religion: 10 },
+      historicalNote:
+        "Đạo đức không đủ nếu thiếu pháp luật."
+    }
+  ]
+},
+{
+  id: "le_8",
+  character: "Lê Tương Dực – Năm 1510",
+  situation:
+    "Vua ăn chơi xa xỉ, xây dựng cung điện tốn kém.",
+  philosophicalContext: "Hưởng lạc vs Trách nhiệm",
+  dialecticLaw:
+    "Quy luật phản tác dụng: Xa hoa của vua làm gia tăng bất mãn xã hội.",
+  yearContext: "1510",
+  historicalQuote:
+    "Vua sa đọa thì nước nguy.",
+  leftChoice: {
+    text: "Tiết chế chi tiêu",
+    effects: { finance: 10, people: 5, military: 0, religion: 0 }
+  },
+  rightChoice: {
+    text: "Tiếp tục xây dựng xa hoa",
+    effects: { finance: -15, people: -15, military: 0, religion: 0 }
+  },
+  multipleChoices: [
+    {
+      id: "le8_a",
+      text: "Tiết chế chi tiêu",
+      description: "Giảm bất mãn",
+      effects: { finance: 10, people: 5, military: 0, religion: 0 },
+      historicalNote:
+        "Xa xỉ là nguyên nhân khiến triều đình suy yếu."
+    },
+    {
+      id: "le8_b",
+      text: "Tiếp tục xây dựng xa hoa",
+      description: "Tự hủy triều đại",
+      effects: { finance: -15, people: -15, military: 0, religion: 0 },
+      historicalNote:
+        "Lê Tương Dực bị gọi là Quỷ vương."
+    },
+    {
+      id: "le8_c",
+      text: "Tăng thuế bù chi",
+      description: "Đè nặng dân",
+      effects: { finance: 5, people: -20, military: 0, religion: 0 },
+      historicalNote:
+        "Thuế nặng làm bùng nổ khởi nghĩa."
+    },
+    {
+      id: "le8_d",
+      text: "Giao xây dựng cho quan lại",
+      description: "Mất kiểm soát",
+      effects: { finance: -10, people: -5, military: 0, religion: 0 },
+      historicalNote:
+        "Tham nhũng gia tăng."
+    }
+  ]
+},
+{
+  id: "le_9",
+  character: "Khởi nghĩa nông dân – Năm 1516",
+  situation:
+    "Khởi nghĩa Trần Cảo bùng nổ, đe dọa triều đình.",
+  philosophicalContext: "Đàn áp vs Cải cách",
+  dialecticLaw:
+    "Quy luật đấu tranh giai cấp: Áp bức kéo dài tất yếu sinh phản kháng.",
+  yearContext: "1516",
+  historicalQuote:
+    "Dân đói thì loạn.",
+  leftChoice: {
+    text: "Đàn áp khởi nghĩa",
+    effects: { finance: -10, people: -15, military: 10, religion: 0 }
+  },
+  rightChoice: {
+    text: "Giảm thuế, an dân",
+    effects: { finance: -10, people: 15, military: -5, religion: 0 }
+  },
+  multipleChoices: [
+    {
+      id: "le9_a",
+      text: "Đàn áp khởi nghĩa",
+      description: "Ổn định ngắn hạn",
+      effects: { finance: -10, people: -15, military: 10, religion: 0 },
+      historicalNote:
+        "Đàn áp không giải quyết gốc rễ."
+    },
+    {
+      id: "le9_b",
+      text: "Giảm thuế, an dân",
+      description: "Giảm mâu thuẫn xã hội",
+      effects: { finance: -10, people: 15, military: -5, religion: 0 },
+      historicalNote:
+        "An dân là giải pháp bền vững."
+    },
+    {
+      id: "le9_c",
+      text: "Chia quyền cho địa phương",
+      description: "Mất kiểm soát",
+      effects: { finance: 0, people: 0, military: -10, religion: 0 },
+      historicalNote:
+        "Phân quyền dễ sinh cát cứ."
+    },
+    {
+      id: "le9_d",
+      text: "Dựa vào tôn giáo xoa dịu",
+      description: "Không triệt để",
+      effects: { finance: 0, people: 5, military: -5, religion: 10 },
+      historicalNote:
+        "Không giải quyết nguyên nhân kinh tế."
+    }
+  ]
+},
+{
+  id: "le_10",
+  character: "Kết thúc Lê Sơ – Năm 1527",
+  situation:
+    "Triều đình suy kiệt, Mạc Đăng Dung chuẩn bị đoạt ngôi.",
+  philosophicalContext: "Suy vong vs Tất yếu lịch sử",
+  dialecticLaw:
+    "Quy luật phủ định: Một triều đại không còn khả năng tự cải cách sẽ bị thay thế.",
+  yearContext: "1527",
+  historicalQuote:
+    "Thế cùng thì biến.",
+  leftChoice: {
+    text: "Cải cách khẩn cấp",
+    effects: { finance: -10, people: 10, military: 5, religion: 0 }
+  },
+  rightChoice: {
+    text: "Buông xuôi",
+    effects: { finance: 0, people: -20, military: -10, religion: 0 }
+  },
+  multipleChoices: [
+    {
+      id: "le10_a",
+      text: "Cải cách khẩn cấp",
+      description: "Nỗ lực cuối cùng",
+      effects: { finance: -10, people: 10, military: 5, religion: 0 },
+      historicalNote:
+        "Cải cách muộn không cứu được triều đại."
+    },
+    {
+      id: "le10_b",
+      text: "Buông xuôi",
+      description: "Sụp đổ tất yếu",
+      effects: { finance: 0, people: -20, military: -10, religion: 0 },
+      historicalNote:
+        "Năm 1527, Mạc Đăng Dung lập nhà Mạc."
+    },
+    {
+      id: "le10_c",
+      text: "Trao quyền cho tướng lĩnh",
+      description: "Quân phiệt hóa",
+      effects: { finance: 0, people: -5, military: 10, religion: 0 },
+      historicalNote:
+        "Quân đội không thể cứu triều đình mục nát."
+    },
+    {
+      id: "le10_d",
+      text: "Cầu viện ngoại bang",
+      description: "Mất chủ quyền",
+      effects: { finance: 0, people: -15, military: -5, religion: 0 },
+      historicalNote:
+        "Đi ngược lợi ích dân tộc."
+    }
+  ]
+}
+]
+
+  }
 ]

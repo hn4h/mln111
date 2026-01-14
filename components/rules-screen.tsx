@@ -107,7 +107,7 @@ export function RulesScreen({ onBack }: RulesScreenProps) {
                   <span>⚠️</span> Vùng An Toàn
                 </h3>
                 <p className="text-sm md:text-base text-muted-foreground mb-3">
-                  Bạn bắt đầu với <span className="font-bold text-foreground">40 điểm</span> cho mỗi trụ cột. 
+                  Bạn bắt đầu với <span className="font-bold text-foreground">50 điểm</span> cho mỗi trụ cột. 
                   Nhiệm vụ của bạn là giữ tất cả các trụ cột trong khoảng:
                 </p>
                 <div className="text-center text-lg font-bold text-foreground bg-background/50 rounded p-3 mb-3">
@@ -174,7 +174,7 @@ export function RulesScreen({ onBack }: RulesScreenProps) {
                 </h3>
                 <p className="text-sm md:text-base text-muted-foreground mb-3">
                   Đây là <span className="font-bold text-green-500">hiệu ứng sau</span> khi thực hiện quyết định. 
-                  Tất cả hiệu ứng được <span className="font-bold">nhân 1.5 lần</span> để tăng độ khó!
+                  Hiệu ứng được áp dụng <span className="font-bold">nguyên bản x1.0</span> để cân bằng!
                 </p>
                 <div className="bg-background/50 rounded p-3 text-xs md:text-sm">
                   <div className="font-mono text-foreground mb-1">Kết quả:</div>
@@ -185,7 +185,7 @@ export function RulesScreen({ onBack }: RulesScreenProps) {
                     <span className="text-red-500">⛪ -5</span>
                   </div>
                   <p className="text-muted-foreground mt-2 italic">
-                    → Sau khi trả giá, bạn được +30 Tài chính, +22.5 Dân sinh, -15 Quân sự, -7.5 Tôn giáo (x1.5)
+                    → Sau khi trả giá, bạn được +20 Tài chính, +15 Dân sinh, -10 Quân sự, -5 Tôn giáo (nguyên bản)
                   </p>
                 </div>
               </div>
@@ -236,12 +236,12 @@ export function RulesScreen({ onBack }: RulesScreenProps) {
                     </div>
 
                     <div>
-                      <span className="font-semibold text-green-500">Kết quả (x1.5):</span>
-                      <span className="ml-2 text-muted-foreground">💰 -10 (→-15), 🙂 +25 (→+37.5), ⚔️ +30 (→+45), ⛪ 0</span>
+                      <span className="font-semibold text-green-500">Kết quả:</span>
+                      <span className="ml-2 text-muted-foreground">💰 -10, 🙂 +25, ⚔️ +30, ⛪ 0</span>
                     </div>
 
                     <div className="font-bold text-foreground bg-background/50 p-2 rounded">
-                      Điểm cuối: 💰 10, 🙂 64.5, ⚔️ 80, ⛪ 36
+                      Điểm cuối: 💰 15, 🙂 52, ⚔️ 65, ⛪ 36
                     </div>
                   </div>
                 </div>
@@ -276,7 +276,7 @@ export function RulesScreen({ onBack }: RulesScreenProps) {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-amber-500 font-bold mt-0.5">5.</span>
-                  <span><span className="font-bold text-foreground">Nhớ hiệu ứng x1.5:</span> Tác động thực tế mạnh hơn con số bạn thấy!</span>
+                  <span><span className="font-bold text-foreground">Đọc kỹ hiệu ứng:</span> Chú ý tác động cụ thể của từng lựa chọn đến các trụ cột!</span>
                 </li>
               </ul>
             </section>

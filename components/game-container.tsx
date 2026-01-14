@@ -70,12 +70,17 @@ export function GameContainer() {
       selectedChoice = choice === "left" ? currentCard.leftChoice : currentCard.rightChoice
     }
 
-    // Hiển thị popup nếu có thông tin lịch sử hoặc triết học
-    if (selectedChoice.historicalNote || selectedChoice.philosophicalExplanation) {
+    // Hiển thị popup nếu có thông tin lịch sử hoặc triết học, hoặc nếu chọn đáp án đúng
+    const isCorrectAnswer = isMultiChoice && 'isCorrect' in selectedChoice && selectedChoice.isCorrect
+    const shouldShowPopup = selectedChoice.historicalNote || 
+                           selectedChoice.philosophicalExplanation ||
+                           (isCorrectAnswer && currentCard.historicalQuote)
+    
+    if (shouldShowPopup) {
       setPopupData({
         title: currentCard.character,
         historicalNote: selectedChoice.historicalNote,
-        historicalQuote: selectedChoice.historicalQuote,
+        historicalQuote: isCorrectAnswer ? currentCard.historicalQuote : selectedChoice.historicalQuote,
         philosophicalExplanation: selectedChoice.philosophicalExplanation,
         dialecticLaw: currentCard.dialecticLaw,
       })
@@ -103,11 +108,11 @@ export function GameContainer() {
       religion: Math.max(0, Math.min(100, statsAfterCost.religion + (selectedChoice.effects.religion * effectMultiplier))),
     }
 
-    // Check for game over conditions - Vùng an toàn rộng
+    // Check for game over conditions - Vùng an toàn rộng hơn
     let gameOverReason = null
     let isGameOver = false
-    const minSafeValue = 1  // Vùng an toàn: 1-100
-    const maxSafeValue = 100
+    const minSafeValue = 5   // Vùng an toàn: 5-95 để dễ hơn
+    const maxSafeValue = 95
 
     Object.entries(newStats).forEach(([key, value]) => {
       if (value <= minSafeValue) {
