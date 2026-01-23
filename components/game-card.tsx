@@ -31,11 +31,11 @@ export function GameCard({ card, onSwipe, decisionDirection, currentStats }: Gam
   const isMultiChoice = card.multipleChoices && card.multipleChoices.length > 0
 
   return (
-    <div className="w-full max-w-6xl mx-auto space-y-6 animate-in fade-in duration-500" style={{ width: '75%' }}>
+    <div className="w-full max-w-6xl mx-auto space-y-3 animate-in fade-in duration-500" style={{ width: '75%' }}>
       {/* Card Content */}
-      <div className="bg-card rounded-2xl border border-border shadow-xl p-6 md:p-8 space-y-6">
+      <div className="bg-card rounded-xl border border-border shadow-xl p-4 space-y-3">
         {/* Character/Title */}
-        <div className="space-y-2 text-center border-b border-border pb-4">
+        <div className="space-y-1 text-center border-b border-border pb-2">
           <p className="text-sm md:text-base font-bold text-foreground">{card.character}</p>
           {card.yearContext && (
             <p className="text-xs text-muted-foreground">Năm {card.yearContext}</p>
@@ -43,7 +43,7 @@ export function GameCard({ card, onSwipe, decisionDirection, currentStats }: Gam
         </div>
 
         {/* Situation - Question */}
-        <div className="space-y-4 py-4">
+        <div className="space-y-2 py-2">
           <p className="text-base md:text-lg leading-relaxed text-foreground text-center">
             {card.situation}
           </p>
@@ -70,9 +70,8 @@ export function GameCard({ card, onSwipe, decisionDirection, currentStats }: Gam
                 disabled={!!decisionDirection || !affordable}
                 variant="outline"
                 size="lg"
-                className={`h-auto py-4 px-6 text-left flex flex-col items-start gap-2 hover:bg-primary/10 hover:border-primary transition-all ${
-                  !affordable ? 'opacity-50 cursor-not-allowed' : ''
-                }`}
+                className={`h-auto py-3 px-4 text-left flex flex-col items-start gap-1 hover:bg-primary/10 hover:border-primary transition-all ${!affordable ? 'opacity-50 cursor-not-allowed' : ''
+                  }`}
               >
                 <div className="flex items-center justify-between w-full">
                   <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">
@@ -143,9 +142,8 @@ export function GameCard({ card, onSwipe, decisionDirection, currentStats }: Gam
               disabled={!!decisionDirection || !canAfford(card.leftChoice.cost)}
               variant="outline"
               size="lg"
-              className={`h-auto py-6 px-6 text-left flex flex-col items-start gap-2 hover:bg-primary/10 hover:border-primary transition-all ${
-                !canAfford(card.leftChoice.cost) ? 'opacity-50 cursor-not-allowed' : ''
-              }`}
+              className={`h-auto py-3 px-4 text-left flex flex-col items-start gap-1 hover:bg-primary/10 hover:border-primary transition-all ${!canAfford(card.leftChoice.cost) ? 'opacity-50 cursor-not-allowed' : ''
+                }`}
             >
               <div className="flex items-center justify-between w-full">
                 <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">
@@ -204,9 +202,8 @@ export function GameCard({ card, onSwipe, decisionDirection, currentStats }: Gam
               disabled={!!decisionDirection || !canAfford(card.rightChoice.cost)}
               variant="outline"
               size="lg"
-              className={`h-auto py-6 px-6 text-left flex flex-col items-start gap-2 hover:bg-primary/10 hover:border-primary transition-all ${
-                !canAfford(card.rightChoice.cost) ? 'opacity-50 cursor-not-allowed' : ''
-              }`}
+              className={`h-auto py-3 px-4 text-left flex flex-col items-start gap-1 hover:bg-primary/10 hover:border-primary transition-all ${!canAfford(card.rightChoice.cost) ? 'opacity-50 cursor-not-allowed' : ''
+                }`}
             >
               <div className="flex items-center justify-between w-full">
                 <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">

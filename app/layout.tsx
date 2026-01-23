@@ -2,6 +2,9 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
+import { DragonWatermark } from "@/components/dragon-watermark"
+import { PaperBackground } from "@/components/paper-background"
+import { DecorativeFrame } from "@/components/decorative-frame"
 import "./globals.css"
 
 const _geist = Geist({ subsets: ["latin"] })
@@ -20,8 +23,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="vi">
-      <body className={`font-sans antialiased`}>
-        {children}
+      <body className="font-sans antialiased">
+        {/* Nền giấy cổ với texture và hiệu ứng vignette */}
+        <PaperBackground
+          paperColor="#F4EBD0"
+          vignetteIntensity={0.12}
+          textureIntensity={0.06}
+        />
+        {/* Watermark rồng thời Lý - ẩn nhẹ phía dưới trang */}
+        <DragonWatermark opacity={0.04} position="bottom" />
+        {/* Khung trang trí cổ điển với viền kép và họa tiết 4 góc */}
+        <DecorativeFrame borderColor="#8B0000" padding="0.5rem">
+          {children}
+        </DecorativeFrame>
         <Analytics />
       </body>
     </html>

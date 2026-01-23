@@ -35,9 +35,8 @@ export function StatsDisplay({ gameState }: StatsDisplayProps) {
           return (
             <div
               key={stat.label}
-              className={`space-y-2 p-2 md:p-3 rounded-lg border transition-all ${
-                isDanger ? "border-accent-warn bg-accent-warn/5" : "border-border bg-secondary"
-              } ${isDanger && dangerLevel === "critical" ? "stat-danger" : ""}`}
+              className={`space-y-2 p-2 md:p-3 rounded-lg border transition-all ${isDanger ? "border-red-500 bg-red-500/5" : "border-border bg-secondary"
+                } ${isDanger && dangerLevel === "critical" ? "stat-danger" : ""}`}
             >
               <div className="flex items-center gap-2">
                 <span className="text-base md:text-lg">{stat.icon}</span>
@@ -47,14 +46,13 @@ export function StatsDisplay({ gameState }: StatsDisplayProps) {
               <div className="space-y-1">
                 <div className="h-2 bg-muted rounded-full overflow-hidden">
                   <div
-                    className={`h-full transition-all rounded-full ${
-                      dangerLevel === "critical"
-                        ? "bg-accent-warn"
-                        : dangerLevel === "warning"
-                          ? "bg-yellow-500"
-                          : "bg-accent-success"
-                    }`}
-                    style={{ width: `${stat.value}%` }}
+                    className={`h-full transition-all duration-500 ease-out rounded-full ${dangerLevel === "critical"
+                      ? "bg-red-500"
+                      : dangerLevel === "warning"
+                        ? "bg-yellow-500"
+                        : "bg-green-500"
+                      }`}
+                    style={{ width: `${Math.max(0, Math.min(100, stat.value))}%` }}
                   />
                 </div>
                 <div className="text-right text-xs font-medium text-foreground">{stat.value}/100</div>
