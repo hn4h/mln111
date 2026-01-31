@@ -108,7 +108,7 @@ export function GameCard({ card, onSwipe, decisionDirection, currentStats }: Gam
                   </div>
                 )}
                 {/* Hiển thị hiệu ứng */}
-                <div className="flex gap-2 text-xs text-muted-foreground">
+                {/* <div className="flex gap-2 text-xs text-muted-foreground">
                   <span className="font-semibold">Kết quả:</span>
                   {choice.effects.finance !== 0 && (
                     <span className={choice.effects.finance > 0 ? "text-green-500" : "text-red-500"}>
@@ -130,7 +130,7 @@ export function GameCard({ card, onSwipe, decisionDirection, currentStats }: Gam
                       ⛪ {choice.effects.religion > 0 ? "+" : ""}{choice.effects.religion}
                     </span>
                   )}
-                </div>
+                </div> */}
               </Button>
             )
           })

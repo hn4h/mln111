@@ -38,6 +38,7 @@ export function GameContainer() {
     historicalQuote?: string
     philosophicalExplanation?: string
     dialecticLaw?: string
+    effects?: { finance: number; people: number; military: number; religion: number }
   } | null>(null)
 
   const selectDynasty = (dynastyId: string) => {
@@ -70,22 +71,18 @@ export function GameContainer() {
       selectedChoice = choice === "left" ? currentCard.leftChoice : currentCard.rightChoice
     }
 
-    // Hiển thị popup nếu có thông tin lịch sử hoặc triết học, hoặc nếu chọn đáp án đúng
+    // Hiển thị popup sau mỗi lựa chọn để hiện kết quả
     const isCorrectAnswer = isMultiChoice && 'isCorrect' in selectedChoice && selectedChoice.isCorrect
-    const shouldShowPopup = selectedChoice.historicalNote ||
-      selectedChoice.philosophicalExplanation ||
-      (isCorrectAnswer && currentCard.historicalQuote)
 
-    if (shouldShowPopup) {
-      setPopupData({
-        title: currentCard.character,
-        historicalNote: selectedChoice.historicalNote,
-        historicalQuote: isCorrectAnswer ? currentCard.historicalQuote : selectedChoice.historicalQuote,
-        philosophicalExplanation: selectedChoice.philosophicalExplanation,
-        dialecticLaw: currentCard.dialecticLaw,
-      })
-      setShowHistoricalPopup(true)
-    }
+    setPopupData({
+      title: currentCard.character,
+      historicalNote: selectedChoice.historicalNote,
+      historicalQuote: isCorrectAnswer ? currentCard.historicalQuote : selectedChoice.historicalQuote,
+      philosophicalExplanation: selectedChoice.philosophicalExplanation,
+      dialecticLaw: currentCard.dialecticLaw,
+      effects: selectedChoice.effects,
+    })
+    setShowHistoricalPopup(true)
 
     // Trừ giá (cost) trước nếu có
     let statsAfterCost = { ...gameState }
@@ -269,6 +266,7 @@ export function GameContainer() {
           historicalQuote={popupData.historicalQuote}
           philosophicalExplanation={popupData.philosophicalExplanation}
           dialecticLaw={popupData.dialecticLaw}
+          effects={popupData.effects}
         />
       )}
     </div>

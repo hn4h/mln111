@@ -18,6 +18,7 @@ interface HistoricalPopupProps {
   historicalQuote?: string
   philosophicalExplanation?: string
   dialecticLaw?: string
+  effects?: { finance: number; people: number; military: number; religion: number }
 }
 
 export function HistoricalPopup({
@@ -28,6 +29,7 @@ export function HistoricalPopup({
   historicalQuote,
   philosophicalExplanation,
   dialecticLaw,
+  effects,
 }: HistoricalPopupProps) {
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
@@ -43,6 +45,37 @@ export function HistoricalPopup({
 
         <ScrollArea className="max-h-[70vh] pr-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {/* Ảnh hưởng của lựa chọn */}
+            {effects && (
+              <div className="bg-green-500/10 border-l-4 border-green-500 rounded-lg p-6 lg:col-span-2">
+                <h3 className="text-xl md:text-2xl font-bold text-foreground mb-4 uppercase tracking-wide">
+                  Kết Quả Lựa Chọn
+                </h3>
+                <div className="flex flex-wrap gap-4 text-lg md:text-xl">
+                  {effects.finance !== 0 && (
+                    <span className={`font-semibold ${effects.finance > 0 ? "text-green-500" : "text-red-500"}`}>
+                      💰 Tài chính: {effects.finance > 0 ? "+" : ""}{effects.finance}
+                    </span>
+                  )}
+                  {effects.people !== 0 && (
+                    <span className={`font-semibold ${effects.people > 0 ? "text-green-500" : "text-red-500"}`}>
+                      🙂 Dân sinh: {effects.people > 0 ? "+" : ""}{effects.people}
+                    </span>
+                  )}
+                  {effects.military !== 0 && (
+                    <span className={`font-semibold ${effects.military > 0 ? "text-green-500" : "text-red-500"}`}>
+                      ⚔️ Quân sự: {effects.military > 0 ? "+" : ""}{effects.military}
+                    </span>
+                  )}
+                  {effects.religion !== 0 && (
+                    <span className={`font-semibold ${effects.religion > 0 ? "text-green-500" : "text-red-500"}`}>
+                      ⛪ Tôn giáo: {effects.religion > 0 ? "+" : ""}{effects.religion}
+                    </span>
+                  )}
+                </div>
+              </div>
+            )}
+
             {/* Quy luật biện chứng */}
             {dialecticLaw && (
               <div className="bg-amber-500/10 border-l-4 border-amber-500 rounded-lg p-6 lg:col-span-2">

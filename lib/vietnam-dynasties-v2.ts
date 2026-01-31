@@ -53,7 +53,7 @@ cards: [
   {
     id: "ly_2",
     character: "Lý Thái Tổ - Năm 1010",
-    situation: "Hoa Lư hiểm trở nhưng chật hẹp, vốn chỉ phù hợp làm căn cứ phòng thủ, khó lòng mở mang bờ cõi và phát triển kinh tế. Bạn muốn dời đô về thành Đại La – nơi có thế "rồng cuộn hổ ngồi" để tính kế lâu dài, nhưng quần thần lo sợ việc di dời sẽ gây tốn kém và làm xáo trộn vận mệnh quốc gia.",
+    situation: "Hoa Lư hiểm trở nhưng chật hẹp, vốn chỉ phù hợp làm căn cứ phòng thủ, khó lòng mở mang bờ cõi và phát triển kinh tế. Bạn muốn dời đô về thành Đại La – nơi có thế \"rồng cuộn hổ ngồi\" để tính kế lâu dài, nhưng quần thần lo sợ việc di dời sẽ gây tốn kém và làm xáo trộn vận mệnh quốc gia.",
     philosophicalContext: "Quy luật phủ định của phủ định",
     dialecticLaw: "Sự phát triển là một chuỗi các sự phủ định biện chứng: Việc rời bỏ Hoa Lư (cái cũ đã hoàn thành sứ mệnh) để đến Thăng Long (cái mới) là bước tiến tất yếu để nâng tầm đất nước lên một nấc thang phát triển cao hơn.",
     yearContext: "1010",
@@ -303,7 +303,7 @@ cards: [
   {
     id: "ly_7",
     character: "Nhà Lý - Thế kỷ XI",
-    situation: "Để phát triển sản xuất nông nghiệp, bạn nhận thấy sức kéo của trâu bò là yếu tố sống còn, quyết định sự ấm no của cả quốc gia. Tuy nhiên, dân chúng và binh lính lại thường xuyên giết mổ trâu bò để ăn thịt hoặc cúng tế bừa bãi, khiến đồng ruộng bị bỏ hoang vì thiếu sức kéo. Bạn sẽ hành động ra sao để bảo vệ "đầu cơ nghiệp" của nhà nông?",
+    situation: "Để phát triển sản xuất nông nghiệp, bạn nhận thấy sức kéo của trâu bò là yếu tố sống còn, quyết định sự ấm no của cả quốc gia. Tuy nhiên, dân chúng và binh lính lại thường xuyên giết mổ trâu bò để ăn thịt hoặc cúng tế bừa bãi, khiến đồng ruộng bị bỏ hoang vì thiếu sức kéo. Bạn sẽ hành động ra sao để bảo vệ \"đầu cơ nghiệp\" của nhà nông?",
     philosophicalContext: "Sản xuất vật chất",
     dialecticLaw: "Sản xuất vật chất là nền tảng của đời sống xã hội: Bảo vệ công cụ lao động (trâu bò) chính là bảo vệ điều kiện tiên quyết để duy trì và phát triển sản xuất nông nghiệp - nguồn sống của cả quốc gia.",
     yearContext: "Thế kỷ XI",
@@ -453,7 +453,7 @@ cards: [
   {
     id: "ly_10",
     character: "Lý Nhân Tông - Năm 1075",
-    situation: "Văn Miếu đã có, nhưng làm sao để chọn được người thực tài vào bộ máy nhà nước thay vì chỉ dựa vào con ông cháu cha hay nguồn gốc dòng tộc? Bạn cần một cơ chế công bằng để tìm kiếm những "viên ngọc quý" trong thiên hạ, giúp triều đình có đội ngũ quan lại tinh nhuệ nhằm vận hành đất nước hiệu quả hơn.",
+    situation: "Văn Miếu đã có, nhưng làm sao để chọn được người thực tài vào bộ máy nhà nước thay vì chỉ dựa vào con ông cháu cha hay nguồn gốc dòng tộc? Bạn cần một cơ chế công bằng để tìm kiếm những \"viên ngọc quý\" trong thiên hạ, giúp triều đình có đội ngũ quan lại tinh nhuệ nhằm vận hành đất nước hiệu quả hơn.",
     philosophicalContext: "Quy luật lượng – chất",
     dialecticLaw: "Sự tích lũy về lượng dẫn đến sự thay đổi về chất: Việc tổ chức thi cử định kỳ giúp tích lũy đội ngũ trí thức đông đảo (lượng), từ đó tạo nên bước chuyển đổi chất lượng cho bộ máy cai trị chuyên nghiệp.",
     yearContext: "1075",
@@ -554,7 +554,7 @@ cards: [
   {
     id: "ly_12",
     character: "Lý Thường Kiệt - Năm 1077",
-    situation: "Quân Tống đang vây hãm gắt gao trên dòng sông Như Nguyệt, thế trận giằng co kéo dài khiến tinh thần quân sĩ bắt đầu nao núng và mệt mỏi. Trong bóng tối của cuộc chiến sinh tử, bạn cần một "vũ khí tâm linh" mạnh mẽ để khẳng định chính nghĩa của dân tộc, khơi dậy ý chí quyết chiến của binh sĩ và làm lung lay tinh thần xâm lược của kẻ thù.",
+    situation: "Quân Tống đang vây hãm gắt gao trên dòng sông Như Nguyệt, thế trận giằng co kéo dài khiến tinh thần quân sĩ bắt đầu nao núng và mệt mỏi. Trong bóng tối của cuộc chiến sinh tử, bạn cần một \"vũ khí tâm linh\" mạnh mẽ để khẳng định chính nghĩa của dân tộc, khơi dậy ý chí quyết chiến của binh sĩ và làm lung lay tinh thần xâm lược của kẻ thù.",
     philosophicalContext: "Tồn tại xã hội và Ý thức xã hội",
     dialecticLaw: "Mối quan hệ biện chứng giữa tồn tại xã hội và ý thức xã hội: Tồn tại xã hội (cuộc kháng chiến chống ngoại xâm và những điều kiện lịch sử cụ thể trên sông Như Nguyệt) quyết định sự ra đời, nội dung và hình thức của ý thức xã hội (bài thơ Nam Quốc Sơn Hà). Tuy nhiên, ý thức xã hội có tính độc lập tương đối và tác động trở lại mạnh mẽ đối với tồn tại xã hội. Khi tư tưởng về chính nghĩa và chủ quyền dân tộc (ý thức xã hội tiến bộ) thâm nhập vào quần chúng, nó trở thành sức mạnh vật chất khổng lồ, chuyển hóa niềm tin thành động lực thực tiễn để xoay chuyển cục diện chiến tranh và thúc đẩy lịch sử phát triển.",
     yearContext: "1077",
@@ -653,7 +653,7 @@ cards: [
   {
     id: "ly_14",
     character: "Lý Thường Kiệt - Năm 1077",
-    situation: "Sau thất bại tại phòng tuyến sông Như Nguyệt, quân Tống đã mệt mỏi, tiến thoái lưỡng nan nhưng nước ta cũng đang dần kiệt quệ về sức người và sức của. Nếu tiếp tục đánh đến cùng để tiêu diệt toàn bộ địch, chúng ta sẽ rơi vào cảnh "lưỡng bại câu thương", thậm chí khiến nhà Tống liều chết phản công. Bạn có chấp nhận đề nghị giảng hòa, mở lối thoát cho đối phương để bảo toàn lực lượng dân tộc?",
+    situation: "Sau thất bại tại phòng tuyến sông Như Nguyệt, quân Tống đã mệt mỏi, tiến thoái lưỡng nan nhưng nước ta cũng đang dần kiệt quệ về sức người và sức của. Nếu tiếp tục đánh đến cùng để tiêu diệt toàn bộ địch, chúng ta sẽ rơi vào cảnh \"lưỡng bại câu thương\", thậm chí khiến nhà Tống liều chết phản công. Bạn có chấp nhận đề nghị giảng hòa, mở lối thoát cho đối phương để bảo toàn lực lượng dân tộc?",
     philosophicalContext: "Nguyên lý mối liên hệ phổ biến",
     dialecticLaw: "Nguyên lý về mối liên hệ phổ biến: Các sự vật, hiện tượng trong thế giới tồn tại trong mối liên hệ qua lại, quy định và thâm nhập lẫn nhau. Vận dụng nguyên tắc toàn diện, việc xem xét cuộc chiến không thể tách rời khỏi các mối liên hệ mật thiết giữa quân sự, kinh tế (sức dân kiệt quệ) và ngoại giao lâu dài (quan hệ với phương Bắc). Quyết định giảng hòa thể hiện tư duy biện chứng khi đặt đối tượng trong chỉnh thể thống nhất, nhận diện đúng mối liên hệ tất yếu giữa việc kết thúc chiến tranh với mục tiêu cao nhất là bảo toàn lực lượng dân tộc và tạo điều kiện phục hồi đất nước, tránh cái nhìn phiến diện, một chiều chỉ thấy thắng lợi quân sự trước mắt mà bỏ qua hậu quả lâu dài.",
     yearContext: "1077",
@@ -853,7 +853,7 @@ cards: [
   {
     id: "ly_18",
     character: "Nhà Lý - Thế kỷ XI",
-    situation: "Các bộ tộc vùng biên viễn thường xuyên bị phương Bắc dùng lợi lộc và chức tước để mua chuộc, lôi kéo nhằm làm suy yếu biên cương nước ta. Nếu dùng vũ lực trấn áp sẽ gây ra hận thù, nếu để mặc thì mất đất. Bạn sẽ làm gì để biến các tù trưởng vùng biên thành những "bờ dậu" vững chắc, trung thành tuyệt đối với triều đình?",
+    situation: "Các bộ tộc vùng biên viễn thường xuyên bị phương Bắc dùng lợi lộc và chức tước để mua chuộc, lôi kéo nhằm làm suy yếu biên cương nước ta. Nếu dùng vũ lực trấn áp sẽ gây ra hận thù, nếu để mặc thì mất đất. Bạn sẽ làm gì để biến các tù trưởng vùng biên thành những \"bờ dậu\" vững chắc, trung thành tuyệt đối với triều đình?",
     philosophicalContext: "Nguyên lý mối liên hệ phổ biến",
     dialecticLaw: "Mối liên hệ giữa trung ương và địa phương: Quốc gia là một chỉnh thể thống nhất, sự ổn định của vùng biên (cái bộ phận) liên quan trực tiếp đến sự tồn vong của kinh đô (cái toàn thể).",
     yearContext: "Thế kỷ XI",
@@ -903,9 +903,9 @@ cards: [
   {
     id: "ly_19",
     character: "Lý Nhân Tông - Năm 1096",
-    situation: "Thái sư Lê Văn Thịnh, vị Thủ khoa khai khoa của đất nước, bị cáo buộc dùng pháp thuật "hóa hổ" để giết bạn trên hồ Dâm Đàm nhằm cướp ngôi. Các quan lại trong triều tin vào chuyện dị đoan và phẫn nộ đòi tử hình ông ngay lập tức. Đứng trước một cáo buộc mang màu sắc mê tín nhưng lại nhắm vào vị đại thần đầu triều, bạn sẽ xử trí ra sao?",
+    situation: "Thái sư Lê Văn Thịnh, vị Thủ khoa khai khoa của đất nước, bị cáo buộc dùng pháp thuật \"hóa hổ\" để giết bạn trên hồ Dâm Đàm nhằm cướp ngôi. Các quan lại trong triều tin vào chuyện dị đoan và phẫn nộ đòi tử hình ông ngay lập tức. Đứng trước một cáo buộc mang màu sắc mê tín nhưng lại nhắm vào vị đại thần đầu triều, bạn sẽ xử trí ra sao?",
     philosophicalContext: "Bản chất và hiện tượng",
-    dialecticLaw: "Mối quan hệ bản chất và hiện tượng: Hiện tượng là "hóa hổ" (một sự việc kỳ quái, phi lý), nhưng bản chất có thể là một âm mưu chính trị hoặc một sự hiểu lầm trong lúc sương mù dày đặc. Triết học đòi hỏi phải đi xuyên qua hiện tượng ly kỳ để tìm ra bản chất thực tế. Việc không tử hình mà chỉ đày đi xa thể hiện một bước lùi trong nhận thức để bảo vệ nhân tài khi bản chất sự việc chưa được làm sáng tỏ bằng lý tính.",
+    dialecticLaw: "Mối quan hệ bản chất và hiện tượng: Hiện tượng là \"hóa hổ\" (một sự việc kỳ quái, phi lý), nhưng bản chất có thể là một âm mưu chính trị hoặc một sự hiểu lầm trong lúc sương mù dày đặc. Triết học đòi hỏi phải đi xuyên qua hiện tượng ly kỳ để tìm ra bản chất thực tế. Việc không tử hình mà chỉ đày đi xa thể hiện một bước lùi trong nhận thức để bảo vệ nhân tài khi bản chất sự việc chưa được làm sáng tỏ bằng lý tính.",
     yearContext: "1096",
     historicalQuote: "Việc biến thành hổ là chuyện hoang đường, nhưng án đã thành, khó lòng dung thứ hoàn toàn.",
     leftChoice: {
@@ -1254,9 +1254,9 @@ cards: [
   {
     id: "ly_26",
     character: "Lý Huệ Tông - Năm 1211",
-    situation: "Sau loạn Quách Bốc, họ Trần (với thế lực kinh tế và quân sự mạnh mẽ tại vùng Hải Ấp) đã có công lớn trong việc phò tá bạn (vua Lý) trở lại ngai vàng. Tuy nhiên, "cái giá" của sự giúp đỡ này là quyền lực của họ ngày càng phình to, lấn át cả thiên tử, biến triều đình nhà Lý dần trở thành một bộ máy hữu danh vô thực. Đứng trước một thế lực đang lên như diều gặp gió, bạn sẽ xử trí ra sao để giữ vững cơ nghiệp tổ tiên?",
+    situation: "Sau loạn Quách Bốc, họ Trần (với thế lực kinh tế và quân sự mạnh mẽ tại vùng Hải Ấp) đã có công lớn trong việc phò tá bạn (vua Lý) trở lại ngai vàng. Tuy nhiên, \"cái giá\" của sự giúp đỡ này là quyền lực của họ ngày càng phình to, lấn át cả thiên tử, biến triều đình nhà Lý dần trở thành một bộ máy hữu danh vô thực. Đứng trước một thế lực đang lên như diều gặp gió, bạn sẽ xử trí ra sao để giữ vững cơ nghiệp tổ tiên?",
     philosophicalContext: "Quy luật về sự thay thế cái cũ bằng cái mới (Phủ định của phủ định)",
-    dialecticLaw: "Trong sự vận động của lịch sử, khi một hình thái cũ (nhà Lý) đã trở nên lỗi thời, kiệt quệ và không còn khả năng quản lý xã hội, thì sự xuất hiện của một hình thái mới, năng động hơn (họ Trần) là một tất yếu khách quan. Việc họ Trần lấn át quyền lực không chỉ là tham vọng cá nhân, mà là sự phản ánh tương quan lực lượng thực tế: cái mới đang tích lũy đủ về "lượng" để thực hiện bước nhảy vọt về "chất".",
+    dialecticLaw: "Trong sự vận động của lịch sử, khi một hình thái cũ (nhà Lý) đã trở nên lỗi thời, kiệt quệ và không còn khả năng quản lý xã hội, thì sự xuất hiện của một hình thái mới, năng động hơn (họ Trần) là một tất yếu khách quan. Việc họ Trần lấn át quyền lực không chỉ là tham vọng cá nhân, mà là sự phản ánh tương quan lực lượng thực tế: cái mới đang tích lũy đủ về \"lượng\" để thực hiện bước nhảy vọt về \"chất\".",
     yearContext: "1211",
     historicalQuote: "Nhà Lý dựa vào nhà Trần như dựa vào tường, nhưng tường ấy đang dần đè sập nhà.",
     leftChoice: {
