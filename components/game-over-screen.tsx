@@ -10,7 +10,7 @@ interface GameOverScreenProps {
 
 export function GameOverScreen({ gameState, cardHistory, onRestart }: GameOverScreenProps) {
   const router = useRouter()
-  
+
   const getDialecticalLesson = (reason: string | null) => {
     if (!reason) return null
 
@@ -95,14 +95,14 @@ export function GameOverScreen({ gameState, cardHistory, onRestart }: GameOverSc
             onClick={onRestart}
             className="px-8 py-3 bg-foreground text-background font-semibold rounded-lg hover:bg-muted-foreground transition-colors text-base"
           >
-            Chơi Lại
+            Về Trang Chủ
           </button>
-          <button
+          {/* <button
             onClick={() => router.push('/')}
             className="px-8 py-3 bg-secondary border border-border text-foreground font-semibold rounded-lg hover:bg-muted transition-colors text-base"
           >
             Về Trang Chủ
-          </button>
+          </button> */}
         </div>
       </div>
     </div>
