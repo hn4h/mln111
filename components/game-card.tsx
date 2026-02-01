@@ -1,6 +1,7 @@
 "use client"
 
 import type React from "react"
+import { useMemo } from "react"
 import { Button } from "@/components/ui/button"
 import type { Card } from "@/lib/types"
 
@@ -11,7 +12,24 @@ interface GameCardProps {
   currentStats?: { finance: number; people: number; military: number; religion: number }
 }
 
+// Fisher-Yates shuffle algorithm
+function shuffleArray<T>(array: T[]): T[] {
+  const shuffled = [...array]
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]]
+  }
+  return shuffled
+}
+
 export function GameCard({ card, onSwipe, decisionDirection, currentStats }: GameCardProps) {
+  // Shuffle multipleChoices khi card thay đổi
+  const shuffledChoices = useMemo(() => {
+    if (card.multipleChoices && card.multipleChoices.length > 0) {
+      return shuffleArray(card.multipleChoices)
+    }
+    return []
+  }, [card.id])
   const handleChoice = (choice: "left" | "right" | string) => {
     if (decisionDirection) return
     onSwipe(choice)
@@ -61,7 +79,7 @@ export function GameCard({ card, onSwipe, decisionDirection, currentStats }: Gam
       <div className={`grid gap-4 ${isMultiChoice ? 'grid-cols-1 md:grid-cols-2' : 'grid-cols-1 md:grid-cols-2'}`}>
         {isMultiChoice ? (
           // Hiển thị nhiều lựa chọn (3-4 options) - 2 cột
-          card.multipleChoices?.map((choice, index) => {
+          shuffledChoices.map((choice, index) => {
             const affordable = canAfford(choice.cost)
             return (
               <Button

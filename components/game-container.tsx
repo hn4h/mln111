@@ -223,15 +223,15 @@ export function GameContainer() {
         <StatsDisplay gameState={gameState} />
       </div>
 
-      <div className="flex-1 flex flex-col items-center justify-center px-4 py-2 overflow-hidden">
+      <div className="flex flex-col items-center justify-center px-4 py-6 overflow-hidden">
         {currentCard ? (
           <>
-            {currentCard.dialecticLaw && (
+            {/* {currentCard.dialecticLaw && (
               <div className="text-center text-xs md:text-sm text-muted-foreground border border-border rounded-lg p-2 bg-muted/30 mb-2 max-w-3xl w-full">
                 <span className="font-semibold">⚖️ Quy luật biện chứng: </span>
                 {currentCard.dialecticLaw}
               </div>
-            )}
+            )} */}
             <GameCard
               card={currentCard}
               onSwipe={makeDecision}

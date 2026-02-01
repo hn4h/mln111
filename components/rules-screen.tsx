@@ -49,7 +49,7 @@ export function RulesScreen({ onBack }: RulesScreenProps) {
               <p className="text-sm md:text-base text-muted-foreground mb-4">
                 Vương quốc đứng vững nhờ bốn trụ cột. Mỗi trụ cột có thang điểm từ <span className="font-bold text-foreground">0 đến 100</span>:
               </p>
-              
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="border border-border rounded-lg p-4 bg-secondary/50">
                   <div className="flex items-center gap-2 mb-2">
@@ -101,13 +101,13 @@ export function RulesScreen({ onBack }: RulesScreenProps) {
                   Điều Kiện Thắng Thua
                 </h2>
               </div>
-              
+
               <div className="bg-amber-500/10 border-2 border-amber-500/30 rounded-lg p-4">
                 <h3 className="font-bold text-foreground mb-2 flex items-center gap-2">
                   <span>⚠️</span> Vùng An Toàn
                 </h3>
                 <p className="text-sm md:text-base text-muted-foreground mb-3">
-                  Bạn bắt đầu với <span className="font-bold text-foreground">50 điểm</span> cho mỗi trụ cột. 
+                  Bạn bắt đầu với <span className="font-bold text-foreground">50 điểm</span> cho mỗi trụ cột.
                   Nhiệm vụ của bạn là giữ tất cả các trụ cột trong khoảng:
                 </p>
                 <div className="text-center text-lg font-bold text-foreground bg-background/50 rounded p-3 mb-3">
@@ -131,7 +131,7 @@ export function RulesScreen({ onBack }: RulesScreenProps) {
             </section>
 
             {/* Cơ chế quyết định */}
-            <section className="space-y-3">
+            {/* <section className="space-y-3">
               <div className="flex items-center gap-2 border-b border-border pb-2">
                 <span className="text-2xl">🤔</span>
                 <h2 className="text-xl md:text-2xl font-bold text-foreground">
@@ -145,7 +145,7 @@ export function RulesScreen({ onBack }: RulesScreenProps) {
               </p>
 
               {/* Giá phải trả */}
-              <div className="border-2 border-orange-500/30 bg-orange-500/5 rounded-lg p-4">
+            {/* <div className="border-2 border-orange-500/30 bg-orange-500/5 rounded-lg p-4">
                 <h3 className="font-bold text-foreground mb-2 flex items-center gap-2">
                   <span>💸</span> 1. Giá Phải Trả (Cost)
                 </h3>
@@ -165,10 +165,10 @@ export function RulesScreen({ onBack }: RulesScreenProps) {
                     → Bạn cần có ít nhất 15 Tài chính, 10 Dân sinh, 8 Quân sự, 5 Tôn giáo mới chọn được
                   </p>
                 </div>
-              </div>
+              </div> */}
 
-              {/* Kết quả */}
-              <div className="border-2 border-green-500/30 bg-green-500/5 rounded-lg p-4">
+            {/* Kết quả */}
+            {/* <div className="border-2 border-green-500/30 bg-green-500/5 rounded-lg p-4">
                 <h3 className="font-bold text-foreground mb-2 flex items-center gap-2">
                   <span>🎁</span> 2. Kết Quả (Effects)
                 </h3>
@@ -188,11 +188,11 @@ export function RulesScreen({ onBack }: RulesScreenProps) {
                     → Sau khi trả giá, bạn được +20 Tài chính, +15 Dân sinh, -10 Quân sự, -5 Tôn giáo (nguyên bản)
                   </p>
                 </div>
-              </div>
-            </section>
+              </div> 
+            </section>*/}
 
             {/* Ví dụ minh họa */}
-            <section className="space-y-3">
+            {/* <section className="space-y-3">
               <div className="flex items-center gap-2 border-b border-border pb-2">
                 <span className="text-2xl">📖</span>
                 <h2 className="text-xl md:text-2xl font-bold text-foreground">
@@ -246,7 +246,7 @@ export function RulesScreen({ onBack }: RulesScreenProps) {
                   </div>
                 </div>
               </div>
-            </section>
+            </section> */}
 
             {/* Mẹo chơi */}
             <section className="space-y-3">
@@ -256,7 +256,7 @@ export function RulesScreen({ onBack }: RulesScreenProps) {
                   Mẹo Để Tồn Tại
                 </h2>
               </div>
-              
+
               <ul className="space-y-2 text-sm md:text-base text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <span className="text-amber-500 font-bold mt-0.5">1.</span>
@@ -295,7 +295,7 @@ export function RulesScreen({ onBack }: RulesScreenProps) {
 
         {/* Footer */}
         <div className="border-t-2 border-border p-4 bg-secondary/30">
-          <Button 
+          <Button
             onClick={onBack}
             className="w-full"
             size="lg"

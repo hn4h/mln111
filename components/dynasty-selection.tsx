@@ -49,7 +49,7 @@ export function DynastySelection({ onSelectDynasty }: DynastySelectionProps) {
             >
               📜 Luật Chơi
             </Button>
-            <Button
+            {/* <Button
               onClick={() => {
                 const victories = JSON.parse(localStorage.getItem('dynastyVictories') || '{}')
                 const count = Object.keys(victories).length
@@ -63,11 +63,11 @@ export function DynastySelection({ onSelectDynasty }: DynastySelectionProps) {
               className="gap-2"
             >
               🏆 Thành Tích ({Object.keys(completedDynasties).length}/3)
-            </Button>
+            </Button> */}
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-1 gap-4">
           {vietnamDynasties.map((dynasty: Dynasty) => {
             const isCompleted = completedDynasties[dynasty.id]
             return (
@@ -117,7 +117,7 @@ export function DynastySelection({ onSelectDynasty }: DynastySelectionProps) {
         </div>
 
         {/* Quy Luật Biện Chứng - Compact inline */}
-        <div className="border-t border-border/50 pt-3">
+        {/* <div className="border-t border-border/50 pt-3">
           <div className="flex flex-wrap justify-center items-center gap-x-6 gap-y-1 text-xs text-muted-foreground">
             <span className="font-semibold text-foreground uppercase tracking-wide">Các Quy Luật Biện Chứng:</span>
             <span><span className="font-medium text-foreground">Thống nhất và đấu tranh</span> của các mặt đối lập</span>
@@ -126,7 +126,7 @@ export function DynastySelection({ onSelectDynasty }: DynastySelectionProps) {
             <span className="hidden md:inline">•</span>
             <span><span className="font-medium text-foreground">Phủ định</span> của phủ định</span>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   )
