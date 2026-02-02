@@ -11,7 +11,7 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Vua Biện Chứng - Lịch Sử Việt Nam",
+  title: "Đại Việt - Thiên Mệnh Trung Dung",
   description:
     "Trò chơi khám phá lịch sử Việt Nam qua tư duy biện chứng và sự cân bằng giữa các lực lượng đối lập",
   generator: "v0.app",

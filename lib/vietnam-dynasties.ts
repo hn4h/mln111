@@ -45,7 +45,7 @@ export const vietnamDynasties: Dynasty[] = [
             id: "ly1_b",
             text: "Dùng vũ lực trấn áp các quan cũ",
             description: "Giải quyết mâu thuẫn bằng bạo lực.",
-            effects: { finance: 5, people: -10, military: 15, religion: -5 },
+            effects: { finance: -5, people: -10, military: 15, religion: -5 },
             historicalNote:
               "Hành động này thường dẫn đến nội chiến và suy yếu tiềm lực quốc gia.",
           },
@@ -60,7 +60,7 @@ export const vietnamDynasties: Dynasty[] = [
           {
             id: "ly1_d",
             text: "Chỉ dựa vào tăng lữ để trị quốc",
-            description: "Coi nhẹ các mặt mâu thuẫn thực tế.",
+            description: "Giải quyết mâu thuẫn bằng Phật giáo.",
             effects: { finance: -5, people: 5, military: -10, religion: 15 },
             historicalNote:
               "Phật giáo quan trọng nhưng không thể thay thế bộ máy hành chính.",
@@ -92,32 +92,33 @@ export const vietnamDynasties: Dynasty[] = [
           {
             id: "ly2_a",
             text: "Giữ đô ở Hoa Lư để phòng thủ",
-            description: "Bảo thủ, phủ định sự phát triển.",
-            effects: { finance: 10, people: -10, military: -5, religion: 0 },
+            description: "Ở đâu cứ ở yên đó cho lành.",
+            effects: { finance: 10, people: -5, military: -5, religion: 0 },
             historicalNote:
-              "Hoa Lư không đủ không gian cho một quốc gia đang lớn mạnh.",
+              "Bảo thủ, phủ định sự phát triển. Hoa Lư không đủ không gian cho một quốc gia đang lớn mạnh.",
           },
           {
             id: "ly2_b",
             text: "Dời đô về Thăng Long",
-            description: "Phủ định biện chứng, mở ra kỷ nguyên mới.",
+            description: "Nghe nói ở đó đất đẹp sau này biết đâu lại phất.",
             effects: { finance: -15, people: 12, military: 10, religion: 5 },
             historicalNote:
-              "Năm 1010, Lý Thái Tổ dời đô về Thăng Long, đặt nền móng cho kinh đô nghìn năm văn hiến.",
+              "Phủ định biện chứng, mở ra kỷ nguyên mới. Năm 1010, Lý Thái Tổ dời đô về Thăng Long, đặt nền móng cho kinh đô nghìn năm văn hiến.",
             isCorrect: true,
           },
           {
             id: "ly2_c",
             text: "Dời đô về vùng miền núi phía Bắc",
-            description: "Đi ngược lại quy luật phát triển kinh tế.",
+            description:
+              "Mất công rời thì rời lên cao chứ rời chỗ bằng làm gì.",
             effects: { finance: -15, people: -10, military: 5, religion: 0 },
             historicalNote:
-              "Kinh đô cần ở nơi giao thương thuận lợi như đồng bằng.",
+              "Đi ngược lại quy luật phát triển kinh tế. Kinh đô cần ở nơi giao thương thuận lợi như đồng bằng.",
           },
           {
             id: "ly2_d",
             text: "Dời đô mỗi đời vua một lần",
-            description: "Gây bất ổn định cho hệ thống.",
+            description: "Rời đi cho vui, sau mỗi chỗ có một di tích.",
             effects: { finance: -30, people: -25, military: -20, religion: 0 },
             historicalNote: "Hành động này sẽ làm kiệt quệ quốc gia.",
           },
@@ -147,7 +148,7 @@ export const vietnamDynasties: Dynasty[] = [
         multipleChoices: [
           {
             id: "ly3_a",
-            text: "Xây chùa Diên Hựu (Một Cột)",
+            text: "Xây dựng chùa Một Cột",
             description:
               "Hiện thực hóa ý thức (niềm tin) vào đời sống thực tiễn.",
             effects: { finance: -12, people: 10, military: 0, religion: 15 },
@@ -157,30 +158,28 @@ export const vietnamDynasties: Dynasty[] = [
           },
           {
             id: "ly3_b",
-            text: "Chỉ vẽ tranh về giấc mộng",
+            text: "Vẽ tranh về giấc mộng",
             description:
               "Ý thức chưa được hiện thực hóa thành hành động vật chất cụ thể.",
-            effects: { finance: -2, people: 2, military: 0, religion: 5 },
+            effects: { finance: -2, people: 0, military: 0, religion: 5 },
             historicalNote:
               "Không tạo được tác động tâm linh sâu rộng trong quần chúng.",
           },
           {
             id: "ly3_c",
             text: "Cấm dân tin vào điềm mộng",
-            description:
-              "Phủ nhận vai trò tác động trở lại của ý thức đối với đời sống.",
-            effects: { finance: 0, people: -20, military: 0, religion: -20 },
+            description: "Cấm vậy dân vẫn tin thì mình đâu thể làm gì.",
+            effects: { finance: 0, people: -10, military: 0, religion: -15 },
             historicalNote:
-              "Gây mâu thuẫn lớn với niềm tin Phật giáo đương thời.",
+              "Phủ nhận vai trò tác động trở lại của ý thức đối với đời sống. Gây mâu thuẫn lớn với niềm tin Phật giáo đương thời.",
           },
           {
             id: "ly3_d",
             text: "Xây hàng ngàn ngôi chùa nhỏ",
-            description:
-              "Dàn trải nguồn lực vật chất, không tạo được biểu tượng tinh thần tập trung.",
+            description: "Đây là cách tiêu tiền của người giàu đấy.",
             effects: { finance: -20, people: 5, military: -10, religion: 15 },
             historicalNote:
-              "Gây lãng phí ngân khố mà không có công trình điểm nhấn.",
+              "Dàn trải nguồn lực vật chất, không tạo được biểu tượng tinh thần tập trung. Gây lãng phí ngân khố mà không có công trình điểm nhấn.",
           },
         ],
       },
@@ -218,7 +217,7 @@ export const vietnamDynasties: Dynasty[] = [
             id: "ly4_b",
             text: "Soạn thảo và ban hành luật Hình thư",
             description: "Hoàn thiện hình thức để quản lý nội dung xã hội.",
-            effects: { finance: -5, people: 15, military: 5, religion: 0 },
+            effects: { finance: -5, people: 10, military: 5, religion: 0 },
             historicalNote:
               "Hình thư (1042) là bộ luật thành văn đầu tiên của Việt Nam.",
             isCorrect: true,
@@ -228,16 +227,17 @@ export const vietnamDynasties: Dynasty[] = [
             text: "Vay mượn hoàn toàn luật từ phương Bắc",
             description:
               "Hình thức không phù hợp với nội dung thực tế đất nước.",
-            effects: { finance: -5, people: -10, military: 0, religion: 0 },
+            effects: { finance: -5, people: -10, military: 0, religion: -5 },
             historicalNote:
               "Luật pháp cần phù hợp với phong tục tập quán bản địa.",
           },
           {
             id: "ly4_d",
             text: "Bãi bỏ mọi luật lệ để dân tự xử",
-            description: "Xóa bỏ hình thức dẫn đến hỗn loạn nội dung.",
-            effects: { finance: -20, people: -40, military: -20, religion: 0 },
-            historicalNote: "Sẽ dẫn đến tình trạng vô chính phủ.",
+            description: "Kệ dân muốn làm gì thì làm.",
+            effects: { finance: -10, people: -20, military: -15, religion: 0 },
+            historicalNote:
+              "Xóa bỏ hình thức dẫn đến hỗn loạn nội dung (tình trạng vô chính phủ).",
           },
         ],
       },
@@ -266,34 +266,35 @@ export const vietnamDynasties: Dynasty[] = [
           {
             id: "ly5_a",
             text: "Duy trì quân đội chuyên nghiệp tách rời sản xuất",
-            description: "Lãng phí lực lượng sản xuất.",
-            effects: { finance: -20, people: -10, military: 15, religion: 0 },
+            description: "Việc nào ra việc nấy.",
+            effects: { finance: -11, people: -10, military: 10, religion: 0 },
             historicalNote:
-              "Làm cạn kiệt ngân khố và thiếu hụt lao động nông nghiệp.",
+              "Lãng phí lực lượng sản xuất. Làm cạn kiệt ngân khố và thiếu hụt lao động nông nghiệp.",
           },
           {
             id: "ly5_b",
-            text: "Áp dụng chính sách Ngụ binh ư nông - quân sĩ luân phiên về quê làm ruộng",
-            description: "Kết hợp hài hòa LLSX và tổ chức quân sự.",
-            effects: { finance: 15, people: 12, military: 10, religion: 0 },
+            text: "Để cho quân sĩ luân phiên về quê làm ruộng",
+            description: "Quân với dân như cá với nước.",
+            effects: { finance: 15, people: 12, military: 5, religion: 0 },
             historicalNote:
-              "Quân sĩ luân phiên về quê làm ruộng, giúp nhà nước không tốn chi phí nuôi quân mà vẫn có lực lượng dự bị hùng hậu.",
+              "Áp dụng chính sách Ngụ binh ư nông - Quân sĩ luân phiên về quê làm ruộng, giúp nhà nước không tốn chi phí nuôi quân mà vẫn có lực lượng dự bị hùng hậu. Kết hợp hài hòa LLSX và tổ chức quân sự.",
             isCorrect: true,
           },
           {
             id: "ly5_c",
             text: "Giải tán quân đội để tập trung cày cấy",
-            description: "Coi nhẹ quốc phòng, đe dọa sự tồn vong.",
-            effects: { finance: 20, people: 10, military: -50, religion: 0 },
-            historicalNote: "Khiến quốc gia dễ bị xâm lược.",
+            description: "Rời bỏ chiến trường, tìm đến nuôi gà trồng rau.",
+            effects: { finance: 20, people: 10, military: -30, religion: 0 },
+            historicalNote:
+              "Coi nhẹ quốc phòng, đe dọa sự tồn vong. Khiến quốc gia dễ bị xâm lược.",
           },
           {
             id: "ly5_d",
             text: "Thuê lính nước ngoài để dân yên tâm sản xuất",
-            description: "Hành động nguy hiểm cho chủ quyền.",
-            effects: { finance: -20, people: 0, military: 5, religion: 0 },
+            description: "Cái gì thiếu thì mình đi thuê.",
+            effects: { finance: -20, people: 5, military: 10, religion: 0 },
             historicalNote:
-              "Dễ dẫn đến họa phản gián và mất quyền kiểm soát quân sự.",
+              "Hành động nguy hiểm cho chủ quyền. Dễ dẫn đến họa phản gián và mất quyền kiểm soát quân sự.",
           },
         ],
       },
@@ -322,34 +323,36 @@ export const vietnamDynasties: Dynasty[] = [
           {
             id: "ly6_a",
             text: "Tiếp tục dùng tên Đại Cồ Việt",
-            description: "Hiện tượng chưa theo kịp bản chất mới.",
+            description: "Tên cũ đang hay mắc gì đổi.",
             effects: { finance: 0, people: -5, military: -5, religion: 0 },
             historicalNote:
-              "Tên cũ mang tính chất của thời kỳ mới lập quốc, chưa thể hiện hết tầm vóc mới.",
+              "Hiện tượng chưa theo kịp bản chất mới. Tên cũ mang tính chất của thời kỳ mới lập quốc, chưa thể hiện hết tầm vóc mới.",
           },
           {
             id: "ly6_b",
             text: "Đặt tên nước là Đại Việt",
-            description: "Hiện tượng phản ánh đúng bản chất độc lập, tự cường.",
-            effects: { finance: -5, people: 10, military: 15, religion: 5 },
+            description: "Thôi đổi đi cho mới mẻ.",
+            effects: { finance: -5, people: 10, military: 10, religion: 5 },
             historicalNote:
-              "Cái tên Đại Việt tồn tại lâu dài nhất trong lịch sử phong kiến Việt Nam.",
+              "Hiện tượng phản ánh đúng bản chất độc lập, tự cường. Cái tên Đại Việt tồn tại lâu dài nhất trong lịch sử phong kiến Việt Nam.",
             isCorrect: true,
           },
           {
             id: "ly6_c",
             text: "Xin triều đình phương Bắc đặt tên cho",
-            description: "Phụ thuộc, mất bản chất độc lập.",
-            effects: { finance: -10, people: -20, military: -20, religion: 0 },
-            historicalNote: "Hành động này là sự đầu hàng về mặt chính trị.",
+            description: "Khó nghĩ quá thì để người khác nghĩ.",
+            effects: { finance: -10, people: -10, military: -10, religion: 0 },
+            historicalNote:
+              "Phụ thuộc, mất bản chất độc lập. Hành động này là sự đầu hàng về mặt chính trị.",
           },
           {
             id: "ly6_d",
             text: "Đặt tên theo niên hiệu của vua",
-            description: "Nhầm lẫn giữa cái riêng và cái chung.",
+            description:
+              "Mong muốn nhỏ nhoi tên mình xuất hiện trên bản đồ thế giới.",
             effects: { finance: -2, people: -5, military: 0, religion: 0 },
             historicalNote:
-              "Tên nước cần mang tính biểu tượng dân tộc lâu dài.",
+              "Nhầm lẫn giữa cái riêng và cái chung. Tên nước cần mang tính biểu tượng dân tộc lâu dài.",
           },
         ],
       },
@@ -378,34 +381,35 @@ export const vietnamDynasties: Dynasty[] = [
           {
             id: "ly7_a",
             text: "Khuyến khích mổ thịt trâu để dân có sức làm ăn",
-            description: "Hủy hoại tư liệu sản xuất vật chất.",
+            description: "Thịt trâu gác bếp cũng là một đặc sản đấy.",
             effects: { finance: -10, people: 10, military: 5, religion: 0 },
             historicalNote:
-              "Sẽ dẫn đến tình trạng thiếu sức kéo và mất mùa nghiêm trọng.",
+              "Hủy hoại tư liệu sản xuất vật chất. Sẽ dẫn đến tình trạng thiếu sức kéo và mất mùa nghiêm trọng.",
           },
           {
             id: "ly7_b",
             text: "Ban lệnh nghiêm cấm giết mổ trâu bò bừa bãi",
-            description: "Bảo vệ tư liệu sản xuất quan trọng nhất.",
+            description: "Trâu bò là bạn, không phải đồ ăn.",
             effects: { finance: 10, people: -5, military: 0, religion: 5 },
             historicalNote:
-              "Chính sách này giúp nông nghiệp nhà Lý phát triển ổn định, đảm bảo an ninh lương thực.",
+              "Bảo vệ tư liệu sản xuất quan trọng nhất. Chính sách này giúp nông nghiệp nhà Lý phát triển ổn định, đảm bảo an ninh lương thực.",
             isCorrect: true,
           },
           {
             id: "ly7_c",
             text: "Chỉ cho phép quý tộc được ăn thịt trâu",
-            description: "Gây bất công trong sản xuất.",
+            description: "Ai nhiều tiền thì được ăn.",
             effects: { finance: 5, people: -15, military: 0, religion: 0 },
             historicalNote:
-              "Tạo ra mâu thuẫn giai cấp mà không giải quyết được gốc rễ vấn đề sản xuất.",
+              "Gây bất công trong sản xuất. Tạo ra mâu thuẫn giai cấp mà không giải quyết được gốc rễ vấn đề sản xuất.",
           },
           {
             id: "ly7_d",
             text: "Nhập khẩu trâu từ nước ngoài thay vì bảo vệ",
-            description: "Lãng phí ngân khố, không dựa vào nội lực.",
+            description: "Trâu mình là vàng là bạc, phải nhập trâu ngoại thôi.",
             effects: { finance: -20, people: 0, military: 0, religion: 0 },
-            historicalNote: "Không bền vững và làm phụ thuộc kinh tế.",
+            historicalNote:
+              "Lãng phí ngân khố, không dựa vào nội lực. Không bền vững và làm phụ thuộc kinh tế.",
           },
         ],
       },
@@ -434,35 +438,36 @@ export const vietnamDynasties: Dynasty[] = [
         multipleChoices: [
           {
             id: "ly8_a",
-            text: "Chỉ làm lễ cầu cúng thần sông",
-            description: "Duy tâm, không giải quyết được thực tế phát triển.",
-            effects: { finance: -5, people: 0, military: 0, religion: 15 },
-            historicalNote: "Lũ lụt vẫn sẽ xảy ra và gây thiệt hại như cũ.",
+            text: "Làm lễ cầu cúng thần sông",
+            description: "Thiên linh linh địa linh linh.",
+            effects: { finance: -5, people: 0, military: 0, religion: 10 },
+            historicalNote:
+              "Duy tâm, không giải quyết được thực tế phát triển. Lũ lụt vẫn sẽ xảy ra và gây thiệt hại như cũ.",
           },
           {
             id: "ly8_b",
             text: "Dời dân đi nơi khác mỗi khi mùa lũ về",
-            description: "Trốn tránh sự phát triển, gây bất ổn định.",
-            effects: { finance: -10, people: -20, military: -5, religion: 0 },
+            description: "Lợi dụng mùa lũ đưa dân đi du lịch.",
+            effects: { finance: -10, people: -15, military: -5, religion: 0 },
             historicalNote:
-              "Làm xáo trộn đời sống và lãng phí đất đai canh tác.",
+              "Trốn tránh sự phát triển, gây bất ổn định. Làm xáo trộn đời sống và lãng phí đất đai canh tác.",
           },
           {
             id: "ly8_c",
             text: "Huy động sức dân đắp đê ngăn lũ (đê Cơ Xá)",
-            description: "Chủ động cải tạo tự nhiên để phát triển.",
+            description: "Thủy Tinh dâng nước thì Sơn Tinh dâng đất.",
             effects: { finance: -15, people: -5, military: 5, religion: 0 },
             historicalNote:
-              "Đây là lần đầu tiên sử sách ghi chép về việc đắp đê quy mô lớn ở Việt Nam.",
+              "Chủ động cải tạo tự nhiên để phát triển. Đây là lần đầu tiên sử sách ghi chép về việc đắp đê quy mô lớn ở Việt Nam.",
             isCorrect: true,
           },
           {
             id: "ly8_d",
             text: "Lấp luôn sông Hồng để lấy đất",
-            description: "Hành động phi thực tế, trái quy luật tự nhiên.",
-            effects: { finance: -40, people: -40, military: -10, religion: 0 },
+            description: "Thay vì ngăn chặn lũ, sao không lấp nó luôn nhỉ?",
+            effects: { finance: -30, people: -30, military: -10, religion: 0 },
             historicalNote:
-              "Gây ra thảm họa sinh thái và lụt lội nghiêm trọng hơn.",
+              "Hành động phi thực tế, trái quy luật tự nhiên. Gây ra thảm họa sinh thái và lụt lội nghiêm trọng hơn.",
           },
         ],
       },
@@ -501,7 +506,7 @@ export const vietnamDynasties: Dynasty[] = [
             id: "ly9_b",
             text: "Cấm mọi hình thức giáo dục ngoài Phật giáo",
             description: "KTTT phiến diện, không đáp ứng nhu cầu quản trị.",
-            effects: { finance: -5, people: -10, military: -5, religion: 20 },
+            effects: { finance: -5, people: -10, military: -5, religion: 15 },
             historicalNote:
               "Dẫn đến thiếu hụt nhân sự có kỹ năng hành chính pháp luật.",
           },
@@ -516,7 +521,7 @@ export const vietnamDynasties: Dynasty[] = [
             id: "ly9_d",
             text: "Bãi bỏ việc học, chỉ chú trọng rèn luyện võ nghệ",
             description: "KTTT què quặt, xã hội thiếu văn hóa.",
-            effects: { finance: -5, people: -10, military: 20, religion: -10 },
+            effects: { finance: -5, people: -10, military: 15, religion: -8 },
             historicalNote: "Sẽ làm sụp đổ bộ máy quản lý hành chính quốc gia.",
           },
         ],
@@ -546,34 +551,37 @@ export const vietnamDynasties: Dynasty[] = [
           {
             id: "ly10_a",
             text: "Tổ chức khoa thi đầu tiên (Minh kinh bác học)",
-            description: "Tạo bước nhảy vọt về chất lượng quan lại.",
+            description:
+              "Bị tóm phao thời hiện đại, ta quyết định trùng sinh bắt phao kẻ khác.",
             effects: { finance: -8, people: 12, military: 0, religion: 0 },
             historicalNote:
-              "Năm 1075, khoa thi đầu tiên được tổ chức, Lê Văn Thịnh đỗ trạng nguyên.",
+              "Tạo bước nhảy vọt về chất lượng quan lại. Năm 1075, khoa thi đầu tiên được tổ chức, Lê Văn Thịnh đỗ trạng nguyên.",
             isCorrect: true,
           },
           {
             id: "ly10_b",
             text: "Bán chức tước để thu ngân khố",
-            description: "Gây thoái hóa chất lượng bộ máy.",
-            effects: { finance: 30, people: -30, military: -15, religion: 0 },
+            description: "Nghe nói mua danh bán chức nhanh giàu.",
+            effects: { finance: 20, people: -20, military: -15, religion: 0 },
             historicalNote:
-              "Dẫn đến tham nhũng và sụp đổ triều đại nhanh chóng.",
+              "Gây thoái hóa chất lượng bộ máy. Dẫn đến tham nhũng và sụp đổ triều đại nhanh chóng.",
           },
           {
             id: "ly10_c",
             text: "Ai cao tuổi nhất thì được làm quan",
-            description: "Tiêu chuẩn lượng không phản ánh chất lượng tài năng.",
+            description: "Sống lâu lên lão làng.",
             effects: { finance: 0, people: -10, military: -10, religion: 0 },
-            historicalNote: "Làm trì trệ bộ máy hành chính.",
+            historicalNote:
+              "Tiêu chuẩn lượng không phản ánh chất lượng tài năng. Làm trì trệ bộ máy hành chính.",
           },
           {
             id: "ly10_d",
             text: "Chọn quan lại bằng cách tung đồng xu",
-            description: "Phủ nhận mọi quy luật vận động có tính hệ thống.",
-            effects: { finance: -10, people: -30, military: -20, religion: 0 },
+            description:
+              "Babi hỏi khi nào được làm quan, anh tung ngay đồng xu.",
+            effects: { finance: -10, people: -15, military: -13, religion: 0 },
             historicalNote:
-              "Hành động điên rồ sẽ kết thúc triều đại ngay lập tức.",
+              "Phủ nhận mọi quy luật vận động có tính hệ thống. Hành động điên rồ sẽ kết thúc triều đại ngay lập tức.",
           },
         ],
       },
@@ -602,7 +610,7 @@ export const vietnamDynasties: Dynasty[] = [
             id: "ly11_a",
             text: "Chủ động tấn công các căn cứ hậu cần Tống",
             description: "Tiên phát chế nhân để thay đổi kết quả cuộc chiến.",
-            effects: { finance: -20, people: 10, military: 25, religion: 0 },
+            effects: { finance: -12, people: 8, military: 15, religion: 0 },
             historicalNote:
               "Năm 1075, Lý Thường Kiệt chỉ huy quân đánh sang đất Tống, phá hủy kho lương của giặc, làm chậm kế hoạch xâm lược của chúng.",
             isCorrect: true,
@@ -611,20 +619,20 @@ export const vietnamDynasties: Dynasty[] = [
             id: "ly11_b",
             text: "Cầu hòa bằng cách cắt đất",
             description: "Tạo ra kết quả nhục nhã từ nguyên nhân hèn nhát.",
-            effects: { finance: -10, people: -30, military: -20, religion: 0 },
+            effects: { finance: -10, people: -18, military: -15, religion: 0 },
             historicalNote: "Hành động này sẽ làm mất nước nhanh chóng.",
           },
           {
             id: "ly11_c",
             text: "Chờ giặc sang mới đánh",
             description: "Bị động về mặt nhân quả, dễ dẫn đến thất bại.",
-            effects: { finance: 5, people: -15, military: -10, religion: 0 },
+            effects: { finance: 5, people: -12, military: -10, religion: 0 },
             historicalNote:
               "Nếu để giặc tập trung đủ lực lượng, tổn thất của ta sẽ cực lớn.",
           },
           {
             id: "ly11_d",
-            text: "Chỉ gửi thư cảnh cáo",
+            text: "Gửi thư cảnh cáo",
             description: "Hành động không đủ mạnh để tạo ra kết quả thực tế.",
             effects: { finance: 0, people: -5, military: -5, religion: 0 },
             historicalNote:
@@ -659,7 +667,7 @@ export const vietnamDynasties: Dynasty[] = [
             text: "Sáng tác bài thơ khẳng định chủ quyền",
             description:
               "Nâng ý thức độc lập lên tầm lý luận (hệ tư tưởng chính nghĩa).",
-            effects: { finance: 0, people: 20, military: 25, religion: 10 },
+            effects: { finance: 0, people: 15, military: 20, religion: 10 },
             historicalNote:
               "Bài thơ thần 'Nam Quốc Sơn Hà' vang lên trên sông Như Nguyệt đã làm nhụt chí quân Tống và khích lệ quân ta thắng trận.",
             isCorrect: true,
@@ -667,28 +675,27 @@ export const vietnamDynasties: Dynasty[] = [
           {
             id: "ly12_b",
             text: "Hứa ban thật nhiều vàng cho lính",
-            description: "Chỉ tác động vào tâm lý lợi ích vật chất ngắn hạn.",
-            effects: { finance: -30, people: 5, military: 10, religion: 0 },
+            description: "Tác động vào tâm lý lợi ích vật chất ngắn hạn.",
+            effects: { finance: -20, people: 5, military: 10, religion: 0 },
             historicalNote:
               "Tiền bạc không thể thay thế lòng yêu nước và ý chí chiến đấu bền bỉ.",
           },
           {
             id: "ly12_c",
             text: "Mời thầy bói xem ngày đánh trận",
-            description:
-              "Ý thức sai lạc, xa rời quy luật thực tiễn khách quan.",
-            effects: { finance: -5, people: 0, military: -10, religion: 20 },
+            description: "Người chơi hệ tâm linh.",
+            effects: { finance: -5, people: 0, military: -10, religion: 15 },
             historicalNote:
-              "Dựa vào mê tín thay vì binh pháp khách quan sẽ dẫn đến thảm bại.",
+              "Ý thức sai lạc, xa rời quy luật thực tiễn khách quan. Dựa vào mê tín thay vì binh pháp khách quan sẽ dẫn đến thảm bại.",
           },
           {
             id: "ly12_d",
             text: "Im lặng để giữ bí mật quân sự",
             description:
-              "Xem nhẹ vai trò năng động của tư tưởng trong chiến tranh.",
+              "Người đừng lặng im đến thế, vì lặng im sẽ giết chết con tim.",
             effects: { finance: 0, people: -10, military: -5, religion: 0 },
             historicalNote:
-              "Khi sĩ khí xuống thấp, sự im lặng vô tình triệt tiêu sức mạnh tinh thần của quân đội.",
+              "Xem nhẹ vai trò năng động của tư tưởng trong chiến tranh. Khi sĩ khí xuống thấp, sự im lặng vô tình triệt tiêu sức mạnh tinh thần của quân đội.",
           },
         ],
       },
@@ -719,7 +726,7 @@ export const vietnamDynasties: Dynasty[] = [
             text: "Xây phòng tuyến sông Như Nguyệt",
             description:
               "Kết hợp cái chung (binh pháp) với cái riêng (địa thế sông).",
-            effects: { finance: -10, people: 10, military: 20, religion: 0 },
+            effects: { finance: -10, people: 10, military: 18, religion: 0 },
             historicalNote:
               "Phòng tuyến sông Như Nguyệt tận dụng lợi thế sông nước để chặn đứng kỵ binh Tống.",
             isCorrect: true,
@@ -728,7 +735,7 @@ export const vietnamDynasties: Dynasty[] = [
             id: "ly13_b",
             text: "Dàn trận đánh hổ lao như ở Trung Nguyên",
             description: "Chỉ áp dụng cái chung một cách máy móc.",
-            effects: { finance: -5, people: -10, military: -25, religion: 0 },
+            effects: { finance: -5, people: -10, military: -20, religion: 0 },
             historicalNote:
               "Đánh trực diện với kỵ binh Tống trên đất bằng là tự sát.",
           },
@@ -736,7 +743,7 @@ export const vietnamDynasties: Dynasty[] = [
             id: "ly13_c",
             text: "Bỏ thành chạy lên núi",
             description: "Phủ định cái riêng một cách tiêu cực.",
-            effects: { finance: -10, people: -20, military: -10, religion: 0 },
+            effects: { finance: -8, people: -12, military: -10, religion: 0 },
             historicalNote:
               "Rút chạy không kế hoạch sẽ làm mất sự ủng hộ của dân đồng bằng.",
           },
@@ -745,7 +752,7 @@ export const vietnamDynasties: Dynasty[] = [
             text: "Chỉ dùng bộ binh đấu kỵ binh",
             description:
               "Không tận dụng được cái riêng của địa hình thủy chiến.",
-            effects: { finance: 0, people: -5, military: -20, religion: 0 },
+            effects: { finance: 0, people: -5, military: -18, religion: 0 },
             historicalNote: "Sẽ gây ra thiệt hại cực lớn về quân số.",
           },
         ],
@@ -777,7 +784,7 @@ export const vietnamDynasties: Dynasty[] = [
             text: "Đuổi cùng diệt tận quân giặc",
             description:
               "Cái nhìn phiến diện, không thấy hậu quả ngoại giao lâu dài.",
-            effects: { finance: -20, people: -10, military: -5, religion: 0 },
+            effects: { finance: -10, people: -5, military: -10, religion: 0 },
             historicalNote:
               "Diệt hết quân Tống sẽ khiến nhà Tống liều chết báo thù, chiến tranh sẽ kéo dài mãi mãi.",
           },
@@ -795,14 +802,14 @@ export const vietnamDynasties: Dynasty[] = [
             id: "ly14_c",
             text: "Đầu hàng hoàn toàn",
             description: "Cắt đứt mối liên hệ độc lập của dân tộc.",
-            effects: { finance: -10, people: -50, military: -30, religion: 0 },
+            effects: { finance: -10, people: -25, military: -25, religion: 0 },
             historicalNote: "Mất nước và bị lịch sử lên án.",
           },
           {
             id: "ly14_d",
             text: "Cấm mọi liên hệ với phương Bắc",
             description: "Cô lập đất nước, đi ngược nguyên lý liên hệ.",
-            effects: { finance: -20, people: -5, military: 0, religion: 0 },
+            effects: { finance: -15, people: -5, military: 0, religion: 0 },
             historicalNote: "Sẽ làm kiệt quệ kinh tế và cô lập quốc gia.",
           },
         ],
@@ -833,7 +840,7 @@ export const vietnamDynasties: Dynasty[] = [
             id: "ly15_a",
             text: "Đẩy mạnh sản xuất nông nghiệp, chuộc người nghèo",
             description: "Tập trung vào sản xuất vật chất để ổn định xã hội.",
-            effects: { finance: -5, people: 20, military: 5, religion: 0 },
+            effects: { finance: -5, people: 15, military: 5, religion: 0 },
             historicalNote:
               "Thái hậu Ỷ Lan nổi tiếng với việc lấy tiền kho chuộc những cô gái nghèo bị bán thân và khuyến khích nông nghiệp.",
             isCorrect: true,
@@ -842,7 +849,7 @@ export const vietnamDynasties: Dynasty[] = [
             id: "ly15_b",
             text: "Dùng toàn bộ ngân khố đi đánh Chiêm Thành",
             description: "Coi nhẹ sản xuất, lãng phí nguồn lực vật chất.",
-            effects: { finance: -40, people: -20, military: 10, religion: 0 },
+            effects: { finance: -30, people: -20, military: 10, religion: 0 },
             historicalNote: "Gây thêm đói kém và bất ổn nội bộ.",
           },
           {
@@ -856,7 +863,7 @@ export const vietnamDynasties: Dynasty[] = [
             id: "ly15_d",
             text: "Ép dân nộp thuế thật nhiều để bù đắp chiến tranh",
             description: "Hủy hoại lực lượng sản xuất.",
-            effects: { finance: 20, people: -30, military: -5, religion: 0 },
+            effects: { finance: 20, people: -25, military: -5, religion: 0 },
             historicalNote: "Dân sẽ nổi dậy vì quá khổ cực.",
           },
         ],
@@ -943,7 +950,7 @@ export const vietnamDynasties: Dynasty[] = [
             text: "Tổ chức Lễ Tịch điền, vua xuống cày ruộng",
             description:
               "Dùng thực tiễn để khẳng định chân lý 'Dĩ nông vi bản'.",
-            effects: { finance: -2, people: 15, military: 0, religion: 5 },
+            effects: { finance: -2, people: 12, military: 0, religion: 5 },
             historicalNote:
               "Các vua nhà Lý rất coi trọng lễ Tịch điền để khuyến khích nhân dân sản xuất.",
             isCorrect: true,
@@ -1000,7 +1007,7 @@ export const vietnamDynasties: Dynasty[] = [
             text: "Áp dụng chính sách 'Nhu viễn', liên kết hôn nhân",
             description:
               "Xây dựng mối liên hệ gắn bó giữa triều đình và biên giới.",
-            effects: { finance: -5, people: 10, military: 15, religion: 0 },
+            effects: { finance: -5, people: 10, military: 12, religion: 0 },
             historicalNote:
               "Nhà Lý thường gả công chúa cho các tù trưởng dân tộc miền núi để biến họ thành thân quyến bảo vệ biên cương.",
             isCorrect: true,
@@ -1009,7 +1016,7 @@ export const vietnamDynasties: Dynasty[] = [
             id: "ly18_b",
             text: "Xây tường thành ngăn cách miền xuôi - miền ngược",
             description: "Cắt đứt mối liên hệ phổ biến, tạo sự chia rẽ.",
-            effects: { finance: -30, people: -15, military: 5, religion: 0 },
+            effects: { finance: -25, people: -15, military: 5, religion: 0 },
             historicalNote:
               "Sẽ khiến các bộ tộc miền núi cảm thấy bị bỏ rơi và dễ quay sang theo địch.",
           },
@@ -1017,7 +1024,7 @@ export const vietnamDynasties: Dynasty[] = [
             id: "ly18_c",
             text: "Chỉ chú trọng phát triển kinh đô Thăng Long",
             description: "Cái nhìn phiến diện, bỏ qua mối liên hệ bộ phận.",
-            effects: { finance: 10, people: -5, military: -20, religion: 0 },
+            effects: { finance: 10, people: -5, military: -15, religion: 0 },
             historicalNote:
               "Biên cương bất ổn thì Thăng Long sớm muộn cũng lâm nguy.",
           },
@@ -1025,7 +1032,7 @@ export const vietnamDynasties: Dynasty[] = [
             id: "ly18_d",
             text: "Bắt các tù trưởng làm nô lệ",
             description: "Hành động phá hoại mối liên hệ đoàn kết dân tộc.",
-            effects: { finance: 5, people: -20, military: -15, religion: 0 },
+            effects: { finance: 5, people: -18, military: -15, religion: 0 },
             historicalNote: "Gây ra các cuộc nổi dậy liên miên ở vùng cao.",
           },
         ],
@@ -1056,7 +1063,7 @@ export const vietnamDynasties: Dynasty[] = [
             id: "ly19_a",
             text: "Tin vào việc hóa hổ và tử hình Thái sư",
             description: "Bị hiện tượng đánh lừa, bỏ qua bản chất thực tế.",
-            effects: { finance: 0, people: -15, military: -5, religion: 0 },
+            effects: { finance: 0, people: -12, military: -5, religion: 0 },
             historicalNote:
               "Làm mất đi một trạng nguyên, một vị đại thần có tài cho đất nước.",
           },
@@ -1113,7 +1120,7 @@ export const vietnamDynasties: Dynasty[] = [
             id: "ly20_a",
             text: "Kiên quyết phò tá Thái tử Long Cán theo di chiếu",
             description: "Đặt lợi ích cái chung lên trên tư lợi cái riêng.",
-            effects: { finance: -5, people: 20, military: 10, religion: 0 },
+            effects: { finance: -5, people: 15, military: 10, religion: 0 },
             historicalNote:
               "Tô Hiến Thành là tấm gương sáng về sự chính trực, từ chối mọi cám dỗ để bảo vệ phép nước.",
             isCorrect: true,
@@ -1122,7 +1129,7 @@ export const vietnamDynasties: Dynasty[] = [
             id: "ly20_b",
             text: "Nhận vàng nhưng vẫn phò tá Thái tử cũ",
             description: "Sống nước đôi, không giải quyết triệt để mâu thuẫn.",
-            effects: { finance: 20, people: -5, military: -5, religion: 0 },
+            effects: { finance: 18, people: -5, military: -5, religion: 0 },
             historicalNote:
               "Sẽ bị cả hai bên nghi ngờ và làm mất uy tín cá nhân.",
           },
@@ -1179,7 +1186,7 @@ export const vietnamDynasties: Dynasty[] = [
             id: "ly21_b",
             text: "Xây thêm đền miếu để xua đuổi tà ma",
             description: "Nhầm lẫn giữa hiện tượng và niềm tin duy tâm.",
-            effects: { finance: -20, people: -5, military: 0, religion: 20 },
+            effects: { finance: -20, people: -5, military: 0, religion: 15 },
             historicalNote:
               "Lãng phí ngân khố mà không giải quyết được gốc rễ bệnh tật.",
           },
@@ -1195,7 +1202,7 @@ export const vietnamDynasties: Dynasty[] = [
             id: "ly21_d",
             text: "Truy tìm và sát hại kẻ bị nghi làm bùa chú",
             description: "Hành động cực đoan dựa trên nhận thức sai lầm.",
-            effects: { finance: 0, people: -20, military: 5, religion: -10 },
+            effects: { finance: 0, people: -15, military: 5, religion: -10 },
             historicalNote: "Gây ra oan sai và làm mất lòng tin của thần dân.",
           },
         ],
@@ -1226,7 +1233,7 @@ export const vietnamDynasties: Dynasty[] = [
             id: "ly22_a",
             text: "Chính thức thành lập thương cảng Vân Đồn",
             description: "Chủ động thúc đẩy sự phát triển kinh tế.",
-            effects: { finance: 30, people: 15, military: -5, religion: 0 },
+            effects: { finance: 20, people: 15, military: -5, religion: 0 },
             historicalNote:
               "Vân Đồn trở thành thương cảng quốc tế đầu tiên và sầm uất nhất của Đại Việt thời bấy giờ.",
             isCorrect: true,
@@ -1244,7 +1251,7 @@ export const vietnamDynasties: Dynasty[] = [
             text: "Cấm dân trong nước giao thương với bên ngoài",
             description:
               "Đi ngược lại quy luật phát triển và liên hệ phổ biến.",
-            effects: { finance: -30, people: -20, military: 0, religion: 0 },
+            effects: { finance: -25, people: -12, military: 0, religion: 0 },
             historicalNote:
               "Làm kiệt quệ nền kinh tế và tụt hậu so với khu vực.",
           },
@@ -1285,7 +1292,7 @@ export const vietnamDynasties: Dynasty[] = [
             id: "ly23_a",
             text: "Dừng các công trình xa hoa để cứu đói dân",
             description: "Điều chỉnh KTTT để bảo vệ CSHT.",
-            effects: { finance: 10, people: 15, military: 0, religion: 0 },
+            effects: { finance: 10, people: 12, military: 0, religion: 0 },
             historicalNote:
               "Lý Cao Tông đã không làm điều này, khiến nhà Lý bắt đầu trượt dài vào suy vong.",
             isCorrect: true,
@@ -1294,7 +1301,7 @@ export const vietnamDynasties: Dynasty[] = [
             id: "ly23_b",
             text: "Xây thêm hành cung để khẳng định uy quyền",
             description: "Làm trầm trọng thêm mâu thuẫn giữa KTTT và CSHT.",
-            effects: { finance: -30, people: -30, military: -10, religion: 0 },
+            effects: { finance: -30, people: -20, military: -10, religion: 0 },
             historicalNote:
               "Việc xây dựng quá mức làm kiệt quệ sức dân và ngân khố quốc gia.",
           },
@@ -1302,7 +1309,7 @@ export const vietnamDynasties: Dynasty[] = [
             id: "ly23_c",
             text: "Bán chức tước để lấy tiền xây dựng",
             description: "Hủy hoại chất lượng bộ máy cai trị.",
-            effects: { finance: 30, people: -40, military: -20, religion: 0 },
+            effects: { finance: 30, people: -25, military: -20, religion: 0 },
             historicalNote:
               "Khiến triều chính nhiễu nhương, kỷ cương lỏng lẻo.",
           },
@@ -1342,7 +1349,7 @@ export const vietnamDynasties: Dynasty[] = [
             id: "ly24_a",
             text: "Giảm tô thuế và chia lại ruộng đất tạm thời",
             description: "Điều chỉnh QHSX để bảo vệ LLSX.",
-            effects: { finance: -25, people: 30, military: -5, religion: 0 },
+            effects: { finance: -20, people: 20, military: -5, religion: 0 },
             historicalNote:
               "Sự chậm trễ trong cứu trợ của nhà Lý đã dẫn đến các cuộc khởi nghĩa nông dân bùng nổ.",
             isCorrect: true,
@@ -1351,7 +1358,7 @@ export const vietnamDynasties: Dynasty[] = [
             id: "ly24_b",
             text: "Ép dân nộp thuế bằng bạo lực",
             description: "Dùng quyền lực để duy trì QHSX bóc lột.",
-            effects: { finance: 20, people: -50, military: 10, religion: -10 },
+            effects: { finance: 20, people: -25, military: 10, religion: -10 },
             historicalNote:
               "Dẫn đến loạn Quách Bốc và sự sụp đổ của kỷ cương xã hội.",
           },
@@ -1359,7 +1366,7 @@ export const vietnamDynasties: Dynasty[] = [
             id: "ly24_c",
             text: "Bỏ mặc cho dân tự xoay xở",
             description: "Phớt lờ quy luật vận động của xã hội.",
-            effects: { finance: 0, people: -30, military: -10, religion: 0 },
+            effects: { finance: 0, people: -20, military: -10, religion: 0 },
             historicalNote:
               "Làm mất hoàn toàn vai trò của nhà nước đối với dân tộc.",
           },
@@ -1388,7 +1395,7 @@ export const vietnamDynasties: Dynasty[] = [
           "Gieo gió thì gặt bão, triều chính đổ nát thì giặc giã nổi lên.",
         leftChoice: {
           text: "Đầu hàng giặc",
-          effects: { finance: -10, people: -20, military: -30, religion: 0 },
+          effects: { finance: -10, people: -20, military: -20, religion: 0 },
         },
         rightChoice: {
           text: "Cầu viện các thế lực địa phương (họ Trần)",
@@ -1409,7 +1416,12 @@ export const vietnamDynasties: Dynasty[] = [
             id: "ly25_b",
             text: "Chạy trốn và không bao giờ quay lại",
             description: "Trốn tránh kết quả do mình tạo ra.",
-            effects: { finance: -50, people: -50, military: -50, religion: 0 },
+            effects: {
+              finance: -25,
+              people: -25,
+              military: -25,
+              religion: -10,
+            },
             historicalNote: "Sẽ kết thúc triều đại sớm hơn trong sự nhục nhã.",
           },
           {
@@ -1417,14 +1429,14 @@ export const vietnamDynasties: Dynasty[] = [
             text: "Tự mình ra trận mà không có quân",
             description:
               "Hành động liều lĩnh, bỏ qua quy luật tương quan lực lượng.",
-            effects: { finance: 0, people: -10, military: -40, religion: 0 },
+            effects: { finance: 0, people: -10, military: -20, religion: 0 },
             historicalNote: "Cầm chắc cái chết và sự hỗn loạn cho đất nước.",
           },
           {
             id: "ly25_d",
             text: "Thương lượng chia đôi đất nước với giặc",
             description: "Chấp nhận một kết quả tạm thời đầy rủi ro.",
-            effects: { finance: -20, people: -30, military: -20, religion: 0 },
+            effects: { finance: -20, people: -20, military: -20, religion: 0 },
             historicalNote: "Dẫn đến cục diện cát cứ, đất nước bị chia cắt.",
           },
         ],
@@ -1456,7 +1468,7 @@ export const vietnamDynasties: Dynasty[] = [
             id: "ly26_a",
             text: "Trao quyền cho Trần Tự Khánh cai quản binh quyền",
             description: "Chấp nhận sự chuyển hóa quyền lực để giữ ổn định.",
-            effects: { finance: 5, people: -5, military: 20, religion: 0 },
+            effects: { finance: 5, people: -5, military: 15, religion: 0 },
             historicalNote:
               "Lý Huệ Tông buộc phải dựa vào sức mạnh quân sự của họ Trần để tồn tại.",
             isCorrect: true,
@@ -1466,7 +1478,7 @@ export const vietnamDynasties: Dynasty[] = [
             text: "Ra mật chiếu ám sát các tướng họ Trần",
             description:
               "Cố gắng cắt đứt mối liên hệ lực lượng một cách cực đoan.",
-            effects: { finance: -5, people: -15, military: -30, religion: 0 },
+            effects: { finance: -5, people: -15, military: -20, religion: 0 },
             historicalNote:
               "Sẽ dẫn đến cuộc thanh trừng ngược lại và mất ngôi nhanh hơn.",
           },
@@ -1475,7 +1487,7 @@ export const vietnamDynasties: Dynasty[] = [
             text: "Bỏ kinh đô đi làm sư ngay lập tức",
             description:
               "Phủ nhận mọi mối liên hệ xã hội để tìm sự giải thoát cá nhân.",
-            effects: { finance: 0, people: -20, military: -20, religion: 30 },
+            effects: { finance: 0, people: -20, military: -20, religion: 15 },
             historicalNote: "Gây ra khoảng trống quyền lực nguy hiểm.",
           },
           {
@@ -1483,7 +1495,7 @@ export const vietnamDynasties: Dynasty[] = [
             text: "Cầu viện quân nước ngoài để đánh họ Trần",
             description:
               "Tạo ra mối liên hệ nguy hiểm, đe dọa chủ quyền dân tộc.",
-            effects: { finance: -30, people: -40, military: 5, religion: 0 },
+            effects: { finance: -20, people: -15, military: 5, religion: 0 },
             historicalNote:
               "Hành động cõng rắn cắn gà nhà sẽ bị lịch sử nguyền rủa.",
           },
@@ -1514,36 +1526,45 @@ export const vietnamDynasties: Dynasty[] = [
           {
             id: "ly27_a",
             text: "Nhường ngôi cho công chúa Chiêu Thánh (Lý Chiêu Hoàng)",
-            description:
-              "Giải quyết mâu thuẫn bằng cách chuyển giao hình thức quyền lực.",
-            effects: { finance: 0, people: 5, military: -10, religion: 25 },
+            description: " ",
+            effects: { finance: 0, people: 5, military: -5, religion: 25 },
             historicalNote:
-              "Vua đi tu ở chùa Chân Giáo, lấy pháp danh Huệ Quang thiền sư.",
+              "Giải quyết mâu thuẫn bằng cách chuyển giao hình thức quyền lực. Vua đi tu ở chùa Chân Giáo, lấy pháp danh Huệ Quang thiền sư.",
             isCorrect: true,
           },
           {
             id: "ly27_b",
             text: "Ép một người họ hàng xa lên ngôi",
-            description: "Cố duy trì mặt đối lập đã suy yếu.",
+            description: " ",
             effects: { finance: -5, people: -10, military: -5, religion: 0 },
             historicalNote:
-              "Sẽ không đủ uy tín để chống lại sự lớn mạnh của họ Trần.",
+              "Cố duy trì mặt đối lập đã suy yếu. Ép một người họ hàng xa lên ngôi.Sẽ không đủ uy tín để chống lại sự lớn mạnh của họ Trần.",
           },
           {
             id: "ly27_c",
-            text: "Tự sát để kết thúc mọi chuyện",
+            text: " ",
             description: "Sự phủ định sạch trơn, tiêu cực.",
-            effects: { finance: 0, people: -30, military: -20, religion: -10 },
+            effects: {
+              finance: -10,
+              people: -20,
+              military: -20,
+              religion: -10,
+            },
             historicalNote:
-              "Gây ra sự hỗn loạn và sụp đổ đẫm máu cho triều đại.",
+              "Tự sát để kết thúc mọi chuyện. Gây ra sự hỗn loạn và sụp đổ đẫm máu cho triều đại.",
           },
           {
             id: "ly27_d",
             text: "Ra lệnh giải tán toàn bộ triều đình",
-            description:
-              "Hành động phi thực tế, bỏ qua quy luật tổ chức xã hội.",
-            effects: { finance: -50, people: -50, military: -50, religion: 0 },
-            historicalNote: "Sẽ dẫn đến thảm họa chiến tranh dân sự.",
+            description: " ",
+            effects: {
+              finance: -20,
+              people: -20,
+              military: -20,
+              religion: -15,
+            },
+            historicalNote:
+              "Hành động phi thực tế, bỏ qua quy luật tổ chức xã hội. Sẽ dẫn đến thảm họa chiến tranh dân sự.",
           },
         ],
       },
@@ -1572,35 +1593,35 @@ export const vietnamDynasties: Dynasty[] = [
           {
             id: "ly28_a",
             text: "Chấp nhận sự bảo hộ của Trần Thủ Độ",
-            description: "Thừa nhận sự thay đổi về nội dung quyền lực thực tế.",
+            description: "Không chống lại dòng chảy lịch sử.",
             effects: { finance: 10, people: 5, military: 15, religion: 0 },
             historicalNote:
-              "Mọi việc lớn nhỏ trong triều lúc này đều do Điện tiền chỉ huy sứ Trần Thủ Độ quyết định.",
+              "Thừa nhận sự thay đổi về nội dung quyền lực thực tế. Mọi việc lớn nhỏ trong triều lúc này đều do Điện tiền chỉ huy sứ Trần Thủ Độ quyết định.",
             isCorrect: true,
           },
           {
             id: "ly28_b",
             text: "Tìm cách bỏ trốn khỏi cung",
-            description: "Phủ nhận hình thức quyền lực một cách trẻ con.",
+            description: "Thấy khó là chạy.",
             effects: { finance: -5, people: -10, military: -5, religion: 0 },
             historicalNote:
-              "Không thể thoát khỏi mạng lưới kiểm soát chặt chẽ của họ Trần.",
+              "Phủ nhận hình thức quyền lực một cách trẻ con. Không thể thoát khỏi mạng lưới kiểm soát chặt chẽ của họ Trần.",
           },
           {
             id: "ly28_c",
             text: "Ra lệnh xử tử Trần Thủ Độ",
-            description: "Cố gắng dùng hình thức để đè bẹp nội dung mạnh hơn.",
-            effects: { finance: 0, people: -20, military: -40, religion: 0 },
+            description: "Dùng quyền lực danh nghĩa để chống lại thực lực.",
+            effects: { finance: 0, people: -20, military: -20, religion: -20 },
             historicalNote:
-              "Hành động này chỉ dẫn đến sự sụp đổ nhanh chóng hơn của cá nhân vua.",
+              "Cố gắng dùng hình thức để đè bẹp nội dung mạnh hơn. Hành động này chỉ dẫn đến sự sụp đổ nhanh chóng hơn của cá nhân vua.",
           },
           {
             id: "ly28_d",
             text: "Chỉ lo chơi đùa, không quan tâm triều chính",
-            description: "Phó mặc sự vận động của lịch sử.",
-            effects: { finance: 0, people: -5, military: 0, religion: 0 },
+            description: "Hồn nhiên đúng tuổi, nguy hiểm đúng lúc.",
+            effects: { finance: -10, people: -10, military: -5, religion: -5 },
             historicalNote:
-              "Đúng với tâm lý của một đứa trẻ, nhưng làm tăng tốc quá trình mất ngôi.",
+              "Chỉ lo chơi đùa, không quan tâm triều chính. Đúng với tâm lý của một đứa trẻ, nhưng làm tăng tốc quá trình mất ngôi.",
           },
         ],
       },
@@ -1629,37 +1650,35 @@ export const vietnamDynasties: Dynasty[] = [
           {
             id: "ly29_a",
             text: "Tác hợp cho Chiêu Hoàng và Trần Cảnh",
-            description:
-              "Tạo ra bước nhảy vọt về chất thông qua con đường hòa bình.",
+            description: "Tạo bước nhảy về chất bằng con đường hòa bình.",
             effects: { finance: -5, people: 10, military: 10, religion: 5 },
             historicalNote:
-              "Đây là một mưu đồ chính trị thiên tài của Trần Thủ Độ để chuyển giao vương triều không đổ máu.",
+              "Tạo ra bước nhảy vọt về chất thông qua con đường hòa bình. Đây là một mưu đồ chính trị thiên tài của Trần Thủ Độ để chuyển giao vương triều không đổ máu.",
             isCorrect: true,
           },
           {
             id: "ly29_b",
             text: "Giết chết Chiêu Hoàng để lên ngôi",
-            description: "Bước nhảy vọt bằng bạo lực tiêu cực.",
-            effects: { finance: 0, people: -50, military: 10, religion: -20 },
+            description: "Chưa tích đủ lượng đã ép tạo bước nhảy.",
+            effects: { finance: 0, people: -25, military: -25, religion: -20 },
             historicalNote:
               "Sẽ gây phẫn nộ trong dân chúng và các trung thần nhà Lý.",
           },
           {
             id: "ly29_c",
             text: "Để họ Trần tiếp tục làm quan dưới quyền nhà Lý",
-            description:
-              "Duy trì sự tích lũy lượng mà không dám thực hiện bước nhảy.",
+            description: "Lượng tăng dần, nhưng chất vẫn đứng yên.",
             effects: { finance: 10, people: 0, military: 5, religion: 0 },
-            historicalNote: "Bỏ lỡ thời cơ lịch sử để đổi mới đất nước.",
+            historicalNote:
+              "Để họ Trần tiếp tục làm quan dưới quyền nhà Lý. Bỏ lỡ thời cơ lịch sử để đổi mới đất nước.",
           },
           {
             id: "ly29_d",
             text: "Cho Trần Cảnh làm con nuôi nhà Lý",
-            description:
-              "Hành động chưa đủ mạnh để thay đổi chất lượng vương triều.",
+            description: "Muốn đổi triều nhưng lại ngại bước nhảy. ",
             effects: { finance: 0, people: 5, military: 0, religion: 0 },
             historicalNote:
-              "Sẽ làm kéo dài sự bất ổn và tranh giành quyền lực.",
+              "Hành động chưa đủ mạnh để thay đổi chất lượng vương triều. Sẽ làm kéo dài sự bất ổn và tranh giành quyền lực.",
           },
         ],
       },
@@ -1688,44 +1707,42 @@ export const vietnamDynasties: Dynasty[] = [
           {
             id: "ly30_a",
             text: "Chủ động nhường ngôi để bảo toàn đại cuộc",
-            description:
-              "Thực hiện phủ định biện chứng: Cái cũ tự phủ định để cái mới tiến bộ hơn ra đời.",
-            effects: { finance: 0, people: 15, military: 15, religion: 10 },
+            description: "Một quyết định lặng lẽ, nhưng cứu cả cơ đồ.",
+            effects: { finance: 5, people: 15, military: 15, religion: 10 },
             historicalNote:
-              "Sự chuyển giao hòa bình giúp quốc gia giữ vững thực lực, chuẩn bị cho sức mạnh của Hào khí Đông A.",
+              "Thực hiện phủ định biện chứng: Cái cũ tự phủ định để cái mới tiến bộ hơn ra đời. Sự chuyển giao hòa bình giúp quốc gia giữ vững thực lực, chuẩn bị cho sức mạnh của Hào khí Đông A.",
             isCorrect: true,
           },
           {
             id: "ly30_b",
             text: "Cố chấp giữ ngôi dù không còn thực lực",
             description:
-              "Chống lại quy luật khách quan khi điều kiện tồn tại đã hết.",
-            effects: { finance: -30, people: -40, military: -30, religion: 0 },
+              "Biết là thua nhưng vẫn cố giữ, vì buông tay thì đau lắm.",
+            effects: { finance: -20, people: -20, military: -20, religion: 0 },
             historicalNote:
-              "Hành động này thường dẫn đến đảo chính đẫm máu hoặc nội chiến làm suy yếu quốc gia.",
+              "Chống lại quy luật khách quan khi điều kiện tồn tại đã hết. Hành động này thường dẫn đến đảo chính đẫm máu hoặc nội chiến làm suy yếu quốc gia.",
           },
           {
             id: "ly30_c",
             text: "Phó mặc cho sự sắp đặt của họ Trần",
             description:
-              "Thụ động trước sự vận động lịch sử, thiếu đi ý chí của chủ thể.",
+              "Không phá cũng chẳng giữ, để lịch sử muốn làm gì thì làm.",
             effects: { finance: 0, people: -10, military: 0, religion: -10 },
             historicalNote:
-              "Khiến vị thế của dòng tộc cũ bị hạ thấp hơn nữa trong mắt dân chúng và lịch sử.",
+              "Thụ động trước sự vận động lịch sử, thiếu đi ý chí của chủ thể. Khiến vị thế của dòng tộc cũ bị hạ thấp hơn nữa trong mắt dân chúng và lịch sử.",
           },
           {
             id: "ly30_d",
             text: "Tìm cách phá hủy ấn tín, giấy tờ của vương triều",
-            description:
-              "Phủ định sạch trơn: Hủy hoại các giá trị kế thừa từ quá khứ.",
+            description: "Chơi trò Trời giấu trời mang đi.",
             effects: {
-              finance: -40,
-              people: -30,
+              finance: -20,
+              people: -20,
               military: -20,
-              religion: -30,
+              religion: -20,
             },
             historicalNote:
-              "Làm đứt gãy mạch quản lý hành chính và văn hóa quốc gia, gây khó khăn cho việc phục hồi kinh tế.",
+              "Phủ định sạch trơn: Hủy hoại các giá trị kế thừa từ quá khứ. Làm đứt gãy mạch quản lý hành chính và văn hóa quốc gia, gây khó khăn cho việc phục hồi kinh tế.",
           },
         ],
       },
