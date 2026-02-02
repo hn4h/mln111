@@ -1,25 +1,26 @@
-import type React from "react"
-import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
-import { Analytics } from "@vercel/analytics/next"
-import { DragonWatermark } from "@/components/dragon-watermark"
-import { PaperBackground } from "@/components/paper-background"
-import { DecorativeFrame } from "@/components/decorative-frame"
-import "./globals.css"
+import type React from "react";
+import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
+import { DragonWatermark } from "@/components/dragon-watermark";
+import { PaperBackground } from "@/components/paper-background";
+import { DecorativeFrame } from "@/components/decorative-frame";
+import "./globals.css";
 
-const _geist = Geist({ subsets: ["latin"] })
-const _geistMono = Geist_Mono({ subsets: ["latin"] })
+const _geist = Geist({ subsets: ["latin"] });
+const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Vua Biện Chứng - Lịch Sử Việt Nam",
-  description: "Trò chơi thẻ bài khám phá lịch sử Việt Nam qua tư duy biện chứng và sự cân bằng giữa các lực lượng đối lập",
+  description:
+    "Trò chơi khám phá lịch sử Việt Nam qua tư duy biện chứng và sự cân bằng giữa các lực lượng đối lập",
   generator: "v0.app",
-}
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="vi">
@@ -39,5 +40,5 @@ export default function RootLayout({
         <Analytics />
       </body>
     </html>
-  )
+  );
 }

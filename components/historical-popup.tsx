@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import {
   Dialog,
@@ -6,19 +6,24 @@ import {
   DialogDescription,
   DialogHeader,
   DialogTitle,
-} from "@/components/ui/dialog"
-import { Button } from "@/components/ui/button"
-import { ScrollArea } from "@/components/ui/scroll-area"
+} from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 interface HistoricalPopupProps {
-  isOpen: boolean
-  onClose: () => void
-  title: string
-  historicalNote?: string
-  historicalQuote?: string
-  philosophicalExplanation?: string
-  dialecticLaw?: string
-  effects?: { finance: number; people: number; military: number; religion: number }
+  isOpen: boolean;
+  onClose: () => void;
+  title: string;
+  historicalNote?: string;
+  historicalQuote?: string;
+  philosophicalExplanation?: string;
+  dialecticLaw?: string;
+  effects?: {
+    finance: number;
+    people: number;
+    military: number;
+    religion: number;
+  };
 }
 
 export function HistoricalPopup({
@@ -53,23 +58,35 @@ export function HistoricalPopup({
                 </h3>
                 <div className="flex flex-wrap gap-4 text-lg md:text-xl">
                   {effects.finance !== 0 && (
-                    <span className={`font-semibold ${effects.finance > 0 ? "text-green-500" : "text-red-500"}`}>
-                      💰 Tài chính: {effects.finance > 0 ? "+" : ""}{effects.finance}
+                    <span
+                      className={`font-semibold ${effects.finance > 0 ? "text-green-500" : "text-red-500"}`}
+                    >
+                      💰 Tài chính: {effects.finance > 0 ? "+" : ""}
+                      {effects.finance}
                     </span>
                   )}
                   {effects.people !== 0 && (
-                    <span className={`font-semibold ${effects.people > 0 ? "text-green-500" : "text-red-500"}`}>
-                      🙂 Dân sinh: {effects.people > 0 ? "+" : ""}{effects.people}
+                    <span
+                      className={`font-semibold ${effects.people > 0 ? "text-green-500" : "text-red-500"}`}
+                    >
+                      🙂 Dân sinh: {effects.people > 0 ? "+" : ""}
+                      {effects.people}
                     </span>
                   )}
                   {effects.military !== 0 && (
-                    <span className={`font-semibold ${effects.military > 0 ? "text-green-500" : "text-red-500"}`}>
-                      ⚔️ Quân sự: {effects.military > 0 ? "+" : ""}{effects.military}
+                    <span
+                      className={`font-semibold ${effects.military > 0 ? "text-green-500" : "text-red-500"}`}
+                    >
+                      ⚔️ Quân sự: {effects.military > 0 ? "+" : ""}
+                      {effects.military}
                     </span>
                   )}
                   {effects.religion !== 0 && (
-                    <span className={`font-semibold ${effects.religion > 0 ? "text-green-500" : "text-red-500"}`}>
-                      ⛪ Tôn giáo: {effects.religion > 0 ? "+" : ""}{effects.religion}
+                    <span
+                      className={`font-semibold ${effects.religion > 0 ? "text-green-500" : "text-red-500"}`}
+                    >
+                      ⛪ Tôn giáo: {effects.religion > 0 ? "+" : ""}
+                      {effects.religion}
                     </span>
                   )}
                 </div>
@@ -95,13 +112,17 @@ export function HistoricalPopup({
                   Trích Dẫn Lịch Sử
                 </h3>
                 <div className="relative">
-                  <div className="absolute top-0 left-0 text-6xl text-orange-500/20 leading-none select-none">"</div>
+                  <div className="absolute top-0 left-0 text-6xl text-orange-500/20 leading-none select-none">
+                    "
+                  </div>
                   <div className="pl-10 pr-6 pt-2">
                     <p className="text-base md:text-lg text-foreground leading-relaxed italic">
                       {historicalQuote}
                     </p>
                   </div>
-                  <div className="absolute bottom-0 right-0 text-6xl text-orange-500/20 leading-none select-none">"</div>
+                  <div className="absolute bottom-0 right-0 text-6xl text-orange-500/20 leading-none select-none">
+                    "
+                  </div>
                 </div>
               </div>
             )}
@@ -110,16 +131,17 @@ export function HistoricalPopup({
             {historicalNote && (
               <div className="bg-blue-500/10 border-l-4 border-blue-500 rounded-lg p-6">
                 <h3 className="text-xl md:text-2xl font-bold text-foreground mb-4 uppercase tracking-wide">
-                  Bối Cảnh Lịch Sử
+                  Thông Điệp
                 </h3>
                 <div className="text-base md:text-lg text-foreground leading-relaxed space-y-3">
-                  {historicalNote.split('\n').map((paragraph, index) => (
-                    paragraph.trim() && (
-                      <p key={index} className="text-justify">
-                        {paragraph}
-                      </p>
-                    )
-                  ))}
+                  {historicalNote.split("\n").map(
+                    (paragraph, index) =>
+                      paragraph.trim() && (
+                        <p key={index} className="text-justify">
+                          {paragraph}
+                        </p>
+                      ),
+                  )}
                 </div>
               </div>
             )}
@@ -131,23 +153,29 @@ export function HistoricalPopup({
                   Phân Tích Triết Học
                 </h3>
                 <div className="text-base md:text-lg text-foreground leading-relaxed space-y-3">
-                  {philosophicalExplanation.split('\n').map((paragraph, index) => (
-                    paragraph.trim() && (
-                      <p key={index} className="text-justify">
-                        {paragraph}
-                      </p>
-                    )
-                  ))}
+                  {philosophicalExplanation.split("\n").map(
+                    (paragraph, index) =>
+                      paragraph.trim() && (
+                        <p key={index} className="text-justify">
+                          {paragraph}
+                        </p>
+                      ),
+                  )}
                 </div>
               </div>
             )}
 
             {/* Thông báo nếu không có thông tin */}
-            {!historicalNote && !philosophicalExplanation && !dialecticLaw && !historicalQuote && (
-              <div className="text-center text-muted-foreground py-8 lg:col-span-2">
-                <p className="text-lg">Không có thông tin bổ sung cho lựa chọn này</p>
-              </div>
-            )}
+            {!historicalNote &&
+              !philosophicalExplanation &&
+              !dialecticLaw &&
+              !historicalQuote && (
+                <div className="text-center text-muted-foreground py-8 lg:col-span-2">
+                  <p className="text-lg">
+                    Không có thông tin bổ sung cho lựa chọn này
+                  </p>
+                </div>
+              )}
           </div>
         </ScrollArea>
 
@@ -158,5 +186,5 @@ export function HistoricalPopup({
         </div>
       </DialogContent>
     </Dialog>
-  )
+  );
 }

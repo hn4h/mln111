@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
-import { Button } from "@/components/ui/button"
-import { ScrollArea } from "@/components/ui/scroll-area"
+import { Button } from "@/components/ui/button";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 interface RulesScreenProps {
-  onBack: () => void
+  onBack: () => void;
 }
 
 export function RulesScreen({ onBack }: RulesScreenProps) {
@@ -17,7 +17,7 @@ export function RulesScreen({ onBack }: RulesScreenProps) {
             📜 Luật Triều Đình
           </h1>
           <p className="text-sm md:text-base text-muted-foreground italic">
-            "Vua sáng, nước nhà thịnh vượng; Vua mờ, nước nhà diệt vong"
+            "Vua sáng, nước nhà thịnh vượng. Vua mờ, nước nhà diệt vong"
           </p>
         </div>
 
@@ -32,9 +32,10 @@ export function RulesScreen({ onBack }: RulesScreenProps) {
                 </h2>
               </div>
               <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                Bạn là vị vua của một triều đại Việt Nam. Nhiệm vụ của bạn là cai trị đất nước qua
-                nhiều năm tháng bằng cách đưa ra các quyết định khôn ngoan, cân bằng giữa bốn yếu tố
-                quan trọng để duy trì sự ổn định của vương quốc.
+                Bạn là vị vua của một triều đại Việt Nam. Nhiệm vụ của bạn là
+                cai trị đất nước qua nhiều năm tháng bằng cách đưa ra các quyết
+                định khôn ngoan, cân bằng giữa bốn yếu tố quan trọng để duy trì
+                sự ổn định của vương quốc.
               </p>
             </section>
 
@@ -47,7 +48,8 @@ export function RulesScreen({ onBack }: RulesScreenProps) {
                 </h2>
               </div>
               <p className="text-sm md:text-base text-muted-foreground mb-4">
-                Vương quốc đứng vững nhờ bốn trụ cột. Mỗi trụ cột có thang điểm từ <span className="font-bold text-foreground">0 đến 100</span>:
+                Vương quốc đứng vững nhờ bốn trụ cột. Mỗi trụ cột có thang điểm
+                từ <span className="font-bold text-foreground">0 đến 100</span>:
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -57,7 +59,8 @@ export function RulesScreen({ onBack }: RulesScreenProps) {
                     <h3 className="font-bold text-foreground">Tài Chính</h3>
                   </div>
                   <p className="text-xs md:text-sm text-muted-foreground">
-                    Kho bạc quốc gia, nguồn lực kinh tế. Không có tiền, không thể xây dựng và duy trì quốc gia.
+                    Kho bạc quốc gia, nguồn lực kinh tế. Không có tiền, không
+                    thể xây dựng và duy trì quốc gia.
                   </p>
                 </div>
 
@@ -67,7 +70,8 @@ export function RulesScreen({ onBack }: RulesScreenProps) {
                     <h3 className="font-bold text-foreground">Dân Sinh</h3>
                   </div>
                   <p className="text-xs md:text-sm text-muted-foreground">
-                    Lòng dân, sự ủng hộ của nhân dân. Mất lòng dân là mất thiên hạ.
+                    Lòng dân, sự ủng hộ của nhân dân. Mất lòng dân là mất thiên
+                    hạ.
                   </p>
                 </div>
 
@@ -77,7 +81,8 @@ export function RulesScreen({ onBack }: RulesScreenProps) {
                     <h3 className="font-bold text-foreground">Quân Sự</h3>
                   </div>
                   <p className="text-xs md:text-sm text-muted-foreground">
-                    Sức mạnh quân đội, khả năng bảo vệ biên cương. Không có quân đội mạnh, nước nhà bị xâm lăng.
+                    Sức mạnh quân đội, khả năng bảo vệ biên cương. Không có quân
+                    đội mạnh, nước nhà bị xâm lăng.
                   </p>
                 </div>
 
@@ -87,7 +92,8 @@ export function RulesScreen({ onBack }: RulesScreenProps) {
                     <h3 className="font-bold text-foreground">Tôn Giáo</h3>
                   </div>
                   <p className="text-xs md:text-sm text-muted-foreground">
-                    Niềm tin, văn hóa tâm linh. Tôn giáo tạo sự đoàn kết và ổn định tinh thần cho xã hội.
+                    Niềm tin, văn hóa tâm linh. Tôn giáo tạo sự đoàn kết và ổn
+                    định tinh thần cho xã hội.
                   </p>
                 </div>
               </div>
@@ -107,8 +113,10 @@ export function RulesScreen({ onBack }: RulesScreenProps) {
                   <span>⚠️</span> Vùng An Toàn
                 </h3>
                 <p className="text-sm md:text-base text-muted-foreground mb-3">
-                  Bạn bắt đầu với <span className="font-bold text-foreground">50 điểm</span> cho mỗi trụ cột.
-                  Nhiệm vụ của bạn là giữ tất cả các trụ cột trong khoảng:
+                  Bạn bắt đầu với{" "}
+                  <span className="font-bold text-foreground">50 điểm</span> cho
+                  mỗi trụ cột. Nhiệm vụ của bạn là giữ tất cả các trụ cột trong
+                  khoảng:
                 </p>
                 <div className="text-center text-lg font-bold text-foreground bg-background/50 rounded p-3 mb-3">
                   5 điểm ≤ Trụ Cột ≤ 95 điểm
@@ -116,15 +124,31 @@ export function RulesScreen({ onBack }: RulesScreenProps) {
                 <ul className="space-y-2 text-xs md:text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <span className="text-red-500 font-bold mt-0.5">✗</span>
-                    <span><span className="font-bold text-red-500">Thất bại:</span> Bất kỳ trụ cột nào <span className="font-bold">dưới 5</span> điểm → Trụ cột sụp đổ!</span>
+                    <span>
+                      <span className="font-bold text-red-500">Thất bại:</span>{" "}
+                      Bất kỳ trụ cột nào{" "}
+                      <span className="font-bold">dưới 5</span> điểm → Trụ cột
+                      sụp đổ!
+                    </span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-red-500 font-bold mt-0.5">✗</span>
-                    <span><span className="font-bold text-red-500">Thất bại:</span> Bất kỳ trụ cột nào <span className="font-bold">trên 95</span> điểm → Mất cân bằng!</span>
+                    <span>
+                      <span className="font-bold text-red-500">Thất bại:</span>{" "}
+                      Bất kỳ trụ cột nào{" "}
+                      <span className="font-bold">trên 95</span> điểm → Mất cân
+                      bằng!
+                    </span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-green-500 font-bold mt-0.5">✓</span>
-                    <span><span className="font-bold text-green-500">Chiến thắng:</span> Trả lời hết tất cả câu hỏi trong triều đại mà vẫn giữ được cân bằng!</span>
+                    <span>
+                      <span className="font-bold text-green-500">
+                        Chiến thắng:
+                      </span>{" "}
+                      Trả lời hết tất cả câu hỏi trong triều đại mà vẫn giữ được
+                      cân bằng!
+                    </span>
                   </li>
                 </ul>
               </div>
@@ -260,24 +284,50 @@ export function RulesScreen({ onBack }: RulesScreenProps) {
               <ul className="space-y-2 text-sm md:text-base text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <span className="text-amber-500 font-bold mt-0.5">1.</span>
-                  <span><span className="font-bold text-foreground">Đừng quá tham lam:</span> Không nhất thiết phải tăng mọi thứ lên 100. Giữ cân bằng quan trọng hơn!</span>
+                  <span>
+                    <span className="font-bold text-foreground">
+                      Đừng quá tham lam:
+                    </span>{" "}
+                    Không nhất thiết phải tăng mọi thứ lên 100. Giữ cân bằng
+                    quan trọng hơn!
+                  </span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-amber-500 font-bold mt-0.5">2.</span>
-                  <span><span className="font-bold text-foreground">Kiểm tra giá trước khi chọn:</span> Một lựa chọn tốt nhưng không đủ tiền chọn cũng vô ích.</span>
+                  <span>
+                    <span className="font-bold text-foreground">
+                      Hy sinh chiến thuật:
+                    </span>{" "}
+                    Đôi khi phải chấp nhận giảm một trụ cột để cứu trụ cột khác.
+                  </span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-amber-500 font-bold mt-0.5">3.</span>
-                  <span><span className="font-bold text-foreground">Hy sinh chiến thuật:</span> Đôi khi phải chấp nhận giảm một trụ cột để cứu trụ cột khác.</span>
+                  <span>
+                    <span className="font-bold text-foreground">
+                      Đọc kỹ mô tả:
+                    </span>{" "}
+                    Mỗi lựa chọn có gợi ý về rủi ro và lợi ích.
+                  </span>
                 </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-amber-500 font-bold mt-0.5">4.</span>
-                  <span><span className="font-bold text-foreground">Đọc kỹ mô tả:</span> Mỗi lựa chọn có gợi ý về rủi ro và lợi ích.</span>
-                </li>
-                <li className="flex items-start gap-2">
+                {/* <li className="flex items-start gap-2">
+                  <span className="text-amber-500 font-bold mt-0.5">2.</span>
+                  <span>
+                    <span className="font-bold text-foreground">
+                      Kiểm tra giá trước khi chọn:
+                    </span>{" "}
+                    Một lựa chọn tốt nhưng không đủ tiền chọn cũng vô ích.
+                  </span>
+                </li> */}
+                {/* <li className="flex items-start gap-2">
                   <span className="text-amber-500 font-bold mt-0.5">5.</span>
-                  <span><span className="font-bold text-foreground">Đọc kỹ hiệu ứng:</span> Chú ý tác động cụ thể của từng lựa chọn đến các trụ cột!</span>
-                </li>
+                  <span>
+                    <span className="font-bold text-foreground">
+                      Đọc kỹ hiệu ứng:
+                    </span>{" "}
+                    Chú ý tác động cụ thể của từng lựa chọn đến các trụ cột!
+                  </span>
+                </li> */}
               </ul>
             </section>
 
@@ -287,23 +337,18 @@ export function RulesScreen({ onBack }: RulesScreenProps) {
                 "Cai trị là nghệ thuật cân bằng, không phải chinh phục"
               </p>
               <p className="text-sm text-muted-foreground">
-                Chúc bạn may mắn, thưa Hoàng Thượng! 👑
+                Chúc bạn may mắn, thưa Đức Vua! 👑
               </p>
             </section>
           </div>
+          <div className="border-t-2 border-border p-4 bg-secondary/30">
+            <Button onClick={onBack} className="w-full" size="lg">
+              ← Trở Về Triều Đình
+            </Button>
+          </div>
         </ScrollArea>
-
         {/* Footer */}
-        <div className="border-t-2 border-border p-4 bg-secondary/30">
-          <Button
-            onClick={onBack}
-            className="w-full"
-            size="lg"
-          >
-            ← Trở Về Triều Đình
-          </Button>
-        </div>
       </div>
     </div>
-  )
+  );
 }
