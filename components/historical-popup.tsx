@@ -18,7 +18,6 @@ interface HistoricalPopupProps {
   historicalNote?: string
   historicalQuote?: string
   philosophicalExplanation?: string
-  dialecticLaw?: string
   effects?: StatEffects
 }
 
@@ -29,7 +28,6 @@ export function HistoricalPopup({
   historicalNote,
   historicalQuote,
   philosophicalExplanation,
-  dialecticLaw,
   effects,
 }: HistoricalPopupProps) {
   return (
@@ -89,17 +87,7 @@ export function HistoricalPopup({
               </div>
             )}
 
-            {/* Quy luật biện chứng */}
-            {dialecticLaw && (
-              <div className="bg-amber-500/10 border-l-4 border-amber-500 rounded-lg p-6 lg:col-span-2">
-                <h3 className="text-xl md:text-2xl font-bold text-foreground mb-4 uppercase tracking-wide">
-                  Quy Luật Biện Chứng
-                </h3>
-                <p className="text-lg md:text-xl text-foreground leading-relaxed italic font-medium">
-                  "{dialecticLaw}"
-                </p>
-              </div>
-            )}
+
 
             {/* Triếch dẫn nguyên văn từ sử sách */}
             {historicalQuote && (
@@ -156,7 +144,7 @@ export function HistoricalPopup({
             )}
 
             {/* Thông báo nếu không có thông tin */}
-            {!historicalNote && !philosophicalExplanation && !dialecticLaw && !historicalQuote && (
+            {!historicalNote && !philosophicalExplanation && !historicalQuote && (
               <div className="text-center text-muted-foreground py-8 lg:col-span-2">
                 <p className="text-lg">Không có thông tin bổ sung cho lựa chọn này</p>
               </div>

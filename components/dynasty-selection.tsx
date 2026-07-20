@@ -34,7 +34,7 @@ export function DynastySelection({ onSelectDynasty }: DynastySelectionProps) {
   }
 
   return (
-    <div className="min-h-screen bg-background flex items-center justify-center px-4 py-8">
+    <div className="h-[100dvh] w-full bg-background overflow-y-auto flex items-start justify-center px-4 py-8">
       <div className="max-w-5xl w-full space-y-8">
         <div className="text-center space-y-4">
           {/* <h1 className="text-5xl md:text-6xl font-bold text-foreground tracking-tight">
@@ -45,14 +45,13 @@ export function DynastySelection({ onSelectDynasty }: DynastySelectionProps) {
             alt="ĐẠI VIỆT: THIÊN MỆNH TRUNG DUNG"
             className="h-64 md:h-60 w-auto object-contain mx-auto"
           /> */}
-          <p className="text-lg md:text-xl pt-25" style={{ color: "#222222" }}>
+          <p className="text-lg md:text-xl font-medium text-foreground/80 pt-4">
             Chọn một chủ đề để bắt đầu hành trình khám phá
           </p>
           <p
-            className="text-sm max-w-3xl mx-auto"
-            style={{ color: "#222222", lineHeight: 1.6 }}
+            className="text-sm text-muted-foreground max-w-3xl mx-auto leading-relaxed"
           >
-            Mỗi chặng đường lịch sử sẽ đưa bạn qua các tình huống thực tế của Cách mạng Việt Nam dưới sự chèo lái của Đảng Cộng sản Việt Nam, kết hợp với các quy luật cơ bản của phép biện chứng duy vật. Quyết định của bạn sẽ ảnh hưởng đến 4 yếu tố: Tài chính, Dân sinh, Lực lượng vũ trang và Hệ tư tưởng.
+            Mỗi chặng đường lịch sử sẽ đưa bạn qua các tình huống thực tế của Cách mạng Việt Nam dưới sự chèo lái của Đảng Cộng sản Việt Nam. Quyết định của bạn sẽ ảnh hưởng đến 4 yếu tố: Tài chính, Dân sinh, Lực lượng vũ trang và Hệ tư tưởng.
           </p>
           <div className="flex justify-center gap-4 mt-4">
             <Button
@@ -82,45 +81,47 @@ export function DynastySelection({ onSelectDynasty }: DynastySelectionProps) {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="flex flex-wrap justify-center gap-6">
           {vietnamDynasties.map((dynasty: Dynasty) => {
             const isCompleted = completedDynasties[dynasty.id]
             return (
               <Card
                 key={dynasty.id}
-                className={`hover:shadow-lg transition-all duration-300 cursor-pointer group relative ${
-                  isCompleted ? 'border-2 border-amber-500' : ''
+                className={`w-full max-w-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 cursor-pointer group relative ${
+                  isCompleted ? 'border-2 border-amber-500 bg-amber-500/[0.01]' : 'bg-card/50 backdrop-blur-sm'
                 }`}
                 onClick={() => onSelectDynasty(dynasty.id)}
               >
                 {isCompleted && (
-                  <div className="absolute top-2 right-2 bg-amber-500 text-white text-xs font-bold px-2 py-1 rounded-full flex items-center gap-1">
+                  <div className="absolute top-3 right-3 bg-amber-500 text-white text-xs font-bold px-2.5 py-1 rounded-full flex items-center gap-1 shadow-sm">
                     <span>✓</span> Đã hoàn thành
                   </div>
                 )}
-                <CardHeader className="text-center">
-                  <div className="text-6xl mb-4 group-hover:scale-110 transition-transform">{dynasty.icon}</div>
-                  <CardTitle className="text-2xl">{dynasty.name}</CardTitle>
-                  <CardDescription className="text-sm font-medium">{dynasty.period}</CardDescription>
+                <CardHeader className="text-center pt-8">
+                  <div className="text-6xl mb-4 group-hover:scale-110 transition-transform duration-300 select-none">{dynasty.icon}</div>
+                  <CardTitle className="text-2xl font-bold tracking-tight">{dynasty.name}</CardTitle>
+                  <CardDescription className="text-sm font-semibold text-amber-600 dark:text-amber-500 mt-1">{dynasty.period}</CardDescription>
                 </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-muted-foreground text-center leading-relaxed">{dynasty.description}</p>
+                <CardContent className="space-y-4">
+                  <p className="text-sm text-muted-foreground text-center leading-relaxed px-2">{dynasty.description}</p>
                   {isCompleted && (
-                    <div className="mt-3 p-2 bg-amber-500/10 rounded text-xs text-center space-y-1">
-                      <p className="font-semibold text-amber-700 dark:text-amber-400">
+                    <div className="mt-3 p-3 bg-amber-500/10 rounded-xl text-xs text-center space-y-1 border border-amber-500/15">
+                      <p className="font-bold text-amber-700 dark:text-amber-400 text-sm">
                         Điểm: {completedDynasties[dynasty.id].finalStats ? 
                           Math.round((completedDynasties[dynasty.id].finalStats.finance + 
                                      completedDynasties[dynasty.id].finalStats.people + 
                                      completedDynasties[dynasty.id].finalStats.military + 
                                      completedDynasties[dynasty.id].finalStats.religion) / 4) : 0}/100
                       </p>
-                      <p className="text-muted-foreground">
-                        {completedDynasties[dynasty.id].yearsReigned} năm
+                      <p className="text-muted-foreground font-medium">
+                        {completedDynasties[dynasty.id].yearsReigned} chặng đường
                       </p>
                     </div>
                   )}
                   <Button
-                    className={`w-full mt-4 group-hover:bg-amber-700/90 ${isCompleted ? "bg-amber-500 hover:bg-amber-600" : ""}`}
+                    className={`w-full mt-2 font-semibold group-hover:bg-amber-600 group-hover:text-white transition-all duration-300 ${
+                      isCompleted ? "bg-amber-500 hover:bg-amber-600 text-white" : ""
+                    }`}
                     variant="outline"
                   >
                     {isCompleted ? "Chơi lại" : "Chọn chủ đề"}
@@ -131,25 +132,7 @@ export function DynastySelection({ onSelectDynasty }: DynastySelectionProps) {
           })}
         </div>
 
-        <div className="border-t border-border pt-6 space-y-4">
-          <h3 className="text-sm font-semibold text-foreground uppercase tracking-wide text-center">
-            Các Quy Luật Biện Chứng
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-muted-foreground">
-            <div className="text-center space-y-1">
-              <p className="font-medium text-foreground">Thống nhất và đấu tranh</p>
-              <p className="text-xs">của các mặt đối lập</p>
-            </div>
-            <div className="text-center space-y-1">
-              <p className="font-medium text-foreground">Chuyển hóa</p>
-              <p className="text-xs">từ lượng sang chất</p>
-            </div>
-            <div className="text-center space-y-1">
-              <p className="font-medium text-foreground">Phủ định</p>
-              <p className="text-xs">của phủ định</p>
-            </div>
-          </div>
-        </div>
+
       </div>
     </div>
   )

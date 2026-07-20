@@ -65,13 +65,6 @@ export function GameCard({ card, onSwipe, decisionDirection, currentStats }: Gam
           <p className="text-base md:text-lg leading-relaxed text-foreground text-center">
             {card.situation}
           </p>
-          {card.philosophicalContext && (
-            <div className="flex items-center justify-center gap-2 text-xs text-muted-foreground">
-              <span className="px-3 py-1 bg-muted rounded-full">
-                {card.philosophicalContext}
-              </span>
-            </div>
-          )}
         </div>
       </div>
 
@@ -82,198 +75,230 @@ export function GameCard({ card, onSwipe, decisionDirection, currentStats }: Gam
           shuffledChoices.map((choice, index) => {
             const affordable = canAfford(choice.cost)
             return (
-              <Button
+              <button
                 key={choice.id}
                 onClick={() => handleChoice(choice.id)}
                 disabled={!!decisionDirection || !affordable}
-                variant="outline"
-                size="lg"
-                className={`h-auto py-3 px-4 text-left flex flex-col items-start gap-1 hover:bg-primary/10 hover:border-primary transition-all ${!affordable ? 'opacity-50 cursor-not-allowed' : ''
+                className={`w-full text-left flex flex-col items-start gap-2.5 p-4 rounded-xl border transition-all duration-300 shadow-sm hover:shadow-md cursor-pointer ${!affordable
+                  ? 'opacity-40 cursor-not-allowed bg-muted/20 border-border/40'
+                  : 'bg-card/65 backdrop-blur-sm border-border/60 hover:bg-primary/[0.03] hover:border-primary/45 hover:scale-[1.01] active:scale-[0.99]'
                   }`}
               >
                 <div className="flex items-center justify-between w-full">
-                  <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">
-                    Lựa chọn {String.fromCharCode(65 + index)}
-                  </span>
+                  <div className="flex items-center gap-2">
+                    <span className="h-5 w-5 rounded-full bg-primary/10 text-primary border border-primary/20 text-[10px] font-bold flex items-center justify-center">
+                      {String.fromCharCode(65 + index)}
+                    </span>
+                    <span className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest">
+                      Lựa chọn {String.fromCharCode(65 + index)}
+                    </span>
+                  </div>
                   {choice.cost && (
-                    <span className="text-xs font-semibold text-orange-500">💸 Giá: {Math.abs(choice.cost.finance + choice.cost.people + choice.cost.military + choice.cost.religion)}</span>
+                    <span className="text-[10px] font-bold uppercase px-2 py-0.5 rounded-full bg-orange-500/10 text-orange-600 dark:text-orange-400 border border-orange-500/20 tracking-wider">
+                      💸 Chi phí: {Math.abs(choice.cost.finance + choice.cost.people + choice.cost.military + choice.cost.religion)}
+                    </span>
                   )}
                 </div>
-                <span className="text-sm md:text-base font-medium text-foreground">
+
+                <span className="text-sm md:text-base font-bold text-foreground/90 leading-snug">
                   {choice.text}
                 </span>
+
                 {choice.description && (
-                  <span className="text-xs text-muted-foreground italic">
+                  <span className="text-xs text-muted-foreground italic leading-relaxed">
                     {choice.description}
                   </span>
                 )}
+
                 {/* Hiển thị giá phải trả */}
                 {choice.cost && (
-                  <div className="flex gap-2 text-xs mt-1 pb-2 border-b border-border/50">
-                    <span className="text-orange-500 font-semibold">Trả trước:</span>
+                  <div className="flex flex-wrap items-center gap-1.5 mt-1 pt-2 border-t border-border/30 w-full">
+                    <span className="text-[10px] font-bold text-orange-600 dark:text-orange-400 uppercase tracking-wider mr-1">Trả trước:</span>
                     {choice.cost.finance !== 0 && (
-                      <span className="text-orange-500">💰 -{Math.abs(choice.cost.finance)}</span>
+                      <span className="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded bg-orange-500/10 text-orange-600 dark:text-orange-400 text-xs border border-orange-500/25">
+                        💰 -{Math.abs(choice.cost.finance)}
+                      </span>
                     )}
                     {choice.cost.people !== 0 && (
-                      <span className="text-orange-500">🙂 -{Math.abs(choice.cost.people)}</span>
+                      <span className="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded bg-orange-500/10 text-orange-600 dark:text-orange-400 text-xs border border-orange-500/25">
+                        🙂 -{Math.abs(choice.cost.people)}
+                      </span>
                     )}
                     {choice.cost.military !== 0 && (
-                      <span className="text-orange-500">⚔️ -{Math.abs(choice.cost.military)}</span>
+                      <span className="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded bg-orange-500/10 text-orange-600 dark:text-orange-400 text-xs border border-orange-500/25">
+                        ⚔️ -{Math.abs(choice.cost.military)}
+                      </span>
                     )}
                     {choice.cost.religion !== 0 && (
-                      <span className="text-orange-500">⛪ -{Math.abs(choice.cost.religion)}</span>
+                      <span className="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded bg-orange-500/10 text-orange-600 dark:text-orange-400 text-xs border border-orange-500/25">
+                        🛡️ -{Math.abs(choice.cost.religion)}
+                      </span>
                     )}
                   </div>
                 )}
-                {/* Hiển thị hiệu ứng */}
-                {/* <div className="flex gap-2 text-xs text-muted-foreground">
-                  <span className="font-semibold">Kết quả:</span>
-                  {choice.effects.finance !== 0 && (
-                    <span className={choice.effects.finance > 0 ? "text-green-500" : "text-red-500"}>
-                      💰 {choice.effects.finance > 0 ? "+" : ""}{choice.effects.finance}
-                    </span>
-                  )}
-                  {choice.effects.people !== 0 && (
-                    <span className={choice.effects.people > 0 ? "text-green-500" : "text-red-500"}>
-                      🙂 {choice.effects.people > 0 ? "+" : ""}{choice.effects.people}
-                    </span>
-                  )}
-                  {choice.effects.military !== 0 && (
-                    <span className={choice.effects.military > 0 ? "text-green-500" : "text-red-500"}>
-                      ⚔️ {choice.effects.military > 0 ? "+" : ""}{choice.effects.military}
-                    </span>
-                  )}
-                  {choice.effects.religion !== 0 && (
-                    <span className={choice.effects.religion > 0 ? "text-green-500" : "text-red-500"}>
-                      ⛪ {choice.effects.religion > 0 ? "+" : ""}{choice.effects.religion}
-                    </span>
-                  )}
-                </div> */}
-              </Button>
+              </button>
             )
           })
         ) : (
           // Hiển thị 2 lựa chọn cũ (left/right)
           <>
-            <Button
+            <button
               onClick={() => handleChoice("left")}
               disabled={!!decisionDirection || !canAfford(card.leftChoice.cost)}
-              variant="outline"
-              size="lg"
-              className={`h-auto py-3 px-4 text-left flex flex-col items-start gap-1 hover:bg-primary/10 hover:border-primary transition-all ${!canAfford(card.leftChoice.cost) ? 'opacity-50 cursor-not-allowed' : ''
+              className={`w-full text-left flex flex-col items-start gap-2.5 p-4 rounded-xl border transition-all duration-300 shadow-sm hover:shadow-md cursor-pointer ${!canAfford(card.leftChoice.cost)
+                ? 'opacity-40 cursor-not-allowed bg-muted/20 border-border/40'
+                : 'bg-card/65 backdrop-blur-sm border-border/60 hover:bg-primary/[0.03] hover:border-primary/45 hover:scale-[1.01] active:scale-[0.99]'
                 }`}
             >
               <div className="flex items-center justify-between w-full">
-                <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">
-                  Lựa chọn A
-                </span>
+                <div className="flex items-center gap-2">
+                  <span className="h-5 w-5 rounded-full bg-primary/10 text-primary border border-primary/20 text-[10px] font-bold flex items-center justify-center">
+                    A
+                  </span>
+                  <span className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest">
+                    Lựa chọn A
+                  </span>
+                </div>
                 {card.leftChoice.cost && (
-                  <span className="text-xs font-semibold text-orange-500">💸 Giá: {Math.abs(card.leftChoice.cost.finance + card.leftChoice.cost.people + card.leftChoice.cost.military + card.leftChoice.cost.religion)}</span>
+                  <span className="text-[10px] font-bold uppercase px-2 py-0.5 rounded-full bg-orange-500/10 text-orange-600 dark:text-orange-400 border border-orange-500/20 tracking-wider">
+                    💸 Chi phí: {Math.abs(card.leftChoice.cost.finance + card.leftChoice.cost.people + card.leftChoice.cost.military + card.leftChoice.cost.religion)}
+                  </span>
                 )}
               </div>
-              <span className="text-sm md:text-base font-medium text-foreground">
+
+              <span className="text-sm md:text-base font-bold text-foreground/90 leading-snug">
                 {card.leftChoice.text}
               </span>
+
               {card.leftChoice.cost && (
-                <div className="flex gap-2 text-xs mt-1 pb-2 border-b border-border/50">
-                  <span className="text-orange-500 font-semibold">Trả trước:</span>
+                <div className="flex flex-wrap items-center gap-1.5 mt-1 pt-2 border-t border-border/30 w-full">
+                  <span className="text-[10px] font-bold text-orange-600 dark:text-orange-400 uppercase tracking-wider mr-1">Trả trước:</span>
                   {card.leftChoice.cost.finance !== 0 && (
-                    <span className="text-orange-500">💰 -{Math.abs(card.leftChoice.cost.finance)}</span>
+                    <span className="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded bg-orange-500/10 text-orange-600 dark:text-orange-400 text-xs border border-orange-500/25">
+                      💰 -{Math.abs(card.leftChoice.cost.finance)}
+                    </span>
                   )}
                   {card.leftChoice.cost.people !== 0 && (
-                    <span className="text-orange-500">🙂 -{Math.abs(card.leftChoice.cost.people)}</span>
+                    <span className="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded bg-orange-500/10 text-orange-600 dark:text-orange-400 text-xs border border-orange-500/25">
+                      🙂 -{Math.abs(card.leftChoice.cost.people)}
+                    </span>
                   )}
                   {card.leftChoice.cost.military !== 0 && (
-                    <span className="text-orange-500">⚔️ -{Math.abs(card.leftChoice.cost.military)}</span>
+                    <span className="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded bg-orange-500/10 text-orange-600 dark:text-orange-400 text-xs border border-orange-500/25">
+                      ⚔️ -{Math.abs(card.leftChoice.cost.military)}
+                    </span>
                   )}
                   {card.leftChoice.cost.religion !== 0 && (
-                    <span className="text-orange-500">⛪ -{Math.abs(card.leftChoice.cost.religion)}</span>
+                    <span className="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded bg-orange-500/10 text-orange-600 dark:text-orange-400 text-xs border border-orange-500/25">
+                      🛡️ -{Math.abs(card.leftChoice.cost.religion)}
+                    </span>
                   )}
                 </div>
               )}
-              <div className="flex gap-2 text-xs text-muted-foreground mt-2">
+
+              <div className="flex flex-wrap gap-2 text-xs text-muted-foreground mt-2 w-full pt-2 border-t border-border/10">
+                <span className="font-bold text-[10px] uppercase tracking-wider text-muted-foreground mr-1">Tác động dự kiến:</span>
                 {card.leftChoice.effects.finance !== 0 && (
-                  <span className={card.leftChoice.effects.finance > 0 ? "text-green-500" : "text-red-500"}>
+                  <span className={card.leftChoice.effects.finance > 0 ? "text-green-600 dark:text-green-400" : "text-red-500"}>
                     💰 {card.leftChoice.effects.finance > 0 ? "+" : ""}{card.leftChoice.effects.finance}
                   </span>
                 )}
                 {card.leftChoice.effects.people !== 0 && (
-                  <span className={card.leftChoice.effects.people > 0 ? "text-green-500" : "text-red-500"}>
+                  <span className={card.leftChoice.effects.people > 0 ? "text-green-600 dark:text-green-400" : "text-red-500"}>
                     🙂 {card.leftChoice.effects.people > 0 ? "+" : ""}{card.leftChoice.effects.people}
                   </span>
                 )}
                 {card.leftChoice.effects.military !== 0 && (
-                  <span className={card.leftChoice.effects.military > 0 ? "text-green-500" : "text-red-500"}>
+                  <span className={card.leftChoice.effects.military > 0 ? "text-green-600 dark:text-green-400" : "text-red-500"}>
                     ⚔️ {card.leftChoice.effects.military > 0 ? "+" : ""}{card.leftChoice.effects.military}
                   </span>
                 )}
                 {card.leftChoice.effects.religion !== 0 && (
-                  <span className={card.leftChoice.effects.religion > 0 ? "text-green-500" : "text-red-500"}>
-                    ⛪ {card.leftChoice.effects.religion > 0 ? "+" : ""}{card.leftChoice.effects.religion}
+                  <span className={card.leftChoice.effects.religion > 0 ? "text-green-600 dark:text-green-400" : "text-red-500"}>
+                    🛡️ {card.leftChoice.effects.religion > 0 ? "+" : ""}{card.leftChoice.effects.religion}
                   </span>
                 )}
               </div>
-            </Button>
+            </button>
 
-            <Button
+            <button
               onClick={() => handleChoice("right")}
               disabled={!!decisionDirection || !canAfford(card.rightChoice.cost)}
-              variant="outline"
-              size="lg"
-              className={`h-auto py-3 px-4 text-left flex flex-col items-start gap-1 hover:bg-primary/10 hover:border-primary transition-all ${!canAfford(card.rightChoice.cost) ? 'opacity-50 cursor-not-allowed' : ''
+              className={`w-full text-left flex flex-col items-start gap-2.5 p-4 rounded-xl border transition-all duration-300 shadow-sm hover:shadow-md cursor-pointer ${!canAfford(card.rightChoice.cost)
+                ? 'opacity-40 cursor-not-allowed bg-muted/20 border-border/40'
+                : 'bg-card/65 backdrop-blur-sm border-border/60 hover:bg-primary/[0.03] hover:border-primary/45 hover:scale-[1.01] active:scale-[0.99]'
                 }`}
             >
               <div className="flex items-center justify-between w-full">
-                <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">
-                  Lựa chọn B
-                </span>
+                <div className="flex items-center gap-2">
+                  <span className="h-5 w-5 rounded-full bg-primary/10 text-primary border border-primary/20 text-[10px] font-bold flex items-center justify-center">
+                    B
+                  </span>
+                  <span className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest">
+                    Lựa chọn B
+                  </span>
+                </div>
                 {card.rightChoice.cost && (
-                  <span className="text-xs font-semibold text-orange-500">💸 Giá: {Math.abs(card.rightChoice.cost.finance + card.rightChoice.cost.people + card.rightChoice.cost.military + card.rightChoice.cost.religion)}</span>
+                  <span className="text-[10px] font-bold uppercase px-2 py-0.5 rounded-full bg-orange-500/10 text-orange-600 dark:text-orange-400 border border-orange-500/20 tracking-wider">
+                    💸 Chi phí: {Math.abs(card.rightChoice.cost.finance + card.rightChoice.cost.people + card.rightChoice.cost.military + card.rightChoice.cost.religion)}
+                  </span>
                 )}
               </div>
-              <span className="text-sm md:text-base font-medium text-foreground">
+
+              <span className="text-sm md:text-base font-bold text-foreground/90 leading-snug">
                 {card.rightChoice.text}
               </span>
+
               {card.rightChoice.cost && (
-                <div className="flex gap-2 text-xs mt-1 pb-2 border-b border-border/50">
-                  <span className="text-orange-500 font-semibold">Trả trước:</span>
+                <div className="flex flex-wrap items-center gap-1.5 mt-1 pt-2 border-t border-border/30 w-full">
+                  <span className="text-[10px] font-bold text-orange-600 dark:text-orange-400 uppercase tracking-wider mr-1">Trả trước:</span>
                   {card.rightChoice.cost.finance !== 0 && (
-                    <span className="text-orange-500">💰 -{Math.abs(card.rightChoice.cost.finance)}</span>
+                    <span className="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded bg-orange-500/10 text-orange-600 dark:text-orange-400 text-xs border border-orange-500/25">
+                      💰 -{Math.abs(card.rightChoice.cost.finance)}
+                    </span>
                   )}
                   {card.rightChoice.cost.people !== 0 && (
-                    <span className="text-orange-500">🙂 -{Math.abs(card.rightChoice.cost.people)}</span>
+                    <span className="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded bg-orange-500/10 text-orange-600 dark:text-orange-400 text-xs border border-orange-500/25">
+                      🙂 -{Math.abs(card.rightChoice.cost.people)}
+                    </span>
                   )}
                   {card.rightChoice.cost.military !== 0 && (
-                    <span className="text-orange-500">⚔️ -{Math.abs(card.rightChoice.cost.military)}</span>
+                    <span className="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded bg-orange-500/10 text-orange-600 dark:text-orange-400 text-xs border border-orange-500/25">
+                      ⚔️ -{Math.abs(card.rightChoice.cost.military)}
+                    </span>
                   )}
                   {card.rightChoice.cost.religion !== 0 && (
-                    <span className="text-orange-500">⛪ -{Math.abs(card.rightChoice.cost.religion)}</span>
+                    <span className="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded bg-orange-500/10 text-orange-600 dark:text-orange-400 text-xs border border-orange-500/25">
+                      🛡️ -{Math.abs(card.rightChoice.cost.religion)}
+                    </span>
                   )}
                 </div>
               )}
-              <div className="flex gap-2 text-xs text-muted-foreground mt-2">
+
+              <div className="flex flex-wrap gap-2 text-xs text-muted-foreground mt-2 w-full pt-2 border-t border-border/10">
+                <span className="font-bold text-[10px] uppercase tracking-wider text-muted-foreground mr-1">Tác động dự kiến:</span>
                 {card.rightChoice.effects.finance !== 0 && (
-                  <span className={card.rightChoice.effects.finance > 0 ? "text-green-500" : "text-red-500"}>
+                  <span className={card.rightChoice.effects.finance > 0 ? "text-green-600 dark:text-green-400" : "text-red-500"}>
                     💰 {card.rightChoice.effects.finance > 0 ? "+" : ""}{card.rightChoice.effects.finance}
                   </span>
                 )}
                 {card.rightChoice.effects.people !== 0 && (
-                  <span className={card.rightChoice.effects.people > 0 ? "text-green-500" : "text-red-500"}>
+                  <span className={card.rightChoice.effects.people > 0 ? "text-green-600 dark:text-green-400" : "text-red-500"}>
                     🙂 {card.rightChoice.effects.people > 0 ? "+" : ""}{card.rightChoice.effects.people}
                   </span>
                 )}
                 {card.rightChoice.effects.military !== 0 && (
-                  <span className={card.rightChoice.effects.military > 0 ? "text-green-500" : "text-red-500"}>
+                  <span className={card.rightChoice.effects.military > 0 ? "text-green-600 dark:text-green-400" : "text-red-500"}>
                     ⚔️ {card.rightChoice.effects.military > 0 ? "+" : ""}{card.rightChoice.effects.military}
                   </span>
                 )}
                 {card.rightChoice.effects.religion !== 0 && (
-                  <span className={card.rightChoice.effects.religion > 0 ? "text-green-500" : "text-red-500"}>
-                    ⛪ {card.rightChoice.effects.religion > 0 ? "+" : ""}{card.rightChoice.effects.religion}
+                  <span className={card.rightChoice.effects.religion > 0 ? "text-green-600 dark:text-green-400" : "text-red-500"}>
+                    🛡️ {card.rightChoice.effects.religion > 0 ? "+" : ""}{card.rightChoice.effects.religion}
                   </span>
                 )}
               </div>
-            </Button>
+            </button>
           </>
         )}
       </div>

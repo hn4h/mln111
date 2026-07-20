@@ -1,6 +1,5 @@
 "use client"
 import type { GameState, Card } from "@/lib/types"
-import { useRouter } from "next/navigation"
 import { useEffect } from "react"
 
 interface VictoryScreenProps {
@@ -8,10 +7,10 @@ interface VictoryScreenProps {
   cardHistory: Array<{ card: Card; choice: "left" | "right" | string }>
   onRestart: () => void
   dynastyName: string
+  onHome: () => void
 }
 
-export function VictoryScreen({ gameState, cardHistory, onRestart, dynastyName }: VictoryScreenProps) {
-  const router = useRouter()
+export function VictoryScreen({ gameState, cardHistory, onRestart, dynastyName, onHome }: VictoryScreenProps) {
 
   useEffect(() => {
     // Lưu thông tin chiến thắng vào localStorage
@@ -122,7 +121,7 @@ export function VictoryScreen({ gameState, cardHistory, onRestart, dynastyName }
             Chơi Lại Chủ Đề Này
           </button>
           <button
-            onClick={() => router.push('/')}
+            onClick={onHome}
             className="px-8 py-3 bg-foreground text-background font-semibold rounded-lg hover:bg-muted-foreground transition-colors text-base"
           >
             Chọn Chủ Đề Khác

@@ -37,7 +37,6 @@ export function GameContainer() {
     historicalNote?: string
     historicalQuote?: string
     philosophicalExplanation?: string
-    dialecticLaw?: string
     effects?: StatEffects
   } | null>(null)
 
@@ -83,7 +82,6 @@ export function GameContainer() {
         historicalNote: selectedChoice.historicalNote,
         historicalQuote: isCorrectAnswer ? currentCard.historicalQuote : selectedChoice.historicalQuote,
         philosophicalExplanation: selectedChoice.philosophicalExplanation,
-        dialecticLaw: currentCard.dialecticLaw,
         effects: selectedChoice.effects,
       })
       setShowHistoricalPopup(true)
@@ -183,6 +181,12 @@ export function GameContainer() {
   }
 
   const restartGame = () => {
+    if (gameState.selectedDynasty) {
+      selectDynasty(gameState.selectedDynasty)
+    }
+  }
+
+  const goToHome = () => {
     setGameState({
       finance: 50,
       people: 50,
@@ -216,27 +220,29 @@ export function GameContainer() {
           cardHistory={cardHistory} 
           onRestart={restartGame}
           dynastyName={selectedDynastyData?.name || ""}
+          onHome={goToHome}
         />
       )
     }
-    return <GameOverScreen gameState={gameState} cardHistory={cardHistory} onRestart={restartGame} />
+    return (
+      <GameOverScreen 
+        gameState={gameState} 
+        cardHistory={cardHistory} 
+        onRestart={restartGame} 
+        onHome={goToHome}
+      />
+    )
   }
 
   return (
-    <div className="min-h-screen bg-background flex flex-col overflow-hidden">
+    <div className="h-[100dvh] bg-background flex flex-col overflow-hidden">
       <div className="flex-shrink-0">
         <StatsDisplay gameState={gameState} />
       </div>
 
-      <div className="flex-1 flex flex-col items-center justify-center px-4 py-4 overflow-y-auto">
+      <div className="flex-1 flex flex-col items-center justify-start px-4 py-6 md:py-10 overflow-y-auto">
         {currentCard ? (
           <>
-            {currentCard.dialecticLaw && (
-              <div className="text-center text-xs md:text-sm text-muted-foreground border border-border rounded-lg p-2 md:p-3 bg-muted/30 mb-4 max-w-3xl w-full">
-                <span className="font-semibold">⚖️ Quy luật biện chứng: </span>
-                {currentCard.dialecticLaw}
-              </div>
-            )}
             <GameCard 
               card={currentCard} 
               onSwipe={makeDecision} 
@@ -270,7 +276,6 @@ export function GameContainer() {
           historicalNote={popupData.historicalNote}
           historicalQuote={popupData.historicalQuote}
           philosophicalExplanation={popupData.philosophicalExplanation}
-          dialecticLaw={popupData.dialecticLaw}
           effects={popupData.effects}
         />
       )}

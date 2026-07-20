@@ -1,30 +1,16 @@
 "use client"
 import type { GameState, Card } from "@/lib/types"
-import { useRouter } from "next/navigation"
 
 interface GameOverScreenProps {
   gameState: GameState
   cardHistory: Array<{ card: Card; choice: "left" | "right" | string }>
   onRestart: () => void
+  onHome: () => void
 }
 
-export function GameOverScreen({ gameState, cardHistory, onRestart }: GameOverScreenProps) {
-  const router = useRouter()
+export function GameOverScreen({ gameState, cardHistory, onRestart, onHome }: GameOverScreenProps) {
   
-  const getDialecticalLesson = (reason: string | null) => {
-    if (!reason) return null
 
-    if (reason.includes("Finance") || reason.includes("Tài chính")) {
-      return "Kinh tế không phát triển, Cách mạng sẽ thiếu đi nền tảng vật chất. Nhưng nếu chỉ tập trung vào tài chính mà xa rời mục tiêu dân tộc thì sẽ mất đi tính chính nghĩa."
-    } else if (reason.includes("People") || reason.includes("Dân sinh")) {
-      return "Dân là gốc nước. Xa rời nhân dân, phong trào cách mạng sẽ bị cô lập và thất bại. Nhưng nếu chỉ chạy theo dân túy ngắn hạn sẽ làm kiệt quệ tài lực quốc gia."
-    } else if (reason.includes("Military") || reason.includes("Quân sự")) {
-      return "Lực lượng vũ trang bảo vệ Tổ quốc. Lạm dụng bạo lực hoặc phiêu lưu quân sự sẽ dẫn đến tổn thất; nhưng nếu yếu đuối, thiếu tự vệ sẽ bị kẻ thù đàn áp."
-    } else if (reason.includes("Religion") || reason.includes("Hệ tư tưởng")) {
-      return "Đường lối chính trị và hệ tư tưởng dẫn dắt hành động cách mạng. Thiếu định hướng tư tưởng sẽ dẫn đến chệch hướng và phân rã tổ chức."
-    }
-    return "Tất cả hệ thống đều chứa đựng mâu thuẫn riêng của mình. Làm chủ nằm ở sự căng thẳng vĩnh cửu giữa các đối lập."
-  }
 
   return (
     <div className="min-h-screen bg-background flex items-center justify-center px-4 py-8">
@@ -68,12 +54,7 @@ export function GameOverScreen({ gameState, cardHistory, onRestart }: GameOverSc
           </div>
         </div>
 
-        <div className="bg-secondary border border-border rounded-lg p-6 space-y-3">
-          <h2 className="text-sm font-semibold text-foreground uppercase tracking-wide">Bài Học Biện Chứng</h2>
-          <p className="text-base text-muted-foreground leading-relaxed">
-            {getDialecticalLesson(gameState.gameOverReason)}
-          </p>
-        </div>
+
 
         <div className="space-y-3 max-h-48 overflow-y-auto">
           <h3 className="text-xs font-semibold text-muted-foreground uppercase">Dòng Thời Gian Quyết Định</h3>
@@ -98,7 +79,7 @@ export function GameOverScreen({ gameState, cardHistory, onRestart }: GameOverSc
             Chơi Lại
           </button>
           <button
-            onClick={() => router.push('/')}
+            onClick={onHome}
             className="px-8 py-3 bg-secondary border border-border text-foreground font-semibold rounded-lg hover:bg-muted transition-colors text-base"
           >
             Về Trang Chủ

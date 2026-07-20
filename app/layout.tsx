@@ -10,7 +10,7 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "Lịch sử Đảng - Bản lĩnh và Trí tuệ",
   description:
-    "Trò chơi khám phá các quyết định lịch sử của Đảng Cộng sản Việt Nam qua tư duy biện chứng Mác-Lênin",
+    "Trò chơi khám phá các quyết định lịch sử của Đảng Cộng sản Việt Nam và việc chèo lái con thuyền Cách mạng",
   generator: "v0.app",
 }
 
