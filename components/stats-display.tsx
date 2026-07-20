@@ -10,7 +10,7 @@ export function StatsDisplay({ gameState }: StatsDisplayProps) {
     { label: "Tài Chính", value: gameState.finance, icon: "💰", variable: "--stat-finance" },
     { label: "Dân Sinh", value: gameState.people, icon: "🙂", variable: "--stat-people" },
     { label: "Quân Sự", value: gameState.military, icon: "⚔️", variable: "--stat-military" },
-    { label: "Tôn Giáo", value: gameState.religion, icon: "⛪", variable: "--stat-religion" },
+    { label: "Hệ Tư Tưởng", value: gameState.religion, icon: "🛡️", variable: "--stat-religion" },
   ]
 
   const getDangerLevel = (value: number) => {
@@ -23,7 +23,7 @@ export function StatsDisplay({ gameState }: StatsDisplayProps) {
     <div className="bg-card border-b border-border p-4 md:p-6 space-y-4">
       <div className="flex justify-between items-center px-2">
         <h2 className="text-xs font-semibold text-muted-foreground uppercase tracking-widest">
-          Trạng thái vương quốc - Năm {gameState.yearsReigned + 1}
+          Trạng thái Cách mạng - Năm thứ {gameState.yearsReigned + 1}
         </h2>
       </div>
 
@@ -35,8 +35,9 @@ export function StatsDisplay({ gameState }: StatsDisplayProps) {
           return (
             <div
               key={stat.label}
-              className={`space-y-2 p-2 md:p-3 rounded-lg border transition-all ${isDanger ? "border-red-500 bg-red-500/5" : "border-border bg-secondary"
-                } ${isDanger && dangerLevel === "critical" ? "stat-danger" : ""}`}
+              className={`space-y-2 p-2 md:p-3 rounded-lg border transition-all ${
+                isDanger ? "border-accent-warn bg-accent-warn/5" : "border-border bg-secondary"
+              } ${isDanger && dangerLevel === "critical" ? "stat-danger" : ""}`}
             >
               <div className="flex items-center gap-2">
                 <span className="text-base md:text-lg">{stat.icon}</span>
@@ -46,13 +47,14 @@ export function StatsDisplay({ gameState }: StatsDisplayProps) {
               <div className="space-y-1">
                 <div className="h-2 bg-muted rounded-full overflow-hidden">
                   <div
-                    className={`h-full transition-all duration-500 ease-out rounded-full ${dangerLevel === "critical"
-                      ? "bg-red-500"
-                      : dangerLevel === "warning"
-                        ? "bg-yellow-500"
-                        : "bg-green-500"
-                      }`}
-                    style={{ width: `${Math.max(0, Math.min(100, stat.value))}%` }}
+                    className={`h-full transition-all rounded-full ${
+                      dangerLevel === "critical"
+                        ? "bg-accent-warn"
+                        : dangerLevel === "warning"
+                          ? "bg-yellow-500"
+                          : "bg-accent-success"
+                    }`}
+                    style={{ width: `${stat.value}%` }}
                   />
                 </div>
                 <div className="text-right text-xs font-medium text-foreground">{stat.value}/100</div>

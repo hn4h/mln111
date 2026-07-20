@@ -1,8 +1,8 @@
 "use client"
 
 import { useState } from "react"
-import type { GameState, Card, Dynasty } from "@/lib/types"
-import { vietnamDynasties } from "@/lib/vietnam-dynasties"
+import type { GameState, Card, Dynasty, StatEffects } from "@/lib/types"
+import { vietnamDynasties } from "@/lib/party-history"
 import { GameCard } from "./game-card"
 import { StatsDisplay } from "./stats-display"
 import { GameOverScreen } from "./game-over-screen"
@@ -38,7 +38,7 @@ export function GameContainer() {
     historicalQuote?: string
     philosophicalExplanation?: string
     dialecticLaw?: string
-    effects?: { finance: number; people: number; military: number; religion: number }
+    effects?: StatEffects
   } | null>(null)
 
   const selectDynasty = (dynastyId: string) => {
@@ -47,8 +47,8 @@ export function GameContainer() {
       setSelectedDynastyData(dynasty)
       const cards = [...dynasty.cards]
       setAvailableCards(cards)
-      setGameState((prev) => ({
-        ...prev,
+      setGameState((prev) => ({ 
+        ...prev, 
         selectedDynasty: dynastyId,
         hasStarted: true
       }))
@@ -71,18 +71,23 @@ export function GameContainer() {
       selectedChoice = choice === "left" ? currentCard.leftChoice : currentCard.rightChoice
     }
 
-    // Hiển thị popup sau mỗi lựa chọn để hiện kết quả
+    // Hiển thị popup nếu có thông tin lịch sử hoặc triết học, hoặc nếu chọn đáp án đúng
     const isCorrectAnswer = isMultiChoice && 'isCorrect' in selectedChoice && selectedChoice.isCorrect
-
-    setPopupData({
-      title: currentCard.character,
-      historicalNote: selectedChoice.historicalNote,
-      historicalQuote: isCorrectAnswer ? currentCard.historicalQuote : selectedChoice.historicalQuote,
-      philosophicalExplanation: selectedChoice.philosophicalExplanation,
-      dialecticLaw: currentCard.dialecticLaw,
-      effects: selectedChoice.effects,
-    })
-    setShowHistoricalPopup(true)
+    const shouldShowPopup = selectedChoice.historicalNote || 
+                           selectedChoice.philosophicalExplanation ||
+                           (isCorrectAnswer && currentCard.historicalQuote)
+    
+    if (shouldShowPopup) {
+      setPopupData({
+        title: currentCard.character,
+        historicalNote: selectedChoice.historicalNote,
+        historicalQuote: isCorrectAnswer ? currentCard.historicalQuote : selectedChoice.historicalQuote,
+        philosophicalExplanation: selectedChoice.philosophicalExplanation,
+        dialecticLaw: currentCard.dialecticLaw,
+        effects: selectedChoice.effects,
+      })
+      setShowHistoricalPopup(true)
+    }
 
     // Trừ giá (cost) trước nếu có
     let statsAfterCost = { ...gameState }
@@ -118,16 +123,16 @@ export function GameContainer() {
           finance: "Tài chính",
           people: "Dân sinh",
           military: "Quân sự",
-          religion: "Tôn giáo",
+          religion: "Hệ tư tưởng",
         }
-        gameOverReason = `${statNames[key]} sụp đổ hoàn toàn! (Dưới ${minSafeValue})`
+        gameOverReason = `${statNames[key]} gặp trở ngại nghiêm trọng! (Dưới ${minSafeValue})`
       } else if (value >= maxSafeValue) {
         isGameOver = true
         const statNames: Record<string, string> = {
           finance: "Tài chính",
           people: "Dân sinh",
           military: "Quân sự",
-          religion: "Tôn giáo",
+          religion: "Hệ tư tưởng",
         }
         gameOverReason = `${statNames[key]} phát triển quá mức, mất cân bằng! (Trên ${maxSafeValue})`
       }
@@ -135,12 +140,12 @@ export function GameContainer() {
 
     // Get remaining cards
     const newAvailableCards = availableCards.slice(1)
-
+    
     // Kiểm tra nếu đã hoàn thành tất cả câu hỏi
     if (newAvailableCards.length === 0 && !isGameOver) {
       setIsVictory(true)
       isGameOver = true
-      gameOverReason = "Bạn đã hoàn thành triều đại! Chúc mừng!"
+      gameOverReason = "Bạn đã hoàn thành xuất sắc các chặng đường cách mạng! Chúc mừng!"
     }
 
     // Update game state
@@ -158,7 +163,7 @@ export function GameContainer() {
     setGameState(newGameState)
     setCardHistory([...cardHistory, { card: currentCard, choice }])
     setAvailableCards(newAvailableCards)
-
+    
     // Clear current card for animation
     setCurrentCard(null)
 
@@ -200,15 +205,15 @@ export function GameContainer() {
 
   // Show title screen first
   if (!gameState.selectedDynasty) {
-    return <TitleScreen onStart={() => { }} onSelectDynasty={selectDynasty} />
+    return <TitleScreen onStart={() => {}} onSelectDynasty={selectDynasty} />
   }
 
   if (gameState.isGameOver) {
     if (isVictory) {
       return (
-        <VictoryScreen
-          gameState={gameState}
-          cardHistory={cardHistory}
+        <VictoryScreen 
+          gameState={gameState} 
+          cardHistory={cardHistory} 
           onRestart={restartGame}
           dynastyName={selectedDynastyData?.name || ""}
         />
@@ -218,23 +223,23 @@ export function GameContainer() {
   }
 
   return (
-    <div className="h-screen bg-background flex flex-col overflow-hidden">
+    <div className="min-h-screen bg-background flex flex-col overflow-hidden">
       <div className="flex-shrink-0">
         <StatsDisplay gameState={gameState} />
       </div>
 
-      <div className="flex flex-col items-center justify-center px-4 py-6 overflow-hidden">
+      <div className="flex-1 flex flex-col items-center justify-center px-4 py-4 overflow-y-auto">
         {currentCard ? (
           <>
-            {/* {currentCard.dialecticLaw && (
-              <div className="text-center text-xs md:text-sm text-muted-foreground border border-border rounded-lg p-2 bg-muted/30 mb-2 max-w-3xl w-full">
+            {currentCard.dialecticLaw && (
+              <div className="text-center text-xs md:text-sm text-muted-foreground border border-border rounded-lg p-2 md:p-3 bg-muted/30 mb-4 max-w-3xl w-full">
                 <span className="font-semibold">⚖️ Quy luật biện chứng: </span>
                 {currentCard.dialecticLaw}
               </div>
-            )} */}
-            <GameCard
-              card={currentCard}
-              onSwipe={makeDecision}
+            )}
+            <GameCard 
+              card={currentCard} 
+              onSwipe={makeDecision} 
               decisionDirection={gameState.decision}
               currentStats={{
                 finance: gameState.finance,
@@ -249,11 +254,11 @@ export function GameContainer() {
         )}
       </div>
 
-      <div className="flex-shrink-0 pb-2 text-center space-y-0 bg-background/80 backdrop-blur">
+      <div className="flex-shrink-0 pb-4 md:pb-6 text-center space-y-1 bg-background/80 backdrop-blur">
         <div className="text-xs text-muted-foreground font-medium">
           Câu hỏi {gameState.currentCardIndex + 1} / {selectedDynastyData?.cards.length || 15}
         </div>
-        {/* <div className="text-xs text-muted-foreground">Năm thứ {gameState.yearsReigned + 1}</div> */}
+        <div className="text-xs text-muted-foreground">Năm thứ {gameState.yearsReigned + 1}</div>
       </div>
 
       {/* Historical Popup */}

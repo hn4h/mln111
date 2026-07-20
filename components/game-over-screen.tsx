@@ -10,18 +10,18 @@ interface GameOverScreenProps {
 
 export function GameOverScreen({ gameState, cardHistory, onRestart }: GameOverScreenProps) {
   const router = useRouter()
-
+  
   const getDialecticalLesson = (reason: string | null) => {
     if (!reason) return null
 
     if (reason.includes("Finance") || reason.includes("Tài chính")) {
-      return "Khi lòng tham trở nên tuyệt đối, nền tảng của vương triều sẽ sụp đổ. Nhưng không có tài nguyên, không gì có thể tồn tại."
+      return "Kinh tế không phát triển, Cách mạng sẽ thiếu đi nền tảng vật chất. Nhưng nếu chỉ tập trung vào tài chính mà xa rời mục tiêu dân tộc thì sẽ mất đi tính chính nghĩa."
     } else if (reason.includes("People") || reason.includes("Dân sinh")) {
-      return "Dân là gốc nước. Phớt lờ họ và họ sẽ phớt lờ bạn. Phục vụ họ một cách mù quáng và họ sẽ tiêu tốn chủ nhân của mình."
+      return "Dân là gốc nước. Xa rời nhân dân, phong trào cách mạng sẽ bị cô lập và thất bại. Nhưng nếu chỉ chạy theo dân túy ngắn hạn sẽ làm kiệt quệ tài lực quốc gia."
     } else if (reason.includes("Military") || reason.includes("Quân sự")) {
-      return "Thanh kiếm bảo vệ có thể hủy diệt. Quyền lực không kiềm chế trở thành bạo chúa; yếu đuối mời gọi chinh phục."
-    } else if (reason.includes("Religion") || reason.includes("Tôn giáo")) {
-      return "Niềm tin tạo nên hiện thực. Đức tin tuyệt đối tạo ra cuồng tín; hoài nghi thuần túy xói mòn ý nghĩa."
+      return "Lực lượng vũ trang bảo vệ Tổ quốc. Lạm dụng bạo lực hoặc phiêu lưu quân sự sẽ dẫn đến tổn thất; nhưng nếu yếu đuối, thiếu tự vệ sẽ bị kẻ thù đàn áp."
+    } else if (reason.includes("Religion") || reason.includes("Hệ tư tưởng")) {
+      return "Đường lối chính trị và hệ tư tưởng dẫn dắt hành động cách mạng. Thiếu định hướng tư tưởng sẽ dẫn đến chệch hướng và phân rã tổ chức."
     }
     return "Tất cả hệ thống đều chứa đựng mâu thuẫn riêng của mình. Làm chủ nằm ở sự căng thẳng vĩnh cửu giữa các đối lập."
   }
@@ -30,7 +30,7 @@ export function GameOverScreen({ gameState, cardHistory, onRestart }: GameOverSc
     <div className="min-h-screen bg-background flex items-center justify-center px-4 py-8">
       <div className="max-w-2xl space-y-8 text-center">
         <div className="space-y-4">
-          <h1 className="text-5xl md:text-6xl font-bold text-foreground">Vương Triều Kết Thúc</h1>
+          <h1 className="text-5xl md:text-6xl font-bold text-foreground">Chặng Đường Tạm Dừng</h1>
           <p className="text-lg md:text-xl text-accent-warn font-semibold">{gameState.gameOverReason}</p>
         </div>
 
@@ -49,20 +49,20 @@ export function GameOverScreen({ gameState, cardHistory, onRestart }: GameOverSc
               <p className="text-3xl font-bold text-foreground">{gameState.military}%</p>
             </div>
             <div className="space-y-2">
-              <p className="text-xs text-muted-foreground uppercase">Tôn Giáo</p>
+              <p className="text-xs text-muted-foreground uppercase">Hệ Tư Tưởng</p>
               <p className="text-3xl font-bold text-foreground">{gameState.religion}%</p>
             </div>
           </div>
 
           <div className="pt-4 border-t border-border text-center">
-            <p className="text-2xl font-bold text-foreground">Trị Vì {gameState.yearsReigned} Năm</p>
+            <p className="text-2xl font-bold text-foreground">Vượt Qua {gameState.yearsReigned} Thử Thách</p>
             <p className="text-xs text-muted-foreground mt-1">
               {gameState.yearsReigned < 5
                 ? "Chỉ là một ghi chú nhỏ trong lịch sử"
                 : gameState.yearsReigned < 15
                   ? "Một khoảnh khắc ngắn ngủi"
                   : gameState.yearsReigned < 25
-                    ? "Một triều đại đáng chú ý"
+                    ? "Một chặng đường đáng chú ý"
                     : "Một di sản lâu dài"}
             </p>
           </div>
@@ -95,14 +95,14 @@ export function GameOverScreen({ gameState, cardHistory, onRestart }: GameOverSc
             onClick={onRestart}
             className="px-8 py-3 bg-foreground text-background font-semibold rounded-lg hover:bg-muted-foreground transition-colors text-base"
           >
-            Về Trang Chủ
+            Chơi Lại
           </button>
-          {/* <button
+          <button
             onClick={() => router.push('/')}
             className="px-8 py-3 bg-secondary border border-border text-foreground font-semibold rounded-lg hover:bg-muted transition-colors text-base"
           >
             Về Trang Chủ
-          </button> */}
+          </button>
         </div>
       </div>
     </div>

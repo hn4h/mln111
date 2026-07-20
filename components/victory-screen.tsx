@@ -38,10 +38,10 @@ export function VictoryScreen({ gameState, cardHistory, onRestart, dynastyName }
 
   const getRating = () => {
     const avg = getAverageScore()
-    if (avg >= 70) return { title: "Thánh Quân", desc: "Một vị vua xuất sắc trong lịch sử!", color: "text-yellow-500" }
-    if (avg >= 60) return { title: "Minh Quân", desc: "Một triều đại phát triển rực rỡ", color: "text-green-500" }
-    if (avg >= 50) return { title: "Quân Chủ Tài Giỏi", desc: "Duy trì được sự cân bằng tốt", color: "text-blue-500" }
-    return { title: "Quân Chủ Đủ Năng Lực", desc: "Đã hoàn thành sứ mệnh", color: "text-purple-500" }
+    if (avg >= 70) return { title: "Nhà Lãnh Đạo Lỗi Lạc", desc: "Một người lãnh đạo xuất sắc của Cách mạng!", color: "text-yellow-500" }
+    if (avg >= 60) return { title: "Nhà Lãnh Đạo Ưu Tú", desc: "Dẫn dắt Cách mạng đạt nhiều thành tựu lớn", color: "text-green-500" }
+    if (avg >= 50) return { title: "Cán Bộ Lãnh Đạo Giỏi", desc: "Duy trì được sự cân bằng tốt giữa các lĩnh vực", color: "text-blue-500" }
+    return { title: "Hoàn Thành Nhiệm Vụ", desc: "Đã hoàn thành xuất sắc sứ mệnh được giao", color: "text-purple-500" }
   }
 
   const rating = getRating()
@@ -51,11 +51,11 @@ export function VictoryScreen({ gameState, cardHistory, onRestart, dynastyName }
       <div className="max-w-2xl space-y-8 text-center">
         {/* Tiêu đề chiến thắng */}
         <div className="space-y-4">
-          <div className="text-6xl">👑</div>
+          <div className="text-6xl">⭐</div>
           <h1 className="text-5xl md:text-6xl font-bold text-foreground">Chiến Thắng!</h1>
           <p className="text-2xl md:text-3xl text-amber-500 font-bold">{dynastyName}</p>
           <p className="text-lg text-muted-foreground">
-            Bạn đã dẫn dắt triều đại qua {gameState.yearsReigned} năm thịnh vượng
+            Bạn đã dẫn dắt đất nước qua {gameState.yearsReigned} chặng đường phát triển
           </p>
         </div>
 
@@ -83,7 +83,7 @@ export function VictoryScreen({ gameState, cardHistory, onRestart, dynastyName }
               <p className="text-3xl font-bold text-foreground">{gameState.military}/100</p>
             </div>
             <div className="space-y-2">
-              <p className="text-xs text-muted-foreground uppercase">Tôn Giáo</p>
+              <p className="text-xs text-muted-foreground uppercase">Hệ Tư Tưởng</p>
               <p className="text-3xl font-bold text-foreground">{gameState.religion}/100</p>
             </div>
           </div>
@@ -94,7 +94,7 @@ export function VictoryScreen({ gameState, cardHistory, onRestart, dynastyName }
           <h3 className="text-sm font-semibold text-foreground uppercase tracking-wide">🏆 Thành Tựu Mở Khóa</h3>
           <div className="space-y-2 text-sm text-muted-foreground">
             <p>✓ Hoàn thành {dynastyName}</p>
-            <p>✓ Trị vì {gameState.yearsReigned} năm</p>
+            <p>✓ Lãnh đạo {gameState.yearsReigned} giai đoạn</p>
             <p>✓ Đạt điểm trung bình {getAverageScore()}/100</p>
           </div>
         </div>
@@ -119,13 +119,13 @@ export function VictoryScreen({ gameState, cardHistory, onRestart, dynastyName }
             onClick={onRestart}
             className="px-8 py-3 bg-amber-500 text-white font-semibold rounded-lg hover:bg-amber-600 transition-colors text-base"
           >
-            Chơi Lại Triều Đại Này
+            Chơi Lại Chủ Đề Này
           </button>
           <button
             onClick={() => router.push('/')}
             className="px-8 py-3 bg-foreground text-background font-semibold rounded-lg hover:bg-muted-foreground transition-colors text-base"
           >
-            Chọn Triều Đại Khác
+            Chọn Chủ Đề Khác
           </button>
         </div>
       </div>
