@@ -1,11 +1,25 @@
 "use client"
 import type { GameState } from "@/lib/types"
+import { ArrowLeft } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog"
 
 interface StatsDisplayProps {
   gameState: GameState
+  onHome?: () => void
 }
 
-export function StatsDisplay({ gameState }: StatsDisplayProps) {
+export function StatsDisplay({ gameState, onHome }: StatsDisplayProps) {
   const stats = [
     { label: "Tài Chính", value: gameState.finance, icon: "💰", color: "var(--stat-finance)", border: "hover:border-amber-500/30 hover:shadow-amber-500/5" },
     { label: "Dân Sinh", value: gameState.people, icon: "🙂", color: "var(--stat-people)", border: "hover:border-rose-500/30 hover:shadow-rose-500/5" },
@@ -23,6 +37,34 @@ export function StatsDisplay({ gameState }: StatsDisplayProps) {
     <div className="bg-card/75 backdrop-blur-md border-b border-border/80 p-4 md:p-5 space-y-4 shadow-sm relative z-10">
       <div className="flex justify-between items-center max-w-6xl mx-auto px-2">
         <div className="flex items-center gap-2">
+          {onHome && (
+            <AlertDialog>
+              <AlertDialogTrigger asChild>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="mr-1 h-8 w-8 rounded-lg text-muted-foreground hover:text-foreground hover:bg-accent/50 transition-all duration-200"
+                  aria-label="Quay về màn hình chính"
+                >
+                  <ArrowLeft className="h-4 w-4 transition-transform duration-200 hover:-translate-x-0.5" />
+                </Button>
+              </AlertDialogTrigger>
+              <AlertDialogContent>
+                <AlertDialogHeader>
+                  <AlertDialogTitle>Quay về màn hình chính?</AlertDialogTitle>
+                  <AlertDialogDescription>
+                    Tiến trình chơi hiện tại của bạn sẽ bị mất. Bạn có chắc chắn muốn rời đi?
+                  </AlertDialogDescription>
+                </AlertDialogHeader>
+                <AlertDialogFooter>
+                  <AlertDialogCancel>Tiếp tục chơi</AlertDialogCancel>
+                  <AlertDialogAction onClick={onHome} className="bg-destructive text-white hover:bg-destructive/90">
+                    Quay về
+                  </AlertDialogAction>
+                </AlertDialogFooter>
+              </AlertDialogContent>
+            </AlertDialog>
+          )}
           <span className="h-2.5 w-2.5 rounded-full bg-red-600 animate-pulse" />
           <h2 className="text-xs md:text-sm font-bold text-foreground/80 uppercase tracking-widest">
             Trạng thái Cách mạng

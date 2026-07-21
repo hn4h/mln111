@@ -237,7 +237,7 @@ export function GameContainer() {
   return (
     <div className="h-[100dvh] bg-background flex flex-col overflow-hidden">
       <div className="flex-shrink-0">
-        <StatsDisplay gameState={gameState} />
+        <StatsDisplay gameState={gameState} onHome={goToHome} />
       </div>
 
       <div className="flex-1 flex flex-col items-center justify-start px-4 py-6 md:py-10 overflow-y-auto">
