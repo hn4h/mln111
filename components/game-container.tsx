@@ -256,7 +256,7 @@ export function GameContainer() {
             />
           </>
         ) : (
-          <div className="text-center text-muted-foreground animate-pulse">Đang tải câu hỏi tiếp theo...</div>
+          <div className="text-center text-muted-foreground animate-pulse">Đang tải câu hỏi tiếp theo…</div>
         )}
       </div>
 

@@ -67,7 +67,14 @@ export function StatsDisplay({ gameState }: StatsDisplayProps) {
               </div>
 
               <div className="space-y-1">
-                <div className="h-2.5 bg-muted/60 rounded-full p-[2px] shadow-inner">
+                <div
+                  role="progressbar"
+                  aria-valuenow={stat.value}
+                  aria-valuemin={0}
+                  aria-valuemax={100}
+                  aria-label={stat.label}
+                  className="h-2.5 bg-muted/60 rounded-full p-[2px] shadow-inner"
+                >
                   <div
                     className="h-full rounded-full transition-all duration-500 ease-out shadow-sm relative overflow-hidden"
                     style={{ 

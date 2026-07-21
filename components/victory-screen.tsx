@@ -1,6 +1,7 @@
 "use client"
 import type { GameState, Card } from "@/lib/types"
 import { useEffect } from "react"
+import { Button } from "@/components/ui/button"
 
 interface VictoryScreenProps {
   gameState: GameState
@@ -40,14 +41,14 @@ export function VictoryScreen({ gameState, cardHistory, onRestart, dynastyName, 
     if (avg >= 70) return { title: "Nhà Lãnh Đạo Lỗi Lạc", desc: "Một người lãnh đạo xuất sắc của Cách mạng!", color: "text-yellow-500" }
     if (avg >= 60) return { title: "Nhà Lãnh Đạo Ưu Tú", desc: "Dẫn dắt Cách mạng đạt nhiều thành tựu lớn", color: "text-green-500" }
     if (avg >= 50) return { title: "Cán Bộ Lãnh Đạo Giỏi", desc: "Duy trì được sự cân bằng tốt giữa các lĩnh vực", color: "text-blue-500" }
-    return { title: "Hoàn Thành Nhiệm Vụ", desc: "Đã hoàn thành xuất sắc sứ mệnh được giao", color: "text-purple-500" }
+    return { title: "Hoàn Thành Nhiệm Vụ", desc: "Đã hoàn thành xuất sắc sứ mệnh được giao", color: "text-amber-500" }
   }
 
   const rating = getRating()
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-amber-500/10 to-background flex items-center justify-center px-4 py-8">
-      <div className="max-w-2xl space-y-8 text-center">
+      <div className="max-w-2xl space-y-8 text-center w-full">
         {/* Tiêu đề chiến thắng */}
         <div className="space-y-4">
           <div className="text-6xl">⭐</div>
@@ -103,10 +104,10 @@ export function VictoryScreen({ gameState, cardHistory, onRestart, dynastyName, 
           <h3 className="text-xs font-semibold text-muted-foreground uppercase">Lịch Sử Quyết Định</h3>
           <div className="space-y-2 text-left text-xs">
             {cardHistory.slice(-10).map((entry, idx) => (
-              <div key={idx} className="flex items-center gap-2 p-2 rounded bg-secondary">
-                <span className="text-muted-foreground">Năm {idx + 1}</span>
-                <span className="text-green-500">✓</span>
-                <span className="flex-1 text-muted-foreground truncate">{entry.card.situation.slice(0, 40)}...</span>
+              <div key={idx} className="flex items-center gap-2 p-2 rounded bg-secondary min-w-0">
+                <span className="text-muted-foreground shrink-0">Năm {idx + 1}</span>
+                <span className="text-green-500 shrink-0">✓</span>
+                <span className="flex-1 text-muted-foreground truncate min-w-0">{entry.card.situation.slice(0, 40)}…</span>
               </div>
             ))}
           </div>
@@ -114,18 +115,21 @@ export function VictoryScreen({ gameState, cardHistory, onRestart, dynastyName, 
 
         {/* Nút hành động */}
         <div className="flex gap-4 justify-center flex-wrap">
-          <button
+          <Button
             onClick={onRestart}
-            className="px-8 py-3 bg-amber-500 text-white font-semibold rounded-lg hover:bg-amber-600 transition-colors text-base"
+            size="lg"
+            className="px-8 py-3 bg-amber-500 text-white font-semibold rounded-lg hover:bg-amber-600 transition-colors text-base border-amber-500"
           >
             Chơi Lại Chủ Đề Này
-          </button>
-          <button
+          </Button>
+          <Button
             onClick={onHome}
-            className="px-8 py-3 bg-foreground text-background font-semibold rounded-lg hover:bg-muted-foreground transition-colors text-base"
+            variant="outline"
+            size="lg"
+            className="px-8 py-3 text-base font-semibold"
           >
             Chọn Chủ Đề Khác
-          </button>
+          </Button>
         </div>
       </div>
     </div>

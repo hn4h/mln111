@@ -49,7 +49,7 @@ export function GameCard({ card, onSwipe, decisionDirection, currentStats }: Gam
   const isMultiChoice = card.multipleChoices && card.multipleChoices.length > 0
 
   return (
-    <div className="w-full max-w-6xl mx-auto space-y-3 animate-in fade-in duration-500" style={{ width: '75%' }}>
+    <div className="w-full md:w-3/4 max-w-4xl mx-auto space-y-3 animate-in fade-in duration-500">
       {/* Card Content */}
       <div className="bg-card rounded-xl border border-border shadow-xl p-4 space-y-3">
         {/* Character/Title */}
@@ -79,7 +79,7 @@ export function GameCard({ card, onSwipe, decisionDirection, currentStats }: Gam
                 key={choice.id}
                 onClick={() => handleChoice(choice.id)}
                 disabled={!!decisionDirection || !affordable}
-                className={`w-full text-left flex flex-col items-start gap-2.5 p-4 rounded-xl border transition-all duration-300 shadow-sm hover:shadow-md cursor-pointer ${!affordable
+                className={`w-full text-left flex flex-col items-start gap-2.5 p-4 rounded-xl border transition-all duration-300 shadow-sm hover:shadow-md cursor-pointer outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-hidden ${!affordable
                   ? 'opacity-40 cursor-not-allowed bg-muted/20 border-border/40'
                   : 'bg-card/65 backdrop-blur-sm border-border/60 hover:bg-primary/[0.03] hover:border-primary/45 hover:scale-[1.01] active:scale-[0.99]'
                   }`}
@@ -145,7 +145,7 @@ export function GameCard({ card, onSwipe, decisionDirection, currentStats }: Gam
             <button
               onClick={() => handleChoice("left")}
               disabled={!!decisionDirection || !canAfford(card.leftChoice.cost)}
-              className={`w-full text-left flex flex-col items-start gap-2.5 p-4 rounded-xl border transition-all duration-300 shadow-sm hover:shadow-md cursor-pointer ${!canAfford(card.leftChoice.cost)
+              className={`w-full text-left flex flex-col items-start gap-2.5 p-4 rounded-xl border transition-all duration-300 shadow-sm hover:shadow-md cursor-pointer outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-hidden ${!canAfford(card.leftChoice.cost)
                 ? 'opacity-40 cursor-not-allowed bg-muted/20 border-border/40'
                 : 'bg-card/65 backdrop-blur-sm border-border/60 hover:bg-primary/[0.03] hover:border-primary/45 hover:scale-[1.01] active:scale-[0.99]'
                 }`}
@@ -224,7 +224,7 @@ export function GameCard({ card, onSwipe, decisionDirection, currentStats }: Gam
             <button
               onClick={() => handleChoice("right")}
               disabled={!!decisionDirection || !canAfford(card.rightChoice.cost)}
-              className={`w-full text-left flex flex-col items-start gap-2.5 p-4 rounded-xl border transition-all duration-300 shadow-sm hover:shadow-md cursor-pointer ${!canAfford(card.rightChoice.cost)
+              className={`w-full text-left flex flex-col items-start gap-2.5 p-4 rounded-xl border transition-all duration-300 shadow-sm hover:shadow-md cursor-pointer outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-hidden ${!canAfford(card.rightChoice.cost)
                 ? 'opacity-40 cursor-not-allowed bg-muted/20 border-border/40'
                 : 'bg-card/65 backdrop-blur-sm border-border/60 hover:bg-primary/[0.03] hover:border-primary/45 hover:scale-[1.01] active:scale-[0.99]'
                 }`}

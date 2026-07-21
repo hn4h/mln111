@@ -109,7 +109,7 @@ export function HistoricalPopup({
 
             {/* Trích dẫn lịch sử */}
             {historicalNote && (
-              <div className="bg-blue-500/10 border-l-4 border-blue-500 rounded-lg p-6">
+              <div className="bg-amber-600/10 border-l-4 border-amber-600 dark:border-amber-500 rounded-lg p-6">
                 <h3 className="text-xl md:text-2xl font-bold text-foreground mb-4 uppercase tracking-wide">
                   Bối Cảnh Lịch Sử
                 </h3>
@@ -127,7 +127,7 @@ export function HistoricalPopup({
 
             {/* Giải thích triết học */}
             {philosophicalExplanation && (
-              <div className="bg-purple-500/10 border-l-4 border-purple-500 rounded-lg p-6">
+              <div className="bg-red-600/10 border-l-4 border-red-600 dark:border-red-500 rounded-lg p-6">
                 <h3 className="text-xl md:text-2xl font-bold text-foreground mb-4 uppercase tracking-wide">
                   Phân Tích Triết Học
                 </h3>
